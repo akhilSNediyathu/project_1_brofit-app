@@ -1,5 +1,7 @@
 import 'package:fitness_app/common/colo_extension.dart';
+import 'package:fitness_app/common/homeScreenListTile.dart';
 import 'package:fitness_app/common_widget/Tab_Buttons.dart';
+import 'package:fitness_app/common_widget/homefloating.dart';
 import 'package:flutter/material.dart';
 
 class MainTabView extends StatefulWidget {
@@ -12,6 +14,7 @@ int selectTab=0;
 class _MainTabViewState extends State<MainTabView> {
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     
     return Scaffold(
       backgroundColor: Tcolo.white,
@@ -84,6 +87,7 @@ class _MainTabViewState extends State<MainTabView> {
         (child: Text
         ('Start Your Workout',style: TextStyle(
           fontSize: 18,
+          fontWeight: FontWeight.w700,
           color: Tcolo.white
         ),)
         ),
@@ -95,7 +99,39 @@ class _MainTabViewState extends State<MainTabView> {
         (image: AssetImage('assets/img/homebg.jpeg'),
         fit: BoxFit.cover,opacity: 0.5)
        ),
+       child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          homeList
+          (imageUrl: 'assets/img/listTile1.png', onTap: (){
+       
+          }, 
+          title: 'Total Arm Toning'),
+          SizedBox(height: media.width*0.04,),
+          homeList
+          (imageUrl: 'assets/img/listTile2.png', onTap: (){
+       
+          }, 
+          title: 'Chisel Your Chest'),
+          SizedBox(height: media.width*0.04,),
+          homeList
+          (imageUrl: 'assets/img/listTile3.png', onTap: (){
+       
+          }, 
+          title: 'Six-Pack Sprint'),
+          SizedBox(height: media.width*0.04,),
+          homeList
+          (imageUrl: 'assets/img/listTile4.png', onTap: (){
+       
+          }, 
+          title: 'Legendary Leg Lifts'),
+
+        ],
+       ),
       ),
+      floatingActionButton: GradientFab(onPressed: (){
+
+      }),
      
   
 

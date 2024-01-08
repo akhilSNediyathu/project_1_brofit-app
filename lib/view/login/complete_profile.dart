@@ -94,6 +94,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
 
                             ],
                           ),),
+                          SizedBox(
+                  height: media.width * 0.04),
                        RoundTextField(
                         hintText:'Date of Birth' ,
                         icon:'assets/img/Calendar.png',

@@ -6,9 +6,12 @@ class Tcolo {
 
   static Color get Secondarycolor1 => const Color(0xffC58BF2);
   static Color get Secondarycolor2 => const Color(0xffEEA4CE);
+   static Color get Tertiarycolor1 => const Color(0xff996C65);
+  static Color get Tertiarycolor2 => const Color(0xff92A3FD);
 
   static List<Color> get primaryG => [Primarycolor2, Primarycolor1];
   static List<Color> get SecondaryG => [Secondarycolor1, Secondarycolor2];
+  static List<Color> get tertiaryG => [Tertiarycolor1, Tertiarycolor2];
 
   static Color get black => const Color(0xff1D1617);
   static Color get gray => const Color(0xff786F72);
