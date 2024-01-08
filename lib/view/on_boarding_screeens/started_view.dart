@@ -1,0 +1,58 @@
+import 'package:fitness_app/common/colo_extension.dart';
+import 'package:fitness_app/common_widget/round_Button.dart';
+import 'package:fitness_app/view/on_boarding_screeens/onboardingViews.dart';
+import 'package:flutter/material.dart';
+
+class OnBoardingView extends StatefulWidget {
+  const OnBoardingView({super.key});
+
+  @override
+  State<OnBoardingView> createState() => _OnBoardingState();
+}
+
+class _OnBoardingState extends State<OnBoardingView> {
+  @override
+  Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
+    return Scaffold(
+      backgroundColor: Tcolo.white,
+      body: Container(
+          width: media.width,
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: Tcolo.primaryG,
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomRight)
+                  ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Spacer(),
+              Text(
+                'BrofiT',
+                style: TextStyle(
+                    color: Tcolo.black,
+                    fontSize: 36,
+                    fontWeight: FontWeight.w700),
+              ),
+              Text(
+                'The Complete Fitness App',
+                style: TextStyle(
+                  color: Tcolo.gray,
+                  fontSize: 18,
+                ),
+              ),
+              Spacer(),
+              SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  child: RoundButton(textColor: Tcolo.Primarycolor1,buttonColor:  Tcolo.white,title: 'Get Started', onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>onBoarding1()));
+                  })
+                ),
+              )
+            ],
+          )),
+    );
+  }
+}
