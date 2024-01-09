@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1071877936765",
+    "project_id": "brofit1-2d221",
+    "storage_bucket": "brofit1-2d221.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1071877936765:android:49266a8b2f0c4164e10314",
+        "android_client_info": {
+          "package_name": "com.example.fitness_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXf6k-WZg6Fe6rOiscmR9IPsOvWbj9tUs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

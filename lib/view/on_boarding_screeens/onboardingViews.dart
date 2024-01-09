@@ -100,7 +100,7 @@ class _onBoarding1State extends State<onBoarding1> {
                         });
 
                         }else{
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>signUpView()));
+                       Navigator.push(context, MaterialPageRoute(builder: (context)=>SignUpView()));
                         }
                       },
                       icon: Icon

@@ -1,4 +1,5 @@
 import 'package:fitness_app/common/colo_extension.dart';
+import 'package:fitness_app/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingpage extends StatelessWidget {
@@ -21,7 +22,9 @@ class OnBoardingpage extends StatelessWidget {
               ),
               alignment: Alignment.bottomRight,
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>SignUpView()));
+                  },
                   child: Text(
                     'Skip >',
                     style: TextStyle(fontSize: 17, color: Tcolo.Primarycolor1),

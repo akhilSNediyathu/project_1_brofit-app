@@ -93,6 +93,7 @@ class _MainTabViewState extends State<MainTabView> {
         ),
       ),
       body: Container(
+        padding: EdgeInsets.symmetric(horizontal: 15),
        decoration: BoxDecoration(
         color: Tcolo.black,
         image: DecorationImage
@@ -100,6 +101,7 @@ class _MainTabViewState extends State<MainTabView> {
         fit: BoxFit.cover,opacity: 0.5)
        ),
        child: Column(
+        
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           homeList
