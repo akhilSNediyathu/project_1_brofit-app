@@ -59,6 +59,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   SizedBox(height: media.width * 0.05,),
                   RoundTextField(
+                    
                     hintText: 'Password',
                     icon: 'assets/img/Lock.png',
                     keyboardType: TextInputType.emailAddress,
@@ -125,7 +126,7 @@ class _LoginViewState extends State<LoginView> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Don’t have an account yet? Register ",
+                          "Don't have an account yet? Register ",
                           style: TextStyle(
                             color: Tcolo.black,
                             fontSize: 14,

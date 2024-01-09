@@ -1,7 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/homeScreenListTile.dart';
 import 'package:fitness_app/common_widget/Tab_Buttons.dart';
 import 'package:fitness_app/common_widget/homefloating.dart';
+import 'package:fitness_app/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 
 class MainTabView extends StatefulWidget {
@@ -46,8 +49,8 @@ class _MainTabViewState extends State<MainTabView> {
 
                     }
                   
-                }, selectIcon: 'assets/img/activity_tab_select.png',
-                 icon: 'assets/img/activity_tab.png'),
+                }, selectIcon: 'assets/img/workout planner1.png',
+                 icon: 'assets/img/workout planner2.png'),
 
                 TAbButton(isActive: selectTab==2, onTap: (){
                   selectTab=2;
@@ -64,6 +67,8 @@ class _MainTabViewState extends State<MainTabView> {
               
 
                   TAbButton(isActive: selectTab==3, onTap: (){
+                    FirebaseAuth.instance.signOut();
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>LoginView()));
                   selectTab=3;
                     if(mounted){
                       setState(() {

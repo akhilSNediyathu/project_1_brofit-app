@@ -1,3 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:fitness_app/view/main_tab_view.dart';
 import 'package:fitness_app/view/on_boarding_screeens/started_view.dart';
 import 'package:flutter/material.dart';
 
@@ -51,9 +54,19 @@ class _SplashState extends State<Splash> {
     );
   }
   Future <void> goToLogin()async{
+
    await Future.delayed(Duration(seconds: 3)
     );
+    final check = FirebaseAuth.instance.currentUser ;
+   if(check==null){
     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>OnBoardingView()));
 
+   }else{
+       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>MainTabView()));
+
+    }
+   
+
   }
+
 }
