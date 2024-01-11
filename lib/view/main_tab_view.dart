@@ -66,7 +66,20 @@ class _MainTabViewState extends State<MainTabView> {
                 
               
 
-                  TAbButton(isActive: selectTab==3, onTap: (){
+                //   TAbButton(isActive: selectTab==3, onTap: (){
+                
+                //   selectTab=3;
+                //     if(mounted){
+                //       setState(() {
+                        
+                //       });
+
+                //     }
+                  
+                // }, icon: 'assets/img/mealsplanner.png',
+                //  selectIcon: 'assets/img/mealsplanner2.png'),
+
+                 TAbButton(isActive: selectTab==3, onTap: (){
                     FirebaseAuth.instance.signOut();
                     Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>LoginView()));
                   selectTab=3;

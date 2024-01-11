@@ -21,6 +21,7 @@ class _SplashState extends State<Splash> {
   }
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
     return Scaffold(
      
       body: Container(
@@ -31,24 +32,27 @@ class _SplashState extends State<Splash> {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomRight),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              
-          //  Text('B R O F I T',style: TextStyle(fontSize: 38,
-          //            color: Colors.white,fontWeight: FontWeight.bold
-          
-          // ),),
-          Opacity(
-            opacity: .7,
-            child: Container(height:300,
-            width: 300,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(200),
-              image: DecorationImage(image: AssetImage('assets/img/Brofit (1).png')),
-              ),),
-          )
-          ],
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                
+            //  Text('B R O F I T',style: TextStyle(fontSize: 38,
+            //            color: Colors.white,fontWeight: FontWeight.bold
+            
+            // ),),
+            Opacity(
+              opacity: .7,
+              child: Container(
+            height: media.height*0.75,
+            width: media.width*0.75,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(200),
+                image: DecorationImage(image: AssetImage('assets/img/newsplash.png',),fit: BoxFit.fitWidth),
+                ),),
+            )
+            ],
+            ),
           ),
       ),
     );

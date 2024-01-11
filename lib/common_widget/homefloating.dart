@@ -21,8 +21,8 @@ class GradientFab extends StatelessWidget {
       ),
       child: IconButton(
         icon: Icon(
-          Icons.add,
-          color: Colors.white,
+          Icons.restaurant,
+          color: Color.fromARGB(255, 238, 234, 234),
         ),
         onPressed: onPressed,
       ),
