@@ -2,8 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/firebase_options.dart';
 import 'package:fitness_app/splashScreen.dart';
+import 'package:fitness_app/view/bmicalculator/bmi_calcView.dart';
 import 'package:fitness_app/view/login/complete_profile.dart';
 import 'package:fitness_app/view/login/signup_view.dart';
+import 'package:fitness_app/view/meals_planner/welcome_screen.dart';
 import 'package:fitness_app/view/on_boarding_screeens/started_view.dart';
 import 'package:flutter/material.dart';
 
@@ -46,6 +48,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "Poppins"
       ),
       home:Splash() ,
+      // home: bmi_welcome(),
       debugShowCheckedModeBanner: false,
     );
   }

@@ -17,6 +17,7 @@ class _OnBoardingState extends State<OnBoardingView> {
     return Scaffold(
       backgroundColor: Tcolo.white,
       body: Container(
+        padding: EdgeInsets.symmetric(vertical: 15),
           width: media.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(

@@ -4,7 +4,9 @@ import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/homeScreenListTile.dart';
 import 'package:fitness_app/common_widget/Tab_Buttons.dart';
 import 'package:fitness_app/common_widget/homefloating.dart';
+import 'package:fitness_app/view/bmicalculator/bmi_calcView.dart';
 import 'package:fitness_app/view/login/login_view.dart';
+import 'package:fitness_app/view/meals_planner/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainTabView extends StatefulWidget {
@@ -13,10 +15,11 @@ class MainTabView extends StatefulWidget {
   @override
   State<MainTabView> createState() => _MainTabViewState();
 }
-int selectTab=0;
+
 class _MainTabViewState extends State<MainTabView> {
   @override
   Widget build(BuildContext context) {
+    int selectTab=0;
     var media = MediaQuery.of(context).size;
     
     return Scaffold(
@@ -53,6 +56,7 @@ class _MainTabViewState extends State<MainTabView> {
                  icon: 'assets/img/workout planner2.png'),
 
                 TAbButton(isActive: selectTab==2, onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>bmi_welcome()));
                   selectTab=2;
                     if(mounted){
                       setState(() {
@@ -150,6 +154,7 @@ class _MainTabViewState extends State<MainTabView> {
        ),
       ),
       floatingActionButton: GradientFab(onPressed: (){
+        Navigator.push(context, MaterialPageRoute(builder:(ctx)=>mealsPlannerWelcome()));
 
       }),
      

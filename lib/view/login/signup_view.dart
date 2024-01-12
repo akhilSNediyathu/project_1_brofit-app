@@ -187,7 +187,7 @@ class _SignUpViewState extends State<SignUpView> {
         email: email,
         password: password,
       );
-      // Registration successful, navigate to the next screen
+     
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => CompleteProfileView()),
