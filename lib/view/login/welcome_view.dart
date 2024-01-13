@@ -1,6 +1,7 @@
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common_widget/round_Button.dart';
-import 'package:fitness_app/view/main_tab_view.dart';
+import 'package:fitness_app/view/home/home_page.dart';
+
 import 'package:flutter/material.dart';
 
 class WelcomeView extends StatefulWidget {
@@ -18,6 +19,7 @@ class _WelcomeViewState extends State<WelcomeView> {
       backgroundColor: Tcolo.white,
       body: SafeArea(
         child: Container(
+          
           width: media.width*1,
           // padding: const EdgeInsets.symmetric(vertical:10,horizontal: 10 ),
           child: Column(
@@ -44,11 +46,12 @@ class _WelcomeViewState extends State<WelcomeView> {
                  ),
              const Spacer(),
                   RoundButton(
+                  
                   textColor: Tcolo.white,
                   title: 'Go To Home',
                   onPressed: () {
                      Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => MainTabView()));
+                        MaterialPageRoute(builder: (context) => HomePage()));
                   },
                   buttonColor: Tcolo.Primarycolor1,
                 ),

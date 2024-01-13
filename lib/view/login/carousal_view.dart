@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common_widget/round_Button.dart';
-import 'package:fitness_app/view/login/complete_profile.dart';
+
 import 'package:fitness_app/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
 

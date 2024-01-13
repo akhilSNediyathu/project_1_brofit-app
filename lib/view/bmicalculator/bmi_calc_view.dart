@@ -4,8 +4,8 @@ import 'package:fitness_app/view/main_tab_view.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class bmi_welcome extends StatelessWidget {
-  bmi_welcome({super.key});
+class BmiWelcome extends StatelessWidget {
+  BmiWelcome({super.key});
   TextEditingController heightController = TextEditingController();
   TextEditingController weightController = TextEditingController();
 
@@ -14,23 +14,7 @@ class bmi_welcome extends StatelessWidget {
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: Tcolo.white,
-         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          leading: IconButton(onPressed: (){
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>MainTabView()));
-
-          }, 
-          icon:Icon( Icons.arrow_back,color: Tcolo.white,)),
-        backgroundColor: Tcolo.Primarycolor2,
-        title: Center
-        (child: Text
-        ('BMI Calculator',style: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
-          color: Tcolo.white
-        ),)
-        ),
-      ),body: Container(
+         body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 20),
         child:Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -174,7 +158,7 @@ class bmi_welcome extends StatelessWidget {
                RoundButton(title: 'check', onPressed: (){
 
                }, 
-               buttonColor: Tcolo.Primarycolor2, textColor: Tcolo.white)
+               buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
 
              
           ],

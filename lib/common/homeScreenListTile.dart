@@ -1,6 +1,8 @@
+// ignore: file_names
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class homeList extends StatelessWidget {
   final String title;
   final String imageUrl;

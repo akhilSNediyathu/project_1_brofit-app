@@ -20,7 +20,7 @@ class GradientFab extends StatelessWidget {
         shape: BoxShape.circle,
       ),
       child: IconButton(
-        icon: Icon(
+        icon: const Icon(
           Icons.restaurant,
           color: Color.fromARGB(255, 238, 234, 234),
         ),

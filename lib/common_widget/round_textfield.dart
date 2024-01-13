@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../common/colo_extension.dart';
 
 class RoundTextField extends StatefulWidget {
-  // final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   
   final TextEditingController? controller;
   final String hintText;
@@ -30,17 +30,25 @@ class _RoundTextFieldState extends State<RoundTextField> {
                   color: Tcolo.Lightgrey,borderRadius: BorderRadius.circular(15)
                 ) ,
                 child: Form(
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  // key:formKey,
+                  autovalidateMode: AutovalidateMode.always,
+                   
+                   
                   child: TextFormField(
                     obscureText: widget.obscureText,
-                    validator: widget.validator,
+                    validator: (value) {
+            if (value == null || value.isEmpty) {
+              return 'Please Fill This Field !';
+            } else {
+              return null;}},
                      keyboardType: widget.keyboardType,
                     controller: widget.controller,
                     decoration: InputDecoration(
                       contentPadding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
+                       disabledBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(50), borderSide: BorderSide(color: Tcolo.gray,width: 2),),
+                       focusedErrorBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(50), borderSide: const BorderSide(color: Color.fromARGB(255, 194, 13, 0),width: 2),) ,
+                      enabledBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(50), borderSide: BorderSide(color: Tcolo.gray,width: 2),),
+                      errorBorder:OutlineInputBorder(borderRadius: BorderRadius.circular(50), borderSide: const BorderSide(color: Color.fromARGB(255, 255, 89, 78),width: 2),),
+                      focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(50),borderSide: BorderSide(color: Tcolo.Primarycolor1,width: 2)),
                       prefixIcon: Container(
                         alignment: Alignment.center,
                         width: 20,
@@ -50,6 +58,9 @@ class _RoundTextFieldState extends State<RoundTextField> {
                         height: 20,fit: BoxFit.contain,
                         color: Tcolo.gray,)),
                       hintText: widget.hintText,
+                      
+                      // errorText: 'Please Fill This Field !',
+                      
                       suffixIcon: widget.rightIcon,
                       hintStyle: TextStyle(
                         color: Tcolo.gray,

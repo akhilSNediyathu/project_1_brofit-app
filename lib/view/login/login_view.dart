@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common_widget/round_Button.dart';
 import 'package:fitness_app/common_widget/round_textfield.dart';
@@ -6,7 +8,7 @@ import 'package:fitness_app/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import 'complete_profile.dart';
+
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -30,10 +32,11 @@ class _LoginViewState extends State<LoginView> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Form(
-              autovalidateMode: AutovalidateMode.onUserInteraction,
-              key: _formKey,
+              
+            
               
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
@@ -52,7 +55,12 @@ class _LoginViewState extends State<LoginView> {
                     ),
                   ),
                   SizedBox(height: media.width * 0.05,),
-                  RoundTextField(
+               Form(
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+              key: _formKey,
+                child: Column(
+                children: [
+                     RoundTextField(
                     hintText: 'Email',
                     icon: 'assets/img/Message.png',
                     keyboardType: TextInputType.emailAddress,
@@ -82,14 +90,16 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
+                ],
+               )),
                   SizedBox(height: media.width * 0.6,),
                   RoundButton(
                     textColor: Tcolo.white,
                     title: 'Login',
                     onPressed: () {
-                     
+                     if (_formKey.currentState!.validate()) {                   
                       loginUser(emailController.text, passwordController.text);
-                      
+                      } else {}
                     },
                     buttonColor: Tcolo.Primarycolor1,
                   ),
@@ -121,7 +131,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   TextButton(
                     onPressed: () {
-                       Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>SignUpView()));;
+                       Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>const SignUpView()));;
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -163,9 +173,10 @@ class _LoginViewState extends State<LoginView> {
       );
 
       // Login successful, navigate to the welcome screen
+      
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => WelcomeView()),
+        MaterialPageRoute(builder: (context) => const WelcomeView()),
       );
     } catch (e) {
       // Handle login errors
@@ -178,7 +189,7 @@ class _LoginViewState extends State<LoginView> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(errorMessage),
-          duration: Duration(seconds: 3),
+          duration: const Duration(seconds: 3),
         ),
       );
 

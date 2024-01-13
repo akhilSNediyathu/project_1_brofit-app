@@ -17,13 +17,13 @@ class OnBoardingpage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 top: 10,
               ),
               alignment: Alignment.bottomRight,
               child: TextButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>SignUpView()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>const SignUpView()));
                   },
                   child: Text(
                     'Skip >',
@@ -39,7 +39,7 @@ class OnBoardingpage extends StatelessWidget {
               height: media.width * 0.1,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
                 pObj['title'].toString(),
                 style: TextStyle(
@@ -48,9 +48,9 @@ class OnBoardingpage extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height:10),
+            const SizedBox(height:10),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Text(
                 pObj['subtitle'].toString(),
                 style: TextStyle(
