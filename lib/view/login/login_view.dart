@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:fitness_app/common/colo_extension.dart';
+import 'package:fitness_app/common/common_padding.dart';
 import 'package:fitness_app/common_widget/round_Button.dart';
 import 'package:fitness_app/common_widget/round_textfield.dart';
 import 'package:fitness_app/view/login/signup_view.dart';
@@ -25,12 +26,15 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
+    EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
     return Scaffold(
       backgroundColor: Tcolo.white,
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
+            
+            padding: padding,
+            // const EdgeInsets.symmetric(horizontal: 20),
             child: Form(
               
             
@@ -90,6 +94,7 @@ class _LoginViewState extends State<LoginView> {
                       ),
                     ),
                   ),
+                  
                 ],
                )),
                   SizedBox(height: media.width * 0.6,),
