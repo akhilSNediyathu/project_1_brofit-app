@@ -3,12 +3,14 @@ import 'package:fitness_app/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
-class homeList extends StatelessWidget {
+class WorkoutList extends StatelessWidget {
   final String title;
   final String imageUrl;
-  final VoidCallback? onTap;
-  // final String? subtitle;
-  const homeList({super.key,required this.imageUrl,required this.onTap,required this.title });
+ 
+  final VoidCallback? onIconTap;
+   final String subtitle;
+   final String trailingimageUrl;
+  const WorkoutList({super.key,required this.imageUrl,required this.onIconTap,required this.title ,required this.subtitle,required this.trailingimageUrl});
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +24,20 @@ class homeList extends StatelessWidget {
       
       child:Container(
         height: media.height*0.08,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: Tcolo.tertiaryG),
-          borderRadius: BorderRadius.circular(20)
-        ),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(colors: ),
+        //   borderRadius: BorderRadius.circular(20)
+        // ),
         child: Center(
           child: ListTile(
-            onTap: onTap,
+            
             leading: Image.asset(imageUrl,fit:BoxFit.fitWidth,),
+            subtitle: Text(subtitle),
+            trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
            
             title: Text(title,style: TextStyle(
-              fontWeight: FontWeight.w700,
-              color: Tcolo.white,
+              fontWeight: FontWeight.w600,
+              color: Tcolo.black,
               
             ),),
           

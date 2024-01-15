@@ -31,7 +31,7 @@ class mealsPlannerWelcome extends StatelessWidget {
       ),
       body: Container(
         
-        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
         child:Column(
            mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,8 +41,8 @@ class mealsPlannerWelcome extends StatelessWidget {
           height:media.height*0.4,
             
             child: Center(child: Image.asset('assets/img/meals wecome.png'))),
-            Text('"Plan your meals with precision, fueling your body with the nutrients it needs for optimal performance and recovery, paving the way to your fitness goals."'),
-            Spacer(),
+            const Text('"Plan your meals with precision, fueling your body with the nutrients it needs for optimal performance and recovery, paving the way to your fitness goals."'),
+            const Spacer(),
             RoundButton(title: 'Set Now', onPressed: (){}, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
 
         ],

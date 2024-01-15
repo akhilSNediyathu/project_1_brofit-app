@@ -3,6 +3,8 @@ import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/homeScreenListTile.dart';
 
 import 'package:fitness_app/common_widget/homefloating.dart';
+import 'package:fitness_app/view/home/chest_workout/set1_chestworkout.dart';
+import 'package:fitness_app/view/home/total_arm_toning/set1.dart';
 
 import 'package:fitness_app/view/meals_planner/welcome_screen.dart';
 import 'package:flutter/material.dart';
@@ -48,12 +50,13 @@ class _MainTabViewState extends State<MainTabView> {
         children: [
           homeList
           (imageUrl: 'assets/img/listTile1.png', onTap: (){
-       
+            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const TotalArmToning()));
           }, 
           title: 'Total Arm Toning'),
           SizedBox(height: media.width*0.04,),
           homeList
           (imageUrl: 'assets/img/listTile2.png', onTap: (){
+             Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const ChestWorkoutSet1()));
        
           }, 
           title: 'Chisel Your Chest'),
