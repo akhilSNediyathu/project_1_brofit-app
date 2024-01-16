@@ -4,6 +4,8 @@ import 'package:fitness_app/common/homeScreenListTile.dart';
 
 import 'package:fitness_app/common_widget/homefloating.dart';
 import 'package:fitness_app/view/home/chest_workout/set1_chestworkout.dart';
+import 'package:fitness_app/view/home/leg_workout/set1_legworkout.dart';
+import 'package:fitness_app/view/home/sixpack_workout/set1_sixpack_workout.dart';
 import 'package:fitness_app/view/home/total_arm_toning/set1.dart';
 
 import 'package:fitness_app/view/meals_planner/welcome_screen.dart';
@@ -63,12 +65,14 @@ class _MainTabViewState extends State<MainTabView> {
           SizedBox(height: media.width*0.04,),
           homeList
           (imageUrl: 'assets/img/listTile3.png', onTap: (){
-       
+            
+       Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const SixpackSet1()));
           }, 
           title: 'Six-Pack Sprint'),
           SizedBox(height: media.width*0.04,),
           homeList
           (imageUrl: 'assets/img/listTile4.png', onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const LegWorkoutSet1()));
        
           }, 
           title: 'Legendary Leg Lifts'),

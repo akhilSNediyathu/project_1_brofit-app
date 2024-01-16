@@ -1,14 +1,14 @@
 import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/view/home/chest_workout/set2_chestworkout.dart';
+import 'package:fitness_app/common/workout_list.dart';
+import 'package:fitness_app/common_widget/round_Button.dart';
+import 'package:fitness_app/view/home/chest_workout/set3_chestworkout.dart';
+import 'package:fitness_app/view/home/sixpack_workout/set3_sixpack_workout.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/workout_list.dart';
-import '../../../common_widget/round_Button.dart';
+class SixPackSet2 extends StatelessWidget {
+  const SixPackSet2({super.key});
 
-class ChestWorkoutSet1 extends StatelessWidget {
-  const ChestWorkoutSet1({super.key});
-
-   @override
+ @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
   const   String iconImage = 'assets/img/Icon-Next.png';
@@ -32,7 +32,7 @@ void _showCustomDialog(BuildContext context) {
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 10),
-                const Text("Great work! You've crushed your first set. Now, conquer the next two and own the full three-set challenge!"),
+                const Text("Awesome! Two sets down, one to go. Finish strong and conquer the challenge!"),
               ],
             ),
           );
@@ -43,7 +43,7 @@ void _showCustomDialog(BuildContext context) {
       Future.delayed(const Duration(seconds: 3), () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => ChestWorkoutSet2()), // Replace with your target page
+          MaterialPageRoute(builder: (context) => const SixpackSet3()), // Replace with your target page
         );
       });
     }
@@ -55,7 +55,7 @@ void _showCustomDialog(BuildContext context) {
        appBar: AppBar(
         automaticallyImplyLeading: false,
         centerTitle: true,
-          title: Text('Comprehensive Chest Routine',style: TextStyle(fontWeight: FontWeight.w600,color:Tcolo.white ),),
+          title: Text('Abdominal toning',style: TextStyle(fontWeight: FontWeight.w600,color:Tcolo.white ),),
           flexibleSpace: Container(
             decoration: BoxDecoration(
               gradient: LinearGradient(
@@ -78,21 +78,22 @@ void _showCustomDialog(BuildContext context) {
               children: [
                 const Center(child: Text('Exercises',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),)),
         
-                const Text('set-1'),
+                const Text('Set-2'),
                 SizedBox(height:media.height*0.02 ,),
-                WorkoutList(imageUrl: 'assets/img/warmup.png', onIconTap: (){}, title: 'Warm Up', subtitle: '05:00', trailingimageUrl: iconImage),
+                WorkoutList(imageUrl: 'assets/img/planktap.png', onIconTap: (){}, title: 'Plank -Tap', subtitle: '00:30', trailingimageUrl: iconImage),
                  SizedBox(height:media.height*0.01 ,),
-                WorkoutList(imageUrl: 'assets/img/widened push up.png', onIconTap: (){}, title: 'Widened Push-Ups', subtitle: '15x', trailingimageUrl: iconImage),
+                WorkoutList(imageUrl: 'assets/img/plank.png', onIconTap: (){}, title: 'Plank', subtitle: '00:30', trailingimageUrl: iconImage),
                 SizedBox(height:media.height*0.01 ,),
-                WorkoutList(imageUrl: 'assets/img/pushup.png', onIconTap: (){}, title: 'Clap Push-Ups', subtitle: '15x', trailingimageUrl: iconImage),
+                WorkoutList(imageUrl: 'assets/img/mountainclimp.png', onIconTap: (){}, title: 'Mountain Climb', subtitle: '00:30', trailingimageUrl: iconImage),
                 SizedBox(height:media.height*0.01 ,),
-                WorkoutList(imageUrl: 'assets/img/rest.png', onIconTap: (){}, title: 'Rest and Drink', subtitle: '02:00', trailingimageUrl: iconImage),
+                WorkoutList(imageUrl: 'assets/img/halfsitups.png', onIconTap: (){}, title: 'Half Sit-Ups', subtitle: '15x', trailingimageUrl: iconImage),
                 SizedBox(height:media.height*0.01 ,),
-                 WorkoutList(imageUrl: 'assets/img/diamond push up.png', onIconTap: (){}, title: 'Explosive  Push-Ups', subtitle: '12x', trailingimageUrl: iconImage),
+                 WorkoutList(imageUrl: 'assets/img/russiantwist.png', onIconTap: (){}, title: 'Russian Twist', subtitle: '15x', trailingimageUrl: iconImage),
                  SizedBox(height:media.height*0.01 ,),
-                  WorkoutList(imageUrl: 'assets/img/chest dips.png', onIconTap: (){}, title: 'Chest dips', subtitle: '15x', trailingimageUrl: iconImage),
+                  WorkoutList(imageUrl: 'assets/img/bycyclecrunch.png', onIconTap: (){}, title: 'Bicycle Crunch', subtitle: '15x', trailingimageUrl: iconImage),
+                  
                   const Spacer(),
-                 RoundButton(title: 'Set-2 ', onPressed: (){
+                 RoundButton(title: 'Set-3 ', onPressed: (){
                   _showCustomDialog(context);
 
                  }, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)

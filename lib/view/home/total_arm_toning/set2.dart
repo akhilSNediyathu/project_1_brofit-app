@@ -12,24 +12,24 @@ class TotalArmToningSet2 extends StatelessWidget {
     var media = MediaQuery.of(context).size;
     const   String iconImage = 'assets/img/Icon-Next.png';
 
-void _showCustomDialog(BuildContext context) {
+void showCustomDialog(BuildContext context) {
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Congrats champ!'),
+            title: const Text('Congrats champ!'),
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  'assets/img/showdialogue.png', // Replace with your image asset path
+                  'assets/img/showdialogue.png', 
                   width: 100,
                   height: 100,
                   fit: BoxFit.contain,
                 ),
-                SizedBox(height: 10),
-                Text("Awesome! Two sets down, one to go. Finish strong and conquer the challenge!"),
+                const SizedBox(height: 10),
+                const Text("Awesome! Two sets down, one to go. Finish strong and conquer the challenge!"),
               ],
             ),
           );
@@ -37,10 +37,10 @@ void _showCustomDialog(BuildContext context) {
       );
 
       // Delay for 3 seconds before navigating to another page
-      Future.delayed(Duration(seconds: 3), () {
+      Future.delayed(const Duration(seconds: 3), () {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => TotalArmToningSet3()), // Replace with your target page
+          MaterialPageRoute(builder: (context) => const TotalArmToningSet3()), // Replace with your target page
         );
       });
     }
@@ -86,7 +86,7 @@ void _showCustomDialog(BuildContext context) {
                   WorkoutList(imageUrl: 'assets/img/triceps dips.png', onIconTap: (){}, title: 'Triceps-dips', subtitle: '15x', trailingimageUrl: iconImage),
                   const Spacer(),
                  RoundButton(title: 'Set-3 ', onPressed: (){
-                  _showCustomDialog(context);
+                  showCustomDialog(context);
                   
                  }, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
                   
