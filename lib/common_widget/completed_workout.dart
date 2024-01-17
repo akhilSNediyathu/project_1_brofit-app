@@ -1,6 +1,6 @@
 import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/homeScreenListTile.dart';
-import 'package:fitness_app/common_widget/round_Button.dart';
+
+import 'package:fitness_app/common_widget/round_button_1.dart';
 import 'package:fitness_app/view/home/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -24,12 +24,12 @@ class CompletedWorkout extends StatelessWidget {
             
             height:media.height*0.4,
               
-              child: Center(child: Image.asset('assets/img/compete_workout (1).png'))),
+              child: Center(child: Image.asset('assets/img/newfinalbg.png'))),
               SizedBox(height: media.height*0.03,),
               const Center(child: Text("Congratulations!",style: TextStyle(fontWeight: FontWeight.w600,fontSize: 18),)),
-               SizedBox(height: media.height*0.03,),
+               SizedBox(height: media.height*0.02,),
               const Text(
-  "Incredible work! You've conquered all three sets, showcasing unwavering determination. Let this achievement fuel your motivation for future challenges. You're on a remarkable fitness journey—keep pushing boundaries!",
+  "Great job on conquering all three sets! Let this fuel your motivation for more challenges on your fitness journey. Keep pushing boundaries!",
   textAlign: TextAlign.center, 
   
 ),
@@ -38,7 +38,7 @@ class CompletedWorkout extends StatelessWidget {
                Navigator.pushAndRemoveUntil(
   context,
   MaterialPageRoute(
-    builder: (context) => HomePage(),
+    builder: (context) => const HomePage(),
   ),
   (route) => false,
 );

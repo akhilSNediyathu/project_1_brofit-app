@@ -10,8 +10,8 @@ class ProfilePage extends StatelessWidget {
     return Scaffold(
       body: TextButton(onPressed: (){
         FirebaseAuth.instance.signOut();
-        Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>LoginView()));
-      }, child: Icon(Icons.logout_sharp)),
+        Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>const LoginView()));
+      }, child: const Icon(Icons.logout_sharp)),
     );
   }
 }

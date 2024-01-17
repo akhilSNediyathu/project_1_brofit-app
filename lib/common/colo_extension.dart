@@ -14,6 +14,7 @@ class Tcolo {
   static List<Color> get primaryG => [Primarycolor2, Primarycolor1];
   static List<Color> get SecondaryG => [Secondarycolor1, Secondarycolor2];
   static List<Color> get tertiaryG => [Tertiarycolor1, Tertiarycolor2];
+  static List<Color> get cardBg => [Colors.blue,Colors.green ];
 
   static Color get black => const Color(0xff1D1617);
   static Color get gray => const Color(0xff786F72);

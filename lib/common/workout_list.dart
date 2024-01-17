@@ -22,12 +22,9 @@ class WorkoutList extends StatelessWidget {
       ),
       elevation: 3,
       
-      child:Container(
+      child:SizedBox(
         height: media.height*0.08,
-        // decoration: BoxDecoration(
-        //   gradient: LinearGradient(colors: ),
-        //   borderRadius: BorderRadius.circular(20)
-        // ),
+        
         child: Center(
           child: ListTile(
             

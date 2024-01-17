@@ -1,7 +1,7 @@
 // sign_up_view.dart
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/common_padding.dart';
-import 'package:fitness_app/common_widget/round_Button.dart';
+import 'package:fitness_app/common_widget/round_button_1.dart';
 import 'package:fitness_app/common_widget/round_textfield.dart';
 import 'package:fitness_app/view/login/login_view.dart';
 import 'package:flutter/material.dart';
@@ -185,7 +185,7 @@ class _SignUpViewState extends State<SignUpView> {
                             duration: Duration(seconds: 3),
                           ),
                         );
-                        return null;
+                        // return null;
                       }
                     },
                     buttonColor: Tcolo.Primarycolor1,
@@ -262,6 +262,7 @@ class _SignUpViewState extends State<SignUpView> {
         password: password,
       );
 
+      // ignore: use_build_context_synchronously
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => const CompleteProfileView()),
@@ -272,6 +273,7 @@ class _SignUpViewState extends State<SignUpView> {
         errorMessage = e.message ?? "An unknown error occurred.";
       }
 
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(errorMessage),
@@ -279,7 +281,7 @@ class _SignUpViewState extends State<SignUpView> {
         ),
       );
 
-      print("Error: $e");
+      // print("Error: $e");
     }
   }
   bool isEmailValid(String email) {

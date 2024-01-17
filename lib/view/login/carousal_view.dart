@@ -1,7 +1,7 @@
-import 'package:carousel_slider/carousel_controller.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/round_Button.dart';
+import 'package:fitness_app/common_widget/round_button_1.dart';
 
 import 'package:fitness_app/view/login/welcome_view.dart';
 import 'package:flutter/material.dart';
@@ -109,7 +109,7 @@ class _WhoNeedsMeState extends State<WhoNeedsMe> {
                   textAlign: TextAlign.center,
                   style: TextStyle(color: Tcolo.gray, fontSize: 13),
                 ),
-                Spacer(),
+               const Spacer(),
                 SizedBox(
                   height: media.width * 0.05,
                 ),
@@ -118,7 +118,7 @@ class _WhoNeedsMeState extends State<WhoNeedsMe> {
                   title: 'Next >',
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => WelcomeView()));
+                        MaterialPageRoute(builder: (context) =>const WelcomeView()));
                   },
                   buttonColor: Tcolo.Primarycolor1,
                 ),

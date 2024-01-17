@@ -1,6 +1,6 @@
 import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/round_Button.dart';
-import 'package:fitness_app/view/on_boarding_screeens/onboardingViews.dart';
+import 'package:fitness_app/common_widget/round_button_1.dart';
+import 'package:fitness_app/view/on_boarding_screeens/onboarding_views.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatefulWidget {
@@ -17,18 +17,17 @@ class _OnBoardingState extends State<OnBoardingView> {
     return Scaffold(
       backgroundColor: Tcolo.white,
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 15),
+          padding:const EdgeInsets.symmetric(vertical: 15),
           width: media.width,
           decoration: BoxDecoration(
               gradient: LinearGradient(
                   colors: Tcolo.primaryG,
                   begin: Alignment.topCenter,
-                  end: Alignment.bottomRight)
-                  ),
+                  end: Alignment.bottomRight)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Spacer(),
+            const Spacer(),
               Text(
                 'BrofiT',
                 style: TextStyle(
@@ -43,14 +42,18 @@ class _OnBoardingState extends State<OnBoardingView> {
                   fontSize: 18,
                 ),
               ),
-              Spacer(),
+              const Spacer(),
               SafeArea(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  child: RoundButton(textColor: Tcolo.Primarycolor1,buttonColor:  Tcolo.white,title: 'Get Started', onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>onBoarding1()));
-                  })
-                ),
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: RoundButton(
+                        textColor: Tcolo.Primarycolor1,
+                        buttonColor: Tcolo.white,
+                        title: 'Get Started',
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) =>const OnBoarding1()));
+                        })),
               )
             ],
           )),

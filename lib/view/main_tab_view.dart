@@ -1,6 +1,5 @@
-
 import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/homeScreenListTile.dart';
+import 'package:fitness_app/common/home_screenlist_tile.dart';
 
 import 'package:fitness_app/common_widget/homefloating.dart';
 import 'package:fitness_app/view/home/chest_workout/set1_chestworkout.dart';
@@ -20,12 +19,12 @@ class MainTabView extends StatefulWidget {
 
 class _MainTabViewState extends State<MainTabView> {
   @override
-  Widget build(BuildContext context) {;
+  Widget build(BuildContext context) {
     
+
     var media = MediaQuery.of(context).size;
-    
+
     return Scaffold(
-      
       // appBar: AppBar(
       //     automaticallyImplyLeading: false,
       //   backgroundColor: Tcolo.Primarycolor1,
@@ -40,53 +39,65 @@ class _MainTabViewState extends State<MainTabView> {
       // ),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
-       decoration: BoxDecoration(
-        color: Tcolo.black,
-        image: const DecorationImage
-        (image: AssetImage('assets/img/homebg.jpeg'),
-        fit: BoxFit.cover,opacity: 0.5)
-       ),
-       child: Column(
-        
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          homeList
-          (imageUrl: 'assets/img/listTile1.png', onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const TotalArmToning()));
-          }, 
-          title: 'Total Arm Toning'),
-          SizedBox(height: media.width*0.04,),
-          homeList
-          (imageUrl: 'assets/img/listTile2.png', onTap: (){
-             Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const ChestWorkoutSet1()));
-       
-          }, 
-          title: 'Chisel Your Chest'),
-          SizedBox(height: media.width*0.04,),
-          homeList
-          (imageUrl: 'assets/img/listTile3.png', onTap: (){
-            
-       Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const SixpackSet1()));
-          }, 
-          title: 'Six-Pack Sprint'),
-          SizedBox(height: media.width*0.04,),
-          homeList
-          (imageUrl: 'assets/img/listTile4.png', onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const LegWorkoutSet1()));
-       
-          }, 
-          title: 'Legendary Leg Lifts'),
-
-        ],
-       ),
+        decoration: BoxDecoration(
+            color: Tcolo.black,
+            image: const DecorationImage(
+                image: AssetImage('assets/img/homebg.jpeg'),
+                fit: BoxFit.cover,
+                opacity: 0.5)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            homeList(
+                imageUrl: 'assets/img/listTile1.png',
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => const TotalArmToning()));
+                },
+                title: 'Total Arm Toning'),
+            SizedBox(
+              height: media.width * 0.04,
+            ),
+            homeList(
+                imageUrl: 'assets/img/listTile2.png',
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => const ChestWorkoutSet1()));
+                },
+                title: 'Chisel Your Chest'),
+            SizedBox(
+              height: media.width * 0.04,
+            ),
+            homeList(
+                imageUrl: 'assets/img/listTile3.png',
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (ctx) => const SixpackSet1()));
+                },
+                title: 'Six-Pack Sprint'),
+            SizedBox(
+              height: media.width * 0.04,
+            ),
+            homeList(
+                imageUrl: 'assets/img/listTile4.png',
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (ctx) => const LegWorkoutSet1()));
+                },
+                title: 'Legendary Leg Lifts'),
+          ],
+        ),
       ),
-      floatingActionButton: GradientFab(onPressed: (){
-        Navigator.push(context, MaterialPageRoute(builder:(ctx)=>const mealsPlannerWelcome()));
-
+      floatingActionButton: GradientFab(onPressed: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (ctx) => const mealsPlannerWelcome()));
       }),
-     
-  
-
     );
   }
 }

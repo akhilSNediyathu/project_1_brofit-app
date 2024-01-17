@@ -2,7 +2,7 @@
 
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/common_padding.dart';
-import 'package:fitness_app/common_widget/round_Button.dart';
+import 'package:fitness_app/common_widget/round_button_1.dart';
 import 'package:fitness_app/common_widget/round_textfield.dart';
 import 'package:fitness_app/view/login/signup_view.dart';
 import 'package:fitness_app/view/login/welcome_view.dart';
@@ -136,7 +136,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   TextButton(
                     onPressed: () {
-                       Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>const SignUpView()));;
+                       Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>const SignUpView()));
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
@@ -198,7 +198,7 @@ class _LoginViewState extends State<LoginView> {
         ),
       );
 
-      print("Error: $e");
+      // print("Error: $e");
     }
   }
 

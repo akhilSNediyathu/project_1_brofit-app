@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'common/colo_extension.dart';
 
 class Splash extends StatefulWidget {
- const Splash({super.key});
+  const Splash({super.key});
 
   @override
   State<Splash> createState() => _SplashState();
@@ -22,62 +22,61 @@ class _SplashState extends State<Splash> {
     goToLogin();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-     EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
+    EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
     return Scaffold(
-     
       body: Container(
-        
-         width: double.infinity,
-       decoration:  BoxDecoration(
+        width: double.infinity,
+        decoration: BoxDecoration(
           gradient: LinearGradient(
-                  colors: Tcolo.primaryG,
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomRight),
-          ),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                
-            //  Text('B R O F I T',style: TextStyle(fontSize: 38,
-            //            color: Colors.white,fontWeight: FontWeight.bold
-            
-            // ),),
-            Opacity(
-              opacity: .7,
-              child: Container(
-            height: media.height*0.75,
-            width: media.width*0.75,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(200),
-                image: const DecorationImage(image: AssetImage('assets/img/newsplash.png',),fit: BoxFit.fitWidth),
-                ),),
-            )
+              colors: Tcolo.primaryG,
+              begin: Alignment.topCenter,
+              end: Alignment.bottomRight),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              //  Text('B R O F I T',style: TextStyle(fontSize: 38,
+              //            color: Colors.white,fontWeight: FontWeight.bold
+
+              // ),),
+              Opacity(
+                opacity: .7,
+                child: Container(
+                  height: media.height * 0.75,
+                  width: media.width * 0.75,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(200),
+                    image: const DecorationImage(
+                        image: AssetImage(
+                          'assets/img/newsplash.png',
+                        ),
+                        fit: BoxFit.fitWidth),
+                  ),
+                ),
+              )
             ],
-            ),
           ),
+        ),
       ),
     );
   }
-  Future <void> goToLogin()async{
 
-   await Future.delayed(const Duration(seconds: 3)
-    );
-    final check = FirebaseAuth.instance.currentUser ;
-   if(check==null){
-    // ignore: use_build_context_synchronously
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>const OnBoardingView()));
-
-   }else{
-       // ignore: use_build_context_synchronously
-       Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>const HomePage()));
-
+  Future<void> goToLogin() async {
+    await Future.delayed(const Duration(seconds: 3));
+    final check = FirebaseAuth.instance.currentUser;
+    if (check == null) {
+      // ignore: use_build_context_synchronously
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (ctx) => const OnBoardingView()));
+    } else {
+      // ignore: use_build_context_synchronously
+      Navigator.of(context).pushReplacement(
+          MaterialPageRoute(builder: (ctx) => const HomePage()));
     }
-   
-
   }
-
 }
