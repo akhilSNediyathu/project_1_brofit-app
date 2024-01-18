@@ -2,7 +2,8 @@ import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/testgif.dart';
 import 'package:fitness_app/common/workout_list.dart';
 import 'package:fitness_app/common_widget/round_button_1.dart';
-import 'package:fitness_app/view/home/chest_workout/set3_chestworkout.dart';
+
+import 'package:fitness_app/view/home/leg_workout/set_3_leg_workout.dart';
 import 'package:flutter/material.dart';
 
 class LegWorkoutSet2 extends StatelessWidget {
@@ -44,7 +45,7 @@ class LegWorkoutSet2 extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  const ChestWorkoutSet3()), // Replace with your target page
+                  const LegWorkoutSet3()), // Replace with your target page
         );
       });
     }
@@ -73,16 +74,30 @@ class LegWorkoutSet2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-                child: Text(
-              'Exercises',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-            )),
-            const Text('Set-2'),
+            Container(
+              color: Tcolo.white,
+              padding:const EdgeInsets.only(top:10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Center(
+                      child: Text(
+                    'Exercises',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  )),
+                    const Text('Set-2'),
             SizedBox(
               height: media.height * 0.01,
             ),
-            WorkoutList(
+                ],
+              ),
+            ),
+           SizedBox(
+            height: media.height*0.6,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                   WorkoutList(
                 imageUrl: 'assets/img/squatup.png',
                 onIconTap: () {
                   Navigator.push(
@@ -175,14 +190,24 @@ class LegWorkoutSet2 extends StatelessWidget {
                 title: 'Wall Sit ',
                 subtitle: '15x',
                 trailingimageUrl: iconImage),
+                ],
+              ),
+            )
+           ),
             const Spacer(),
-            RoundButton(
-                title: 'Set-3 ',
-                onPressed: () {
-                  showCustomDialog(context);
-                },
-                buttonColor: Tcolo.Primarycolor1,
-                textColor: Tcolo.white)
+            Container(
+              padding:const EdgeInsets.only(bottom: 20),
+              child: Center(
+                child: RoundButton(
+                 
+                    title: 'Set-3 ',
+                    onPressed: () {
+                      showCustomDialog(context);
+                    },
+                    buttonColor: Tcolo.Primarycolor1,
+                    textColor: Tcolo.white),
+              ),
+            )
           ],
         ),
       ),

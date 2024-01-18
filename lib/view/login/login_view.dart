@@ -99,6 +99,7 @@ class _LoginViewState extends State<LoginView> {
                )),
                   SizedBox(height: media.width * 0.6,),
                   RoundButton(
+                    
                     textColor: Tcolo.white,
                     title: 'Login',
                     onPressed: () {
@@ -152,7 +153,7 @@ class _LoginViewState extends State<LoginView> {
                           "Sign up",
                           style: TextStyle(
                             color: Tcolo.Secondarycolor1,
-                            fontSize: 14,
+                            fontSize: media.height*0.015,
                             fontWeight: FontWeight.w700,
                           ),
                         ),

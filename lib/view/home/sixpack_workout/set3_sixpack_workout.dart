@@ -37,7 +37,13 @@ class SixpackSet3 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
+            Container(
+              color: Tcolo.white,
+               padding:const EdgeInsets.only(top:10),
+              child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Center(
                 child: Text(
               'Exercises',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
@@ -46,7 +52,15 @@ class SixpackSet3 extends StatelessWidget {
             SizedBox(
               height: media.height * 0.02,
             ),
-            WorkoutList(
+                ],
+              ),
+            ),
+          SizedBox(
+            height: media.height*.6,
+            child: SingleChildScrollView(
+              child:Column(
+                children: [
+                    WorkoutList(
                 imageUrl: 'assets/img/planktap.png',
                 onIconTap: () {
                    Navigator.push(
@@ -139,8 +153,14 @@ class SixpackSet3 extends StatelessWidget {
                 title: 'Bicycle Crunch',
                 subtitle: '15x',
                 trailingimageUrl: iconImage),
+                ],
+              )
+            ),
+          )
+          ,
             const Spacer(),
             RoundButton(
+              
                 title: 'Finish workout ',
                 onPressed: () {
                   Navigator.pushReplacement(

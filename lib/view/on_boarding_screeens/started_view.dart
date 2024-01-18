@@ -47,6 +47,7 @@ class _OnBoardingState extends State<OnBoardingView> {
                 child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     child: RoundButton(
+                       
                         textColor: Tcolo.Primarycolor1,
                         buttonColor: Tcolo.white,
                         title: 'Get Started',

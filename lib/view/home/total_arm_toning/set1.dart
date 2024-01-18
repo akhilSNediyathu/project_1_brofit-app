@@ -73,7 +73,12 @@ class TotalArmToning extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
+            Container(
+              padding:const EdgeInsets.only(top:10),
+             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Center(
                 child: Text(
               'Exercises',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
@@ -82,7 +87,14 @@ class TotalArmToning extends StatelessWidget {
             SizedBox(
               height: media.height * 0.02,
             ),
-            WorkoutList(
+              ],
+             ), 
+            ),
+          SizedBox(height: media.height*0.64,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                  WorkoutList(
                 imageUrl: 'assets/img/warmup.png',
                 onIconTap: () {
                   Navigator.push(
@@ -180,8 +192,13 @@ class TotalArmToning extends StatelessWidget {
                 title: 'Triceps-dips',
                 subtitle: '15x',
                 trailingimageUrl: iconImage),
+              ],
+            ),
+          ),
+          ),
             const Spacer(),
             RoundButton(
+               
                 title: 'Set-2 ',
                 onPressed: () {
                   showCustomDialog(context);

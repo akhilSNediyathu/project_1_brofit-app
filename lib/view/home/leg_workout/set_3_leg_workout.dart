@@ -37,16 +37,31 @@ class LegWorkoutSet3 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-                child: Text(
-              'Exercises',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-            )),
-            const Text('Set-3'),
-            SizedBox(
-              height: media.height * 0.01,
+            Container(
+              color: Tcolo.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Center(
+                      child: Text(
+                    'Exercises',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  )),
+                     const Text('Set-3'),
+                      SizedBox(
+              height: media.height * 0.02,
             ),
-            WorkoutList(
+                ],
+              ),
+            ),
+         
+           
+           SizedBox(
+            height: media.height*0.6,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                   WorkoutList(
                 imageUrl: 'assets/img/squatup.png',
                 onIconTap: () {
                   Navigator.push(
@@ -139,17 +154,28 @@ class LegWorkoutSet3 extends StatelessWidget {
                 title: 'Wall Sit ',
                 subtitle: '15x',
                 trailingimageUrl: iconImage),
+                ],
+              ),
+            ),
+           ),
             const Spacer(),
-            RoundButton(
-                title: 'Set-3 ',
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (ctx) => const CompletedWorkout()));
-                },
-                buttonColor: Tcolo.Primarycolor1,
-                textColor: Tcolo.white)
+            Container(
+              padding:const EdgeInsets.only(bottom: 20),
+              child: Center(
+                child: RoundButton(
+                 
+                  
+                    title: 'Finish Workout ',
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (ctx) => const CompletedWorkout()));
+                    },
+                    buttonColor: Tcolo.Primarycolor1,
+                    textColor: Tcolo.white),
+              ),
+            )
           ],
         ),
       ),

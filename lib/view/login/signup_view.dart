@@ -19,7 +19,7 @@ class SignUpView extends StatefulWidget {
 class _SignUpViewState extends State<SignUpView> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
+
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
@@ -77,14 +77,7 @@ class _SignUpViewState extends State<SignUpView> {
                   SizedBox(
                     height: media.width * 0.05,
                   ),
-                  // RoundTextField(
-                  //   hintText: 'Last Name',
-                  //   icon: 'assets/img/Profile.png',
-                  //   controller: lastNameController,
-                  // ),
-                  // SizedBox(
-                  //   height: media.width * 0.05,
-                 // ),
+               
                   RoundTextField(
                     hintText: 'Email',
                     icon: 'assets/img/Message.png',
@@ -161,6 +154,7 @@ class _SignUpViewState extends State<SignUpView> {
                     height: media.width * 0.4,
                   ),
                   RoundButton(
+                  
                     textColor: Tcolo.white,
                     title: 'Register',
                     onPressed: ()  {

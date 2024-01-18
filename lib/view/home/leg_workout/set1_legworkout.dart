@@ -69,21 +69,36 @@ class LegWorkoutSet1 extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+        padding: const EdgeInsets.symmetric( horizontal: 15,vertical: 15),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
-                child: Text(
-              'Exercises',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-            )),
-            const Text('set-1'),
-            SizedBox(
-              height: media.height * 0.02,
+            Container(color: Tcolo.white,
+            padding:const EdgeInsets.only(top:10),
+              child: Column(
+                
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Center(
+                      child: Text(
+                    'Exercises',
+                    style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+                  )),
+                  const Text('set-1'),
+              SizedBox(
+                height: media.height * 0.02,
+              ),
+                ],
+              ),
             ),
-            WorkoutList(
+            
+           SizedBox(
+            height: media.height*0.6,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                   WorkoutList(
                 imageUrl: 'assets/img/warmup.png',
                 onIconTap: () {
                   Navigator.push(
@@ -192,14 +207,26 @@ class LegWorkoutSet1 extends StatelessWidget {
                 title: 'Wall Sit ',
                 subtitle: '15x',
                 trailingimageUrl: iconImage),
+                ],
+              ),
+            ),
+            
+           ),
             const Spacer(),
-            RoundButton(
-                title: 'Set-2 ',
-                onPressed: () {
-                  showCustomDialog(context);
-                },
-                buttonColor: Tcolo.Primarycolor1,
-                textColor: Tcolo.white)
+            Container(
+            
+              padding:const EdgeInsets.only(bottom: 20),
+              child: Center(
+                child: RoundButton(
+                 
+                    title: 'Set-2 ',
+                    onPressed: () {
+                      showCustomDialog(context);
+                    },
+                    buttonColor: Tcolo.Primarycolor1,
+                    textColor: Tcolo.white),
+              ),
+            )
           ],
         ),
       ),

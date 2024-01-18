@@ -34,7 +34,9 @@ class CompletedWorkout extends StatelessWidget {
   
 ),
               const Spacer(),
-              RoundButton(title: 'Back To Home', onPressed: (){
+              RoundButton(
+                
+                title: 'Back To Home', onPressed: (){
                Navigator.pushAndRemoveUntil(
   context,
   MaterialPageRoute(

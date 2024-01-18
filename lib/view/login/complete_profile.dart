@@ -158,7 +158,8 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                           ],
                         ),
                          SizedBox(height: media.width *0.09,),
-                  RoundButton(textColor: Tcolo.white,title: 'Next >',onPressed: (){
+                  RoundButton(
+                 textColor: Tcolo.white,title: 'Next >',onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>const WhoNeedsMe()));
                   },
                   buttonColor:  Tcolo.Primarycolor1,),

@@ -64,76 +64,79 @@ void showCustomDialog(BuildContext context) {
         ),
         body: 
         
-        Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Center(child: Text('Set-2',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),)),
-                  
+        Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+            child: Column(
               
-              SizedBox(height:media.height*0.02 ,),
-             
-              WorkoutList(imageUrl: 'assets/img/pushup.png', onIconTap: (){
-                Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/push up.gif',
-                              initialCounter: 30))
-                              );
-              }, title: 'Push-Ups', subtitle: '15x', trailingimageUrl: iconImage),
-              SizedBox(height:media.height*0.02 ,),
-              WorkoutList(imageUrl: 'assets/img/declined push up.png', onIconTap: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/declinepushupnew.gif',
-                              initialCounter: 30))
-                              );
-              }, title: 'Declined Push-Ups', subtitle: '15x', trailingimageUrl: iconImage),
-              SizedBox(height:media.height*0.02 ,),
-              WorkoutList(imageUrl: 'assets/img/shouldertap.png', onIconTap: (){
-                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/shouldertap.gif',
-                              initialCounter: 30))
-                              );
-              }, title: 'Shoulder Tap', subtitle: '12x', trailingimageUrl: iconImage),
-              SizedBox(height:media.height*0.02 ,),
-               WorkoutList(imageUrl: 'assets/img/diamond push up.png', onIconTap: (){
-                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/damond pushup.gif',
-                              initialCounter: 30))
-                              );
-               }, title: 'Diamond Push-Ups', subtitle: '12x', trailingimageUrl: iconImage),
-               SizedBox(height:media.height*0.02 ,),
-                WorkoutList(imageUrl: 'assets/img/triceps dips.png', onIconTap: (){
-                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/tricepdips.gif',
-                              initialCounter: 30))
-                              );
-                }, title: 'Triceps-dips', subtitle: '15x', trailingimageUrl: iconImage),
-                const Spacer(),
-               RoundButton(title: 'Set-3 ', onPressed: (){
-                showCustomDialog(context);
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text('Set-2',style: TextStyle(fontWeight: FontWeight.w500,fontSize: 18),),
+                    
                 
-               }, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
-                
+                SizedBox(height:media.height*0.02 ,),
+               
+                WorkoutList(imageUrl: 'assets/img/pushup.png', onIconTap: (){
+                  Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/push up.gif',
+                                initialCounter: 30))
+                                );
+                }, title: 'Push-Ups', subtitle: '15x', trailingimageUrl: iconImage),
+                SizedBox(height:media.height*0.02 ,),
+                WorkoutList(imageUrl: 'assets/img/declined push up.png', onIconTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/declinepushupnew.gif',
+                                initialCounter: 30))
+                                );
+                }, title: 'Declined Push-Ups', subtitle: '15x', trailingimageUrl: iconImage),
+                SizedBox(height:media.height*0.02 ,),
+                WorkoutList(imageUrl: 'assets/img/shouldertap.png', onIconTap: (){
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/shouldertap.gif',
+                                initialCounter: 30))
+                                );
+                }, title: 'Shoulder Tap', subtitle: '12x', trailingimageUrl: iconImage),
+                SizedBox(height:media.height*0.02 ,),
+                 WorkoutList(imageUrl: 'assets/img/diamond push up.png', onIconTap: (){
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/damond pushup.gif',
+                                initialCounter: 30))
+                                );
+                 }, title: 'Diamond Push-Ups', subtitle: '12x', trailingimageUrl: iconImage),
+                 SizedBox(height:media.height*0.02 ,),
+                  WorkoutList(imageUrl: 'assets/img/triceps dips.png', onIconTap: (){
+                     Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/tricepdips.gif',
+                                initialCounter: 30))
+                                );
+                  }, title: 'Triceps-dips', subtitle: '15x', trailingimageUrl: iconImage),
+                  const Spacer(),
+                 RoundButton(
+                  title: 'Set-3 ', onPressed: (){
+                  showCustomDialog(context);
                   
+                 }, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
                   
-                  
-            ],
+                    
+                    
+                    
+              ],
+            ),
           ),
         ),
     );

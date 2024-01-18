@@ -73,7 +73,12 @@ class SixpackSet1 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Center(
+           Container(
+            color: Tcolo.white,
+           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+               const Center(
                 child: Text(
               'Exercises',
               style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
@@ -82,7 +87,15 @@ class SixpackSet1 extends StatelessWidget {
             SizedBox(
               height: media.height * 0.02,
             ),
-            WorkoutList(
+            ],
+           ),
+           ),
+          SizedBox(
+            height: media.height*.6,
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                    WorkoutList(
                 imageUrl: 'assets/img/warmup.png',
                 onIconTap: () {
                    Navigator.push(
@@ -175,14 +188,24 @@ class SixpackSet1 extends StatelessWidget {
                 title: 'Bicycle Crunch',
                 subtitle: '15x',
                 trailingimageUrl: iconImage),
+                ],
+              ),
+            ),
+          ),
             const Spacer(),
-            RoundButton(
-                title: 'Set-2 ',
-                onPressed: () {
-                  showCustomDialog(context);
-                },
-                buttonColor: Tcolo.Primarycolor1,
-                textColor: Tcolo.white)
+            Container(
+               padding:const EdgeInsets.only(bottom: 20),
+              child: Center(
+                child: RoundButton(
+                   
+                    title: 'Set-2 ',
+                    onPressed: () {
+                      showCustomDialog(context);
+                    },
+                    buttonColor: Tcolo.Primarycolor1,
+                    textColor: Tcolo.white),
+              ),
+            )
           ],
         ),
       ),

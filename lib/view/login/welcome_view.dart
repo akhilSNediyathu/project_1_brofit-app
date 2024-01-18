@@ -45,16 +45,20 @@ class _WelcomeViewState extends State<WelcomeView> {
                  ),
                  ),
              const Spacer(),
-                  RoundButton(
-                  
-                  textColor: Tcolo.white,
-                  title: 'Go To Home',
-                  onPressed: () {
-                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) =>const HomePage()));
-                  },
-                  buttonColor: Tcolo.Primarycolor1,
-                ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+                    child: RoundButton(
+                       
+                    
+                    textColor: Tcolo.white,
+                    title: 'Go To Home',
+                    onPressed: () {
+                       Navigator.push(context,
+                          MaterialPageRoute(builder: (context) =>const HomePage()));
+                    },
+                    buttonColor: Tcolo.Primarycolor1,
+                                    ),
+                  ),
 
 
             ],

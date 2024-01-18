@@ -72,108 +72,111 @@ class _ChestWorkoutSet2State extends State<ChestWorkoutSet2> {
           ),
         ),
       ),
-      body: Padding(
+      body: Container(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Center(
-                child: Text(
-              'Exercises',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
-            )),
-            const Text('set-2'),
-            SizedBox(
-              height: media.height * 0.03,
-            ),
-            WorkoutList(
-                imageUrl: 'assets/img/widened push up.png',
-                onIconTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/wide-arm-push-ups (1) (1).gif',
-                              initialCounter: 30)));
-                },
-                title: 'Widened Push-Ups',
-                subtitle: '15x',
-                trailingimageUrl: iconImage),
-            SizedBox(
-              height: media.height * 0.02,
-            ),
-            WorkoutList(
-                imageUrl: 'assets/img/pushup.png',
-                onIconTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/clapping-push-ups.gif',
-                              initialCounter: 30)));
-                },
-                title: 'Clap Push-Ups',
-                subtitle: '15x',
-                trailingimageUrl: iconImage),
-            SizedBox(
-              height: media.height * 0.02,
-            ),
-            WorkoutList(
-                imageUrl: 'assets/img/rest.png',
-                onIconTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/watertime.gif',
-                              initialCounter: 120)));
-
-                },
-                title: 'Rest and Drink',
-                subtitle: '02:00',
-                trailingimageUrl: iconImage),
-            SizedBox(
-              height: media.height * 0.02,
-            ),
-            WorkoutList(
-                imageUrl: 'assets/img/diamond push up.png',
-                onIconTap: () {
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Center(
+                  child: Text(
+                'Exercises',
+                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+              )),
+              const Text('set-2'),
+              SizedBox(
+                height: media.height * 0.03,
+              ),
+              WorkoutList(
+                  imageUrl: 'assets/img/widened push up.png',
+                  onIconTap: () {
                     Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/plyometric-push-ups (1).gif',
-                              initialCounter: 30)));
-                },
-                title: 'Explosive  Push-Ups',
-                subtitle: '12x',
-                trailingimageUrl: iconImage),
-            SizedBox(
-              height: media.height * 0.02,
-            ),
-            WorkoutList(
-                imageUrl: 'assets/img/chest dips.png',
-                onIconTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'assets/gif/parallel-bar-dip.gif',
-                              initialCounter: 30)));
-                },
-                title: 'Chest dips',
-                subtitle: '15x',
-                trailingimageUrl: iconImage),
-            const Spacer(),
-            RoundButton(
-                title: 'Set-3 ',
-                onPressed: () {
-                  showCustomDialog(context);
-                },
-                buttonColor: Tcolo.Primarycolor1,
-                textColor: Tcolo.white)
-          ],
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/wide-arm-push-ups (1) (1).gif',
+                                initialCounter: 30)));
+                  },
+                  title: 'Widened Push-Ups',
+                  subtitle: '15x',
+                  trailingimageUrl: iconImage),
+              SizedBox(
+                height: media.height * 0.02,
+              ),
+              WorkoutList(
+                  imageUrl: 'assets/img/pushup.png',
+                  onIconTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/clapping-push-ups.gif',
+                                initialCounter: 30)));
+                  },
+                  title: 'Clap Push-Ups',
+                  subtitle: '15x',
+                  trailingimageUrl: iconImage),
+              SizedBox(
+                height: media.height * 0.02,
+              ),
+              WorkoutList(
+                  imageUrl: 'assets/img/rest.png',
+                  onIconTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/watertime.gif',
+                                initialCounter: 120)));
+          
+                  },
+                  title: 'Rest and Drink',
+                  subtitle: '02:00',
+                  trailingimageUrl: iconImage),
+              SizedBox(
+                height: media.height * 0.02,
+              ),
+              WorkoutList(
+                  imageUrl: 'assets/img/diamond push up.png',
+                  onIconTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/plyometric-push-ups (1).gif',
+                                initialCounter: 30)));
+                  },
+                  title: 'Explosive  Push-Ups',
+                  subtitle: '12x',
+                  trailingimageUrl: iconImage),
+              SizedBox(
+                height: media.height * 0.02,
+              ),
+              WorkoutList(
+                  imageUrl: 'assets/img/chest dips.png',
+                  onIconTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CustomCounterDialog1(
+                                gifPath: 'assets/gif/parallel-bar-dip.gif',
+                                initialCounter: 30)));
+                  },
+                  title: 'Chest dips',
+                  subtitle: '15x',
+                  trailingimageUrl: iconImage),
+              const Spacer(),
+              RoundButton(
+              
+                  title: 'Set-3 ',
+                  onPressed: () {
+                    showCustomDialog(context);
+                  },
+                  buttonColor: Tcolo.Primarycolor1,
+                  textColor: Tcolo.white)
+            ],
+          ),
         ),
       ),
     );

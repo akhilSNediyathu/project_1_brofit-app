@@ -7,14 +7,18 @@ class RoundButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color buttonColor;
    final Color textColor;
+   
+   
 
-  const RoundButton({super.key,required this.title,required this.onPressed,required this.buttonColor,required this.textColor});
+  const RoundButton({super.key,required this.title,required this.onPressed,required this.buttonColor,required this.textColor,});
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
+    
     return MaterialButton(
                         onPressed: onPressed,
-                        height: 50,
+                        height: media.height*0.055,
                         //),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(25),

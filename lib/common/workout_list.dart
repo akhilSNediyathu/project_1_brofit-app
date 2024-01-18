@@ -22,25 +22,54 @@ class WorkoutList extends StatelessWidget {
       ),
       elevation: 3,
       
-      child:SizedBox(
-        height: media.height*0.08,
-        
-        child: Center(
-          child: ListTile(
-            
-            leading: Image.asset(imageUrl,fit:BoxFit.fitWidth,),
-            subtitle: Text(subtitle),
-            trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
-           
-            title: Text(title,style: TextStyle(
-              fontWeight: FontWeight.w600,
-              color: Tcolo.black,
-              
-            ),),
+      child:Center(
+        child: SizedBox(
           
+          height: media.height*0.089,
+      
+          child: Center(
+            
+            child: ListTile(
+              
+              
+              leading: SizedBox(
+                child: Image.asset(imageUrl,fit:BoxFit.contain,),
+                height: media.height*0.06,),
+              subtitle: Text(subtitle,style: TextStyle(fontSize: media.height*0.015),),
+              trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
+             
+              title: Text(title,style: TextStyle(
+                fontWeight: FontWeight.w600,
+                color: Tcolo.black,fontSize: media.height*0.018
+                
+              ),),
+            
+            ),
           ),
         ),
       )
     );
+    // return Container(
+    //   padding: EdgeInsets.all(10),
+    //   child: ClipRRect(
+    //     borderRadius: BorderRadius.circular(20),
+    //     child: ListTile(
+    //       tileColor: Tcolo.gray,
+    //       leading: SizedBox(
+    //             child: Image.asset(imageUrl,fit:BoxFit.fitWidth,),
+    //             height: media.height*0.05,),
+    //           subtitle: Text(subtitle,style: TextStyle(fontSize: media.height*0.015),),
+    //           trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
+             
+    //           title: Text(title,style: TextStyle(
+    //             fontWeight: FontWeight.w600,
+    //             color: Tcolo.black,fontSize: media.height*0.018
+                
+    //           ),),
+            
+    //         ),
+    //   ),
+    // );
+    
   }
 }
