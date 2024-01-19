@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     List pages = [
       const MainTabView(),
       const PlanWorkoutWelcome(),
-      BmiWelcome(),
+      const BmiWelcome(),
     const  ProfilePage()
     ];
     return Scaffold(

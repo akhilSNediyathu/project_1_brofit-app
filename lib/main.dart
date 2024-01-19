@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/firebase_options.dart';
 import 'package:fitness_app/splash_screen.dart';
+import 'package:fitness_app/view/login/complete_profile.dart';
 
 
 import 'package:flutter/material.dart';
@@ -42,9 +43,9 @@ class MyApp extends StatelessWidget {
           primaryColor: Tcolo.Primarycolor1,
           useMaterial3: true,
           fontFamily: "Poppins"),
-      home: const Splash(),
-      // home: bmi_welcome(),
-      // home: TotalArmToningSet2(),
+       home: const Splash(),
+      // home: CompleteProfileView(),
+      
       debugShowCheckedModeBanner: false,
     );
   }

@@ -12,7 +12,8 @@ class RoundTextField extends StatefulWidget {
   final EdgeInsets? margin;
   final TextInputType? keyboardType;
   final bool obscureText;
-    final String? Function(String?)? validator;
+    // final String? Function(String?)? validator;
+    final FormFieldValidator<String>? validator;
    RoundTextField({super.key,required this.hintText,required this.icon,this.controller,this.margin,this.keyboardType,this.obscureText=false,this.rightIcon,this.validator});
 
   @override
@@ -35,11 +36,13 @@ class _RoundTextFieldState extends State<RoundTextField> {
                    
                   child: TextFormField(
                     obscureText: widget.obscureText,
-                    validator: (value) {
-            if (value == null || value.isEmpty) {
-              return 'Please Fill This Field !';
-            } else {
-              return null;}},
+                    validator:  widget.validator,
+            //          (value) {
+            // if (value == null || value.isEmpty) {
+            //   return 'Please Fill This Field !';
+            // } else {
+            //   return null;}}
+             
                      keyboardType: widget.keyboardType,
                     controller: widget.controller,
                     decoration: InputDecoration(

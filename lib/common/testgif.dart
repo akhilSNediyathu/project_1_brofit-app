@@ -106,7 +106,7 @@ class _CustomCounterDialogState extends State<CustomCounterDialog1> {
                             shape: BoxShape.circle,
                             
                           ),
-                          child: Center(child: Text('$counter'+'\tsec',style: TextStyle(fontWeight: FontWeight.w600,color: Tcolo.black),))),
+                          child: Center(child: Text('$counter  sec',style: TextStyle(fontWeight: FontWeight.w600,color: Tcolo.black),))),
                          SizedBox(height: media.height*0.08,),
               ElevatedButton(
   onPressed: () {

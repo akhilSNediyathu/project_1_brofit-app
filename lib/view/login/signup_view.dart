@@ -1,4 +1,5 @@
 // sign_up_view.dart
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/common_padding.dart';
 import 'package:fitness_app/common_widget/round_button_1.dart';
@@ -26,6 +27,8 @@ class _SignUpViewState extends State<SignUpView> {
   
     bool a = true;
     bool b = true;
+
+   
 
   @override
   Widget build(BuildContext context) {
@@ -165,6 +168,7 @@ class _SignUpViewState extends State<SignUpView> {
                             emailController.text,
                             passwordController.text,
                           );
+                           
                         }
                       } else {
                         passwordController.clear();
@@ -259,7 +263,7 @@ class _SignUpViewState extends State<SignUpView> {
       // ignore: use_build_context_synchronously
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const CompleteProfileView()),
+        MaterialPageRoute(builder: (context) =>  CompleteProfileView(name: firstNameController.text,)),
       );
     } catch (e) {
       String errorMessage = "An error occurred during registration.";
@@ -279,7 +283,7 @@ class _SignUpViewState extends State<SignUpView> {
     }
   }
   bool isEmailValid(String email) {
-    // Define a simple regular expression for email validation
+    
     final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$');
     return emailRegex.hasMatch(email);
   }
