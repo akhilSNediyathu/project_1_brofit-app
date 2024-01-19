@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class BmiWelcome extends StatefulWidget {
-  BmiWelcome({super.key});
+  const BmiWelcome({super.key});
 
   @override
   State<BmiWelcome> createState() => _BmiWelcomeState();

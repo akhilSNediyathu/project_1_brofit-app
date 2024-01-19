@@ -33,8 +33,8 @@ class WorkoutList extends StatelessWidget {
               
               
               leading: SizedBox(
-                child: Image.asset(imageUrl,fit:BoxFit.contain,),
-                height: media.height*0.06,),
+                height: media.height*0.06,
+                child: Image.asset(imageUrl,fit:BoxFit.contain,),),
               subtitle: Text(subtitle,style: TextStyle(fontSize: media.height*0.015),),
               trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
              

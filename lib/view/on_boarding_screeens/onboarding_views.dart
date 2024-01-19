@@ -2,7 +2,7 @@
 
 
 import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/onBoardingPage.dart';
+import 'package:fitness_app/common_widget/on_boarding_page.dart';
 import 'package:fitness_app/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 

@@ -25,7 +25,7 @@ class TotalArmToning extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  'assets/img/showdialogue.png', // Replace with your image asset path
+                  'assets/img/showdialogue.png', 
                   width: 100,
                   height: 100,
                   fit: BoxFit.contain,
@@ -44,7 +44,7 @@ class TotalArmToning extends StatelessWidget {
           context,
           MaterialPageRoute(
               builder: (context) =>
-                  const TotalArmToningSet2()), // Replace with your target page
+                  const TotalArmToningSet2()), 
         );
       });
     }
