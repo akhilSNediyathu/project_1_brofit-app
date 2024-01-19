@@ -1,6 +1,6 @@
 // ignore: file_names
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_app/common/common_padding.dart';
+
 
 import 'package:fitness_app/view/home/home_page.dart';
 
@@ -26,7 +26,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-    EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
+    // EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
     return Scaffold(
       body: Container(
         width: double.infinity,

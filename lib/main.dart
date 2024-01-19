@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/firebase_options.dart';
 import 'package:fitness_app/splash_screen.dart';
-import 'package:fitness_app/view/login/complete_profile.dart';
+
 
 
 import 'package:flutter/material.dart';

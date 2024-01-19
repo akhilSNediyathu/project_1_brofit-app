@@ -1,5 +1,5 @@
 // sign_up_view.dart
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/common_padding.dart';
 import 'package:fitness_app/common_widget/round_button_1.dart';
