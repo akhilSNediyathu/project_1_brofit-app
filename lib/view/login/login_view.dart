@@ -65,6 +65,11 @@ class _LoginViewState extends State<LoginView> {
                 child: Column(
                 children: [
                      RoundTextField(
+                      validator: (value) {
+                             if (value == null || value.isEmpty) {
+                              return 'Please Fill This Field !';
+                            } else {
+                              return null;}},
                     hintText: 'Email',
                     icon: 'assets/img/Message.png',
                     keyboardType: TextInputType.emailAddress,
@@ -72,7 +77,11 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   SizedBox(height: media.width * 0.05,),
                   RoundTextField(
-                    
+                    validator: (value) {
+                             if (value == null || value.isEmpty) {
+                              return 'Please Fill This Field !';
+                            } else {
+                              return null;}},
                     hintText: 'Password',
                     icon: 'assets/img/Lock.png',
                     keyboardType: TextInputType.emailAddress,

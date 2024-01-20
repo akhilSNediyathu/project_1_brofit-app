@@ -44,7 +44,7 @@ class _SignUpViewState extends State<SignUpView> {
             padding: padding,
             child: Form(
               key: _formKey,
-              autovalidateMode: AutovalidateMode.disabled,
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
