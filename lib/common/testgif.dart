@@ -47,7 +47,7 @@ class _CustomCounterDialogState extends State<CustomCounterDialog1> {
 
   @override
   void dispose() {
-    timer?.cancel(); // Cancel the timer to avoid memory leaks
+    timer?.cancel(); 
     super.dispose();
   }
 

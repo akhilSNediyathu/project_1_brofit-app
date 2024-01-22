@@ -1,7 +1,8 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fitness_app/common/colo_extension.dart';
+import 'package:fitness_app/common/common_text_styles.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../../common_widget/round_button_1.dart';
@@ -10,19 +11,21 @@ import 'carousal_view.dart';
 
 class CompleteProfileView extends StatefulWidget {
   final String name;
-  const CompleteProfileView({Key? key,required this.name}) : super(key: key);
+
+  const CompleteProfileView({Key? key, required this.name}) : super(key: key);
 
   @override
   State<CompleteProfileView> createState() => _CompleteProfileViewState();
 }
 
 class _CompleteProfileViewState extends State<CompleteProfileView> {
-  TextEditingController txtDate = TextEditingController();
-   TextEditingController heightController = TextEditingController();
-    TextEditingController weightController = TextEditingController();
+  TextEditingController heightController = TextEditingController();
+  TextEditingController weightController = TextEditingController();
   String? selectedGender;
+  DateTime? selectedDate;
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future<void> saveDataToFirebase() async {
@@ -30,25 +33,35 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
       final User? user = _auth.currentUser;
 
       if (user != null) {
-      
         String documentId = user.email ?? '';
 
-        
         await _firestore.collection('UserDetails').doc(documentId).set({
-           'Name':widget.name,
+          'Name': widget.name,
           'gender': selectedGender,
-          'Dob': txtDate.text,
-          'Height':heightController.text,
-          'Weight':weightController.text
-          
+         'Dob': selectedDate?.toString(),
+          'Height': heightController.text,
+          'Weight': weightController.text,
         });
-
-       
-        // print('Data saved to Firebase successfully!');
       }
     } catch (error) {
-      // print('Error saving data to Firebase: $error');
-     
+      if (kDebugMode) {
+        print('Error saving data to Firebase: $error');
+      }
+    }
+  }
+
+  Future<void> _selectDate(BuildContext context) async {
+    final DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(1900),
+      lastDate: DateTime.now(),
+    );
+
+    if (picked != null && picked != selectedDate) {
+      setState(() {
+        selectedDate = picked;
+      });
     }
   }
 
@@ -65,7 +78,7 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
               SizedBox(height: media.width * 0.05),
               Text(
                 "Let's complete your profile",
-                style: TextStyle(color: Tcolo.black, fontSize: 20, fontWeight: FontWeight.w700),
+                style: AppTextStyles.titleTextStyle,
               ),
               Text(
                 "It will help us to know more about you!",
@@ -127,46 +140,38 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         ),
                       ),
                       SizedBox(height: media.width * 0.04),
-                      RoundTextField(
-                        controller: txtDate,
-                        hintText: 'Date of Birth',
-                        icon: 'assets/img/Calendar.png',
-                        keyboardType: TextInputType.emailAddress,
-                        obscureText: false,
-                      validator: (value) {
-  
-    RegExp dateRegex = RegExp(r'^\d{2}-\d{2}-\d{4}$');
-
-    if (value == null || value.isEmpty) {
-      return 'Please enter your date of birth';
-    } else if (!dateRegex.hasMatch(value)) {
-      return 'Please enter a valid date in the format dd-mm-yyyy';
-    }
-
-    return null;
-  },
+                      GestureDetector(
+                        onTap: () => _selectDate(context),
+                        child: AbsorbPointer(
+                          child: RoundTextField(
+                            controller: TextEditingController(text: selectedDate?.toLocal().toString().split(' ')[0]),
+                            hintText: 'Date of Birth',
+                            icon: 'assets/img/Calendar.png',
+                            keyboardType: TextInputType.emailAddress,
+                            obscureText: false,
+                          ),
+                        ),
                       ),
                       SizedBox(height: media.width * 0.04),
                       Row(
                         children: [
                           Expanded(
-                            
                             child: RoundTextField(
                               controller: weightController,
                               hintText: 'Your Weight',
                               icon: 'assets/img/weight-scale 1.png',
                               keyboardType: TextInputType.number,
                               obscureText: false,
-                             validator: (value) {
-                                  if (value!.isEmpty) {
-                                    return 'Please enter your weight';
-                                  }
-                                  double weight = double.tryParse(value) ?? 0.0;
-                                  if (weight <= 0 || weight > 500) {
-                                    return 'Please enter a valid weight';
-                                  }
-                                  return null;
-                                },
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please enter your weight';
+                                }
+                                double weight = double.tryParse(value) ?? 0.0;
+                                if (weight <= 0 || weight > 500) {
+                                  return 'Please enter a valid weight';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(width: 8),
@@ -196,15 +201,15 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                               keyboardType: TextInputType.number,
                               obscureText: false,
                               validator: (value) {
-                                    if (value!.isEmpty) {
-                                      return 'Please enter your height';
-                                    }
-                                    double height = double.tryParse(value) ?? 0.0;
-                                    if (height <= 0 || height > 300) {
-                                      return 'Please enter a valid height';
-                                    }
-                                    return null;
-                                  },
+                                if (value!.isEmpty) {
+                                  return 'Please enter your height';
+                                }
+                                double height = double.tryParse(value) ?? 0.0;
+                                if (height <= 0 || height > 300) {
+                                  return 'Please enter a valid height';
+                                }
+                                return null;
+                              },
                             ),
                           ),
                           const SizedBox(width: 8),
@@ -224,31 +229,27 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
                         ],
                       ),
                       SizedBox(height: media.width * 0.09),
-                      
                     ],
                   ),
                 ),
-                
               ),
               RoundButton(
-                        textColor: Tcolo.white,
-                        title: 'Next >',
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()&&weightController.text.isNotEmpty&&heightController.text.isNotEmpty&&txtDate.text.isNotEmpty&&selectedGender!=null) {
-                           
-                           saveDataToFirebase();
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => const WhoNeedsMe()));
-                            weightController.clear();
-                            heightController.clear();
-                            
-                            txtDate.clear();
-
-                          }
-                          else{}
-                        },
-                        buttonColor: Tcolo.Primarycolor1,
-                      ),
-              
+                textColor: Tcolo.white,
+                title: 'Next >',
+                onPressed: () {
+                  if (_formKey.currentState!.validate() &&
+                      weightController.text.isNotEmpty &&
+                      heightController.text.isNotEmpty &&
+                      selectedDate != null &&
+                      selectedGender != null) {
+                    saveDataToFirebase();
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const WhoNeedsMe()));
+                    weightController.clear();
+                    heightController.clear();
+                  } else {}
+                },
+                buttonColor: Tcolo.Primarycolor1,
+              ),
             ],
           ),
         ),

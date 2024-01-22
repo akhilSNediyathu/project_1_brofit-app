@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 
 class AppTextStyles {
   
-  static const TextStyle titleTextStyle = TextStyle(
-    color: Colors.black,
+  static  TextStyle titleTextStyle = TextStyle(
+    color:Tcolo.black,
     fontSize: 20,
     fontWeight: FontWeight.w700,
   );
@@ -22,16 +22,28 @@ static TextStyle subtitleTextStyle(BuildContext context) {
     );
   }
 
-  static const TextStyle headingTextStyle = TextStyle(
-    color: Colors.grey,
-    fontSize: 13,
-    
-  );
-  static const TextStyle subHeadingTextStyle = TextStyle(
-    color: Colors.grey,
-    fontSize: 13,
-    
-  );
+  static  TextStyle carousalHeadingTextStyle = TextStyle(
+                                                      color: Tcolo.white,
+                                                      fontSize: 14,
+                                                      fontWeight: FontWeight.w700);
+  static  TextStyle carousalHeading2TextStyle =TextStyle(
+                      color: Tcolo.black,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700);
 
-  
+                      static TextStyle carousalStyle3 =  TextStyle(color: Tcolo.gray, fontSize: 13);
+
+static TextStyle loginHeading1 = TextStyle(
+                      color: Tcolo.gray,
+                      fontSize: 16,
+                    );
+  static TextStyle loginEnding = TextStyle(
+                            color: Tcolo.black,
+                            fontSize: 14,
+                          );
+
+  static TextStyle welcomeSubtitle = TextStyle(
+                  color: Tcolo.gray,
+                  fontSize: 13
+                 );                        
 }

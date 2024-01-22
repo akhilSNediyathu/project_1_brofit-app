@@ -1,5 +1,6 @@
 // ignore: file_names
-import 'package:fitness_app/common/colo_extension.dart';
+
+import 'package:fitness_app/common/common_text_styles.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types
@@ -38,11 +39,8 @@ class WorkoutList extends StatelessWidget {
               subtitle: Text(subtitle,style: TextStyle(fontSize: media.height*0.015),),
               trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
              
-              title: Text(title,style: TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Tcolo.black,fontSize: media.height*0.018
-                
-              ),),
+              title: Text(title,style: AppTextStyles.subtitleTextStyle(context),
+              ),
             
             ),
           ),

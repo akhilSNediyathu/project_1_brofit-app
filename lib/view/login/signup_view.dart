@@ -2,6 +2,7 @@
 
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/common_padding.dart';
+import 'package:fitness_app/common/common_text_styles.dart';
 import 'package:fitness_app/common_widget/round_button_1.dart';
 import 'package:fitness_app/common_widget/round_textfield.dart';
 import 'package:fitness_app/view/login/login_view.dart';
@@ -50,18 +51,11 @@ class _SignUpViewState extends State<SignUpView> {
                 children: [
                   Text(
                     'Hey there,',
-                    style: TextStyle(
-                      color: Tcolo.gray,
-                      fontSize: 16,
-                    ),
+                    style: AppTextStyles.loginHeading1
                   ),
                   Text(
                     'Create an Account',
-                    style: TextStyle(
-                      color: Tcolo.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: AppTextStyles.titleTextStyle,
                   ),
                   SizedBox(
                     height: media.width * 0.05,
@@ -72,7 +66,7 @@ class _SignUpViewState extends State<SignUpView> {
                     controller: firstNameController,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter your first name';
+                        return 'Please enter your name';
                       }
                       return null;
                     },
@@ -228,10 +222,7 @@ class _SignUpViewState extends State<SignUpView> {
                       children: [
                         Text(
                           "Already have an account? ",
-                          style: TextStyle(
-                            color: Tcolo.black,
-                            fontSize: 14,
-                          ),
+                          style: AppTextStyles.loginEnding,
                         ),
                         Text(
                           "Login",

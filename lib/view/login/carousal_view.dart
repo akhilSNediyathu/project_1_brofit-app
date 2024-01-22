@@ -1,6 +1,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness_app/common/colo_extension.dart';
+import 'package:fitness_app/common/common_text_styles.dart';
 import 'package:fitness_app/common_widget/round_button_1.dart';
 
 import 'package:fitness_app/view/login/welcome_view.dart';
@@ -55,10 +56,7 @@ class _WhoNeedsMeState extends State<WhoNeedsMe> {
                                     SizedBox(height: media.width*0.1,),
                                     Text(
                                                  gObj['title'].toString(),
-                                                  style: TextStyle(
-                                                      color: Tcolo.white,
-                                                      fontSize: 14,
-                                                      fontWeight: FontWeight.w700),
+                                                  style: AppTextStyles.carousalHeadingTextStyle,
                                                 ),
                                                  Container(
                                                   width: media.width*0.1,
@@ -99,15 +97,12 @@ class _WhoNeedsMeState extends State<WhoNeedsMe> {
                 ),
                 Text(
                   "Who  needs me?",
-                  style: TextStyle(
-                      color: Tcolo.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700),
+                  style: AppTextStyles.carousalHeading2TextStyle,
                 ),
                 Text(
                   "Discover a stronger you - your journey starts here. Let's crush it together",
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: Tcolo.gray, fontSize: 13),
+                  style:AppTextStyles.carousalStyle3,
                 ),
                const Spacer(),
                 SizedBox(

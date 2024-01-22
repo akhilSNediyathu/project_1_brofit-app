@@ -2,10 +2,12 @@
 
 import 'package:fitness_app/common/colo_extension.dart';
 import 'package:fitness_app/common/common_padding.dart';
+import 'package:fitness_app/common/common_text_styles.dart';
 import 'package:fitness_app/common_widget/round_button_1.dart';
 import 'package:fitness_app/common_widget/round_textfield.dart';
 import 'package:fitness_app/view/login/signup_view.dart';
 import 'package:fitness_app/view/login/welcome_view.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -22,6 +24,7 @@ class _LoginViewState extends State<LoginView> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool a = true;
 
   @override
   Widget build(BuildContext context) {
@@ -45,18 +48,11 @@ class _LoginViewState extends State<LoginView> {
                 children: [
                   Text(
                     'Hey there,',
-                    style: TextStyle(
-                      color: Tcolo.gray,
-                      fontSize: 16,
-                    ),
+                    style: AppTextStyles.loginHeading1
                   ),
                   Text(
                     'Welcome Back',
-                    style: TextStyle(
-                      color: Tcolo.black,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style:  AppTextStyles.titleTextStyle,
                   ),
                   SizedBox(height: media.width * 0.05,),
                Form(
@@ -85,10 +81,14 @@ class _LoginViewState extends State<LoginView> {
                     hintText: 'Password',
                     icon: 'assets/img/Lock.png',
                     keyboardType: TextInputType.emailAddress,
-                    obscureText: true,
+                    obscureText: a,
                     controller: passwordController,
                     rightIcon: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          a=!a;
+                        });
+                      },
                       child: Container(
                         alignment: Alignment.center,
                         width: 20,
@@ -153,10 +153,7 @@ class _LoginViewState extends State<LoginView> {
                       children: [
                         Text(
                           "Don't have an account yet? Register ",
-                          style: TextStyle(
-                            color: Tcolo.black,
-                            fontSize: 14,
-                          ),
+                          style: AppTextStyles.loginEnding,
                         ),
                         Text(
                           "Sign up",
@@ -186,15 +183,13 @@ class _LoginViewState extends State<LoginView> {
         email: email,
         password: password,
       );
-
-      // Login successful, navigate to the welcome screen
       
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const WelcomeView()),
       );
     } catch (e) {
-      // Handle login errors
+     
       String errorMessage = "An error occurred during login.";
       if (e is FirebaseAuthException) {
         errorMessage = e.message ?? "An unknown error occurred.";
@@ -208,7 +203,9 @@ class _LoginViewState extends State<LoginView> {
         ),
       );
 
-      // print("Error: $e");
+       if (kDebugMode) {
+         print("Error: $e");
+       }
     }
   }
 
