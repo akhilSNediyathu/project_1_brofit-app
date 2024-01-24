@@ -1,7 +1,8 @@
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/firebase_options.dart';
+import 'package:brofit/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/firebase_options.dart';
-import 'package:fitness_app/splash_screen.dart';
+
 
 
 

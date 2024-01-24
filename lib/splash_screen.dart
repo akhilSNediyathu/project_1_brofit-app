@@ -1,10 +1,10 @@
 // ignore: file_names
+import 'package:brofit/view/home/home_page.dart';
+import 'package:brofit/view/on_boarding_screeens/started_view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 
-import 'package:fitness_app/view/home/home_page.dart';
 
-import 'package:fitness_app/view/on_boarding_screeens/started_view.dart';
 import 'package:flutter/material.dart';
 
 import 'common/colo_extension.dart';

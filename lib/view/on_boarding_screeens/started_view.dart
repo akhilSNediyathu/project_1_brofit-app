@@ -1,6 +1,6 @@
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/round_button_1.dart';
-import 'package:fitness_app/view/on_boarding_screeens/onboarding_views.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/on_boarding_screeens/onboarding_views.dart';
 import 'package:flutter/material.dart';
 
 class OnBoardingView extends StatefulWidget {

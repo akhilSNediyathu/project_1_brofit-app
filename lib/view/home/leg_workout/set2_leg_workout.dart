@@ -1,9 +1,9 @@
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/testgif.dart';
-import 'package:fitness_app/common/workout_list.dart';
-import 'package:fitness_app/common_widget/round_button_1.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/testgif.dart';
+import 'package:brofit/common/workout_list.dart';
+import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/home/leg_workout/set_3_leg_workout.dart';
 
-import 'package:fitness_app/view/home/leg_workout/set_3_leg_workout.dart';
 import 'package:flutter/material.dart';
 
 class LegWorkoutSet2 extends StatelessWidget {
