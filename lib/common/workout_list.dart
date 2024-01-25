@@ -1,6 +1,7 @@
 // ignore: file_names
 
-import 'package:fitness_app/common/common_text_styles.dart';
+import 'package:brofit/common/common_text_styles.dart';
+
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

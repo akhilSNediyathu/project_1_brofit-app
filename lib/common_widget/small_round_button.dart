@@ -1,9 +1,7 @@
-
-
-import 'package:brofit/common/colo_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:brofit/common/colo_extension.dart';
 
-class RoundButton extends StatelessWidget {
+class SmallRoundbutton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final Color buttonColor;
@@ -11,7 +9,7 @@ class RoundButton extends StatelessWidget {
    
    
 
-  const RoundButton({super.key,required this.title,required this.onPressed,required this.buttonColor,required this.textColor,});
+  const SmallRoundbutton({super.key,required this.title,required this.onPressed,required this.buttonColor,required this.textColor,});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,8 @@ class RoundButton extends StatelessWidget {
                         ),
                         textColor: Tcolo.Primarycolor2,
                         color:buttonColor,
-                        minWidth: double.maxFinite,
+                        minWidth: media.width*0.02,
+                        
                         
                           child: Text(
                             title,

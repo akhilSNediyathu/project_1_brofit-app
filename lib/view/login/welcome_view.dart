@@ -1,9 +1,8 @@
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/home/home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/round_button_1.dart';
-import 'package:fitness_app/view/home/home_page.dart';
-
 import 'package:flutter/material.dart';
 
 import '../../common/common_text_styles.dart';

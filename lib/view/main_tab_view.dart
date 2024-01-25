@@ -1,13 +1,11 @@
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/home_screenlist_tile.dart';
-
-import 'package:fitness_app/common_widget/homefloating.dart';
-import 'package:fitness_app/view/home/chest_workout/set1_chestworkout.dart';
-import 'package:fitness_app/view/home/leg_workout/set1_legworkout.dart';
-import 'package:fitness_app/view/home/sixpack_workout/set1_sixpack_workout.dart';
-import 'package:fitness_app/view/home/total_arm_toning/set1.dart';
-
-import 'package:fitness_app/view/meals_planner/welcome_screen.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/home_screenlist_tile.dart';
+import 'package:brofit/common_widget/homefloating.dart';
+import 'package:brofit/view/home/chest_workout/set1_chestworkout.dart';
+import 'package:brofit/view/home/leg_workout/set1_legworkout.dart';
+import 'package:brofit/view/home/sixpack_workout/set1_sixpack_workout.dart';
+import 'package:brofit/view/home/total_arm_toning/set1.dart';
+import 'package:brofit/view/meals_planner/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 class MainTabView extends StatefulWidget {

@@ -1,9 +1,9 @@
 // ignore: file_names
 
 
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/on_boarding_page.dart';
-import 'package:fitness_app/view/login/signup_view.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common_widget/on_boarding_page.dart';
+import 'package:brofit/view/login/signup_view.dart';
 import 'package:flutter/material.dart';
 
 class OnBoarding1 extends StatefulWidget {

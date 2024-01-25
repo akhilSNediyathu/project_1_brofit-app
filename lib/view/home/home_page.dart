@@ -1,8 +1,8 @@
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/Tab_Buttons.dart';
-import 'package:fitness_app/view/home/plan_workout/plan_workout_welcome.dart';
-import 'package:fitness_app/view/home/profile_view/profie_page.dart';
-import 'package:fitness_app/view/main_tab_view.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common_widget/tab_buttons.dart';
+import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart';
+import 'package:brofit/view/home/profile_view/profie_page.dart';
+import 'package:brofit/view/main_tab_view.dart';
 import 'package:flutter/material.dart';
 
 import '../bmicalculator/bmi_calc_view.dart';

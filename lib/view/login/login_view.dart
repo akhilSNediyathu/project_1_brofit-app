@@ -1,12 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/common_padding.dart';
-import 'package:fitness_app/common/common_text_styles.dart';
-import 'package:fitness_app/common_widget/round_button_1.dart';
-import 'package:fitness_app/common_widget/round_textfield.dart';
-import 'package:fitness_app/view/login/signup_view.dart';
-import 'package:fitness_app/view/login/welcome_view.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_padding.dart';
+import 'package:brofit/common/common_text_styles.dart';
+import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/common_widget/round_textfield.dart';
+import 'package:brofit/view/login/signup_view.dart';
+import 'package:brofit/view/login/welcome_view.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -56,7 +56,7 @@ class _LoginViewState extends State<LoginView> {
                   ),
                   SizedBox(height: media.width * 0.05,),
                Form(
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                  // autovalidateMode: AutovalidateMode.onUserInteraction,
               key: _formKey,
                 child: Column(
                 children: [

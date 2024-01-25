@@ -1,6 +1,7 @@
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/testgif.dart';
-import 'package:fitness_app/view/home/chest_workout/set2_chestworkout.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/testgif.dart';
+import 'package:brofit/view/home/chest_workout/set2_chestworkout.dart';
+
 import 'package:flutter/material.dart';
 
 import '../../../common/workout_list.dart';

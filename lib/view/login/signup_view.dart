@@ -1,11 +1,11 @@
 // sign_up_view.dart
 
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common/common_padding.dart';
-import 'package:fitness_app/common/common_text_styles.dart';
-import 'package:fitness_app/common_widget/round_button_1.dart';
-import 'package:fitness_app/common_widget/round_textfield.dart';
-import 'package:fitness_app/view/login/login_view.dart';
+import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_padding.dart';
+import 'package:brofit/common/common_text_styles.dart';
+import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/common_widget/round_textfield.dart';
+import 'package:brofit/view/login/login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -45,7 +45,7 @@ class _SignUpViewState extends State<SignUpView> {
             padding: padding,
             child: Form(
               key: _formKey,
-              autovalidateMode: AutovalidateMode.onUserInteraction,
+              // autovalidateMode: AutovalidateMode.onUserInteraction,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

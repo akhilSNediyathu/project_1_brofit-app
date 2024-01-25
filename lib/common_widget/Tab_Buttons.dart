@@ -1,4 +1,5 @@
-import 'package:fitness_app/common/colo_extension.dart';
+
+import 'package:brofit/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 
 class TAbButton extends StatelessWidget {
