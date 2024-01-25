@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-
-import 'package:fitness_app/common/colo_extension.dart';
-import 'package:fitness_app/common_widget/round_button_1.dart';
-import 'package:fitness_app/common_widget/round_textfield.dart';
-import 'package:fitness_app/view/home/plan_workout/data_base_functions.dart';
-import 'package:fitness_app/view/home/plan_workout/data_model.dart';
-import 'package:fitness_app/view/home/plan_workout/plan_workout_welcome.dart';
-
-=======
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/time_setter.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
@@ -15,7 +5,6 @@ import 'package:brofit/common_widget/round_textfield.dart';
 import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart';
->>>>>>> fordatabase
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -65,11 +54,7 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
                 },
                 child: TimeSetter(
                     wokoutName:
-<<<<<<< HEAD
-                        'Set dasily Workout time : ${_selectedDailyWorkoutTime != null ? formatTimeOfDay(_selectedDailyWorkoutTime!) : '00:00 hrs'}'),
-=======
                         'Set daily Workout time : ${_selectedDailyWorkoutTime != null ? formatTimeOfDay(_selectedDailyWorkoutTime!) : '00:00 hrs'}'),
->>>>>>> fordatabase
               ),
               SizedBox(height: media.height * 0.01),
               GestureDetector(
@@ -266,9 +251,3 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
     return '${dateTime.hour}:${dateTime.minute}';
   }
 }
-<<<<<<< HEAD
-
-class TimeSetter {
-}
-=======
->>>>>>> fordatabase
