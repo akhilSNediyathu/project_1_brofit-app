@@ -2,6 +2,9 @@ import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/time_setter.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
+import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
+import 'package:brofit/view/home/plan_workout/data_model.dart';
+import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -49,47 +52,88 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
                 onTap: () {
                   _selectTimeForDailyWorkout(context);
                 },
-                child: TimeSetter(wokoutName: 'Set daily Workout time : ${_selectedDailyWorkoutTime?.format(context) ?? '00:00 hrs'}'),
+                child: TimeSetter(
+                    wokoutName:
+                        'Set daily Workout time : ${_selectedDailyWorkoutTime != null ? formatTimeOfDay(_selectedDailyWorkoutTime!) : '00:00 hrs'}'),
               ),
               SizedBox(height: media.height * 0.01),
               GestureDetector(
                 onTap: () {
                   _selectTimeForDailyWakeUp(context);
                 },
-                child: TimeSetter(wokoutName: 'Set daily WakeUp time : ${_selectedDailyWakeTime?.format(context) ?? '00:00 hrs'}'),
+                child: TimeSetter(
+                    wokoutName:
+                        'Set daily WakeUp time : ${_selectedDailyWakeTime != null ? formatTimeOfDay(_selectedDailyWakeTime!) : '00:00 hrs'}'),
               ),
               SizedBox(height: media.height * 0.01),
               GestureDetector(
                 onTap: () {
-                 _selectTimeForDailBreakFast(context);
+                  _selectTimeForDailBreakFast(context);
                 },
-                child: TimeSetter(wokoutName: 'Set daily breakfast time : ${_selectedDailyBreakfastTime?.format(context) ?? '00:00 hrs'}'),
+                child: TimeSetter(
+                    wokoutName:
+                        'Set daily breakfast time : ${_selectedDailyBreakfastTime != null ? formatTimeOfDay(_selectedDailyBreakfastTime!) : '00:00 hrs'}'),
               ),
               SizedBox(height: media.height * 0.01),
               GestureDetector(
                 onTap: () {
-                 _selectTimeForDailLunch(context);
+                  _selectTimeForDailLunch(context);
                 },
-                child:  TimeSetter(wokoutName: 'Set daily Lunch time :${_selectedDailyLunchTime?.format(context) ?? '00:00 hrs'}'),
+                child: TimeSetter(
+                    wokoutName:
+                        'Set daily Lunch time :${_selectedDailyLunchTime != null ? formatTimeOfDay(_selectedDailyLunchTime!) : '00:00 hrs'}'),
               ),
               SizedBox(height: media.height * 0.01),
               GestureDetector(
                 onTap: () {
-                 _selectTimeForDinner(context);
+                  _selectTimeForDinner(context);
                 },
-                child:  TimeSetter(wokoutName: 'Set daily Dinner time : ${_selectedDailyDinnerTime?.format(context) ?? '00:00 hrs'}'),
+                child: TimeSetter(
+                    wokoutName:
+                        'Set daily Dinner time : ${_selectedDailyDinnerTime != null ? formatTimeOfDay(_selectedDailyDinnerTime!) : '00:00 hrs'}'),
               ),
               SizedBox(height: media.height * 0.01),
               GestureDetector(
                 onTap: () {
                   _selectTimeForBed(context);
                 },
-                child:  TimeSetter(wokoutName: 'Set daily Bed time :${_selectedDailyBedTime?.format(context) ?? '00:00 hrs'}'),
+                child: TimeSetter(
+                    wokoutName:
+                        'Set daily Bed time :${_selectedDailyBedTime != null ? formatTimeOfDay(_selectedDailyBedTime!) : '00:00 hrs'}'),
               ),
               SizedBox(height: media.height * 0.05),
               RoundButton(
                 title: 'Save',
-                onPressed: () {},
+                onPressed: () async {
+                  if (_selectedDailyWorkoutTime == null ||
+                      _selectedDailyWakeTime == null ||
+                      _selectedDailyBreakfastTime == null ||
+                      _selectedDailyLunchTime == null ||
+                      _selectedDailyDinnerTime == null ||
+                      _selectedDailyBedTime == null ||
+                      nameController.text.isEmpty) {
+                    showValidationError();
+                    return;
+                  } else {
+                    await addDatas(workout: WorkoutPlan(
+                      name: nameController.text,
+                      dailyWorkoutTime: formatTimeOfDay(_selectedDailyWorkoutTime!),
+                      dailyWakeUpTime: formatTimeOfDay(_selectedDailyWakeTime!),
+                      dailyBreakfastTime: formatTimeOfDay(_selectedDailyBreakfastTime!),
+                      dailyLunchTime: formatTimeOfDay(_selectedDailyLunchTime!),
+                      dailyDinnerTime: formatTimeOfDay(_selectedDailyDinnerTime!),
+                      dailyBedTime: formatTimeOfDay(_selectedDailyBedTime!),
+                      id: DateTime.now().microsecondsSinceEpoch.toString(),
+                    ));
+                    await getDatas();
+                    addToList();
+                    // ignore: use_build_context_synchronously
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const PlanWorkoutWelcome()));
+                  }
+                },
                 buttonColor: Tcolo.Primarycolor1,
                 textColor: Tcolo.white,
               ),
@@ -115,20 +159,21 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
       }
     }
   }
-   Future<void> _selectTimeForDailyWakeUp(BuildContext context) async {
+
+  Future<void> _selectTimeForDailyWakeUp(BuildContext context) async {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
-      initialTime: _selectedDailyWorkoutTime ?? TimeOfDay.now(),
+      initialTime: _selectedDailyWakeTime ?? TimeOfDay.now(),
     );
 
     if (pickedTime != null) {
       setState(() {
         _selectedDailyWakeTime = pickedTime;
       });
-     
     }
   }
-   Future<void> _selectTimeForDailBreakFast(BuildContext context) async {
+
+  Future<void> _selectTimeForDailBreakFast(BuildContext context) async {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: _selectedDailyWorkoutTime ?? TimeOfDay.now(),
@@ -138,10 +183,10 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
       setState(() {
         _selectedDailyBreakfastTime = pickedTime;
       });
-     
     }
   }
-    Future<void> _selectTimeForDailLunch(BuildContext context) async {
+
+  Future<void> _selectTimeForDailLunch(BuildContext context) async {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: _selectedDailyWorkoutTime ?? TimeOfDay.now(),
@@ -151,10 +196,10 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
       setState(() {
         _selectedDailyLunchTime = pickedTime;
       });
-     
     }
   }
-     Future<void> _selectTimeForDinner(BuildContext context) async {
+
+  Future<void> _selectTimeForDinner(BuildContext context) async {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: _selectedDailyWorkoutTime ?? TimeOfDay.now(),
@@ -162,12 +207,12 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
 
     if (pickedTime != null) {
       setState(() {
-        _selectedDailyDinnerTime= pickedTime;
+        _selectedDailyDinnerTime = pickedTime;
       });
-     
     }
   }
-    Future<void> _selectTimeForBed(BuildContext context) async {
+
+  Future<void> _selectTimeForBed(BuildContext context) async {
     TimeOfDay? pickedTime = await showTimePicker(
       context: context,
       initialTime: _selectedDailyWorkoutTime ?? TimeOfDay.now(),
@@ -177,7 +222,32 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
       setState(() {
         _selectedDailyBedTime = pickedTime;
       });
-     
     }
+  }
+
+  void showValidationError() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Set all the Time'),
+          content: const Text('Please fill in all fields'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  String formatTimeOfDay(TimeOfDay timeOfDay) {
+    final now = DateTime.now();
+    final dateTime = DateTime(now.year, now.month, now.day, timeOfDay.hour, timeOfDay.minute);
+    return '${dateTime.hour}:${dateTime.minute}';
   }
 }
