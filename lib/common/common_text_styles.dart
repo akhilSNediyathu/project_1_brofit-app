@@ -46,5 +46,15 @@ static TextStyle loginHeading1 = TextStyle(
   static TextStyle welcomeSubtitle = TextStyle(
                   color: Tcolo.gray,
                   fontSize: 13
-                 );                        
+                 );     
+                   static  TextStyle profileStyle1 =TextStyle(
+                      color: Tcolo.Primarycolor1,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700);  
+
+                       static  TextStyle profileStyle2 =TextStyle(
+                      color: Tcolo.Primarycolor1,
+                      fontSize: 18,
+                      );   
+                                      
 }
