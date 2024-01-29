@@ -2,6 +2,7 @@ import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/time_setter.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
+import 'package:brofit/local_notification.dart';
 import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart';
@@ -23,6 +24,7 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
   TimeOfDay? _selectedDailyLunchTime;
   TimeOfDay? _selectedDailyDinnerTime;
   TimeOfDay? _selectedDailyBedTime;
+  List<int> selectedDays = [1, 2, 3, 4, 5, 6, 7]; 
 
   @override
   Widget build(BuildContext context) {
@@ -127,6 +129,7 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
                     ));
                     await getDatas();
                     addToList();
+                    LocalNotifications.scheduleNotification(title: 'Daily Workout Reminder', body: 'It\'s time for your daily workout! Stay active and healthy.', payload: 'daily_workout_reminder', scheduledTime: _selectedDailyWorkoutTime!, daysOfWeek: selectedDays);
                     // ignore: use_build_context_synchronously
                     Navigator.pushReplacement(
                         context,
