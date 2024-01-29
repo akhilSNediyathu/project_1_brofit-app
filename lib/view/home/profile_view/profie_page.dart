@@ -1,6 +1,7 @@
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/profile_list_tile.dart';
+import 'package:brofit/local_notification.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/drink_water_welcome.dart';
 import 'package:brofit/view/login/login_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -109,10 +110,16 @@ class _ProfilePageState extends State<ProfilePage> {
                        Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const DrinkWaterReminder()));
                       }),
                       ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){}),
-                      ProfileListTile(icon: Icons.privacy_tip_outlined, title: 'Privacy Polilcy', onTap: (){}),
+                      ProfileListTile(icon: Icons.privacy_tip_outlined, title: 'Privacy Polilcy', onTap: (){
+                      
+                      }),
                        ProfileListTile(icon: Icons.logout , title: 'Logout', 
                        onTap: (){
                          _showLogoutConfirmationDialog(context);
+                       }),
+                        ProfileListTile(icon: Icons.doorbell_rounded , title: 'Stop Notifications', 
+                       onTap: (){
+                        showStopAllNotificationsDialog(context);
                        }),
 
 
@@ -198,6 +205,32 @@ class _ProfilePageState extends State<ProfilePage> {
 
               },
               child: const Text('Logout'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+   Future<void> showStopAllNotificationsDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Stop All Notifications?'),
+          content: const Text('Are you sure you want to stop receiving  notifications?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop(); 
+              },
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () {
+                LocalNotifications.cancelAllNotifications();
+                Navigator.of(context).pop(); 
+              },
+              child: const Text('Confirm'),
             ),
           ],
         );
