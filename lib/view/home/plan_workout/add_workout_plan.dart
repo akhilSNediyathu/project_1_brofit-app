@@ -3,9 +3,9 @@ import 'package:brofit/common/time_setter.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
 import 'package:brofit/local_notification.dart';
+import 'package:brofit/view/home/home_page.dart';
 import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
-import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
   TimeOfDay? _selectedDailyLunchTime;
   TimeOfDay? _selectedDailyDinnerTime;
   TimeOfDay? _selectedDailyBedTime;
-  List<int> selectedDays = [1, 2, 3, 4, 5, 6, 7]; 
+  List<int> selectedDays = [1, 2, 3, 4, 5, 6, 7];
 
   @override
   Widget build(BuildContext context) {
@@ -117,24 +117,72 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
                     showValidationError();
                     return;
                   } else {
-                    await addDatas(workout: WorkoutPlan(
+                    await addDatas(
+                        workout: WorkoutPlan(
                       name: nameController.text,
-                      dailyWorkoutTime: formatTimeOfDay(_selectedDailyWorkoutTime!),
+                      dailyWorkoutTime: formatTimeOfDay(
+                        _selectedDailyWorkoutTime!,
+                      ),
                       dailyWakeUpTime: formatTimeOfDay(_selectedDailyWakeTime!),
-                      dailyBreakfastTime: formatTimeOfDay(_selectedDailyBreakfastTime!),
+                      dailyBreakfastTime:
+                          formatTimeOfDay(_selectedDailyBreakfastTime!),
                       dailyLunchTime: formatTimeOfDay(_selectedDailyLunchTime!),
-                      dailyDinnerTime: formatTimeOfDay(_selectedDailyDinnerTime!),
+                      dailyDinnerTime:
+                          formatTimeOfDay(_selectedDailyDinnerTime!),
                       dailyBedTime: formatTimeOfDay(_selectedDailyBedTime!),
-                      id: DateTime.now().microsecondsSinceEpoch.toString(),
+                      id: 'plan',
                     ));
                     await getDatas();
                     addToList();
-                    LocalNotifications.scheduleNotification(title: 'Daily Workout Reminder', body: 'It\'s time for your daily workout! Stay active and healthy.', payload: 'daily_workout_reminder', scheduledTime: _selectedDailyWorkoutTime!, daysOfWeek: selectedDays);
+                    LocalNotifications.scheduleNotification(
+                        title: 'Daily Workout Reminder',
+                        body:
+                            'It\'s time for your daily workout! Stay active and healthy.',
+                        payload: 'daily_workout_reminder',
+                        scheduledTime: _selectedDailyWorkoutTime!,
+                        daysOfWeek: selectedDays);
+                    LocalNotifications.scheduleNotification(
+                        title: 'Daily Wake-Up Reminder',
+                        body:
+                            'Rise and shine! It\'s time to start your day with energy and positivity. Seize the morning and embrace a new day filled with possibilities.',
+                        payload: 'daily_wake_up_reminder',
+                        scheduledTime: _selectedDailyWakeTime!,
+                        daysOfWeek: selectedDays);
+                    LocalNotifications.scheduleNotification(
+                        title: 'Breakfast Time Reminder',
+                        body:
+                            'Good morning! It\'s time to fuel your day with a nutritious breakfast. Make it delicious and energizing!',
+                        payload: 'breakfast_time_reminder',
+                        scheduledTime: _selectedDailyBreakfastTime!,
+                        daysOfWeek: selectedDays);
+                    LocalNotifications.scheduleNotification(
+                        title: 'Lunch Reminder',
+                        body:
+                            'Hey there! It\'s lunchtime. Take a break and enjoy a nourishing meal to refuel your energy for the rest of the day.',
+                        payload: 'lunch_time_reminder',
+                        scheduledTime: _selectedDailyLunchTime!,
+                        daysOfWeek: selectedDays);
+                    LocalNotifications.scheduleNotification(
+                        title: 'Dinner Reminder',
+                        body:
+                            'Good evening! It\'s dinner time. Treat yourself to a satisfying and nutritious dinner. Bon appétit!',
+                        payload: 'dinner_time_reminder',
+                        scheduledTime: _selectedDailyDinnerTime!,
+                        daysOfWeek: selectedDays);
+                    LocalNotifications.scheduleNotification(
+                        title: 'Bedtime Reminder',
+                        body:
+                            'Good night! It\'s time to wind down and get ready for a restful sleep. Create a peaceful bedtime routine for a rejuvenating night\'s sleep.',
+                        payload: 'bedtime_reminder',
+                        scheduledTime: _selectedDailyBedTime!,
+                        daysOfWeek: selectedDays);
+// ignore: use_build_context_synchronously
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(builder: (ctx2) => const HomePage()),
+                        (route) => false);
+
                     // ignore: use_build_context_synchronously
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const PlanWorkoutWelcome()));
+                    // ignore: use_build_context_synchronously
                   }
                 },
                 buttonColor: Tcolo.Primarycolor1,
@@ -250,7 +298,8 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
 
   String formatTimeOfDay(TimeOfDay timeOfDay) {
     final now = DateTime.now();
-    final dateTime = DateTime(now.year, now.month, now.day, timeOfDay.hour, timeOfDay.minute);
+    final dateTime = DateTime(
+        now.year, now.month, now.day, timeOfDay.hour, timeOfDay.minute);
     return '${dateTime.hour}:${dateTime.minute}';
   }
 }

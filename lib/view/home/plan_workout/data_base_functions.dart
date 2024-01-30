@@ -1,5 +1,7 @@
 
 
+
+
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
@@ -32,4 +34,10 @@ addToList()async{
  finaldatas.clear();
  finaldatas = List.from(dataList);
  
+}
+deleteplan({required WorkoutPlan workout})async{
+  
+    final datas = await Hive.openBox<WorkoutPlan>(workoutPlanDb);
+  await datas.delete(workout.id);
+  await addToList();
 }
