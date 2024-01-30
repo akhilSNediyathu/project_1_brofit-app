@@ -19,6 +19,7 @@ const AndroidInitializationSettings initializationSettingsAndroid =
     AndroidInitializationSettings('@mipmap/ic_launcher');
 final DarwinInitializationSettings initializationSettingsDarwin =
     DarwinInitializationSettings(
+        // ignore: avoid_returning_null_for_void
         onDidReceiveLocalNotification: (id, title, body, payload) => null,);
 const LinuxInitializationSettings initializationSettingsLinux =
     LinuxInitializationSettings(
@@ -110,6 +111,9 @@ static Future scheduleNotification({
       importance: Importance.max,
       priority: Priority.high,
       ticker: 'ticker',
+      fullScreenIntent: true,
+      
+      
     );
 
     const NotificationDetails notificationDetails =
@@ -122,6 +126,7 @@ static Future scheduleNotification({
       scheduledTimeZoneDateTime,
       notificationDetails,
       payload: payload,
+      androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       
       uiLocalNotificationDateInterpretation:
           UILocalNotificationDateInterpretation.absoluteTime,
