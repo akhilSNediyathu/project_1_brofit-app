@@ -1,31 +1,35 @@
-
 import 'package:brofit/common/colo_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class GradientFab extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const GradientFab({super.key, required this.onPressed});
+  const GradientFab({Key? key, required this.onPressed}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 65.0,
-      height: 65.0,
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: Tcolo.SecondaryG,
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+    var media = MediaQuery.of(context).size;
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: media.width * 0.13,
+        height: media.width * 0.13,
+        decoration: BoxDecoration(
+          color: Tcolo.Lightgrey,
+          gradient: LinearGradient(
+            colors: Tcolo.tertiaryG,
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          shape: BoxShape.circle,
         ),
-        shape: BoxShape.circle,
-      ),
-      child: IconButton(
-        icon: const Icon(
-          Icons.restaurant,
-          color: Color.fromARGB(255, 238, 234, 234),
+        child: Lottie.asset(
+          'assets/gif/heartrate.json', // Replace with your Lottie asset
+          width: media.width * 0.1,
+          height: media.width * 0.11,
+          fit: BoxFit.cover,
         ),
-        onPressed: onPressed,
       ),
     );
   }

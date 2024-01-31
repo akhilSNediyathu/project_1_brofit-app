@@ -54,6 +54,8 @@ class PlanDetailsPage extends StatelessWidget {
                   _buildDetailsItem('Name', details.name),
                   _buildDetailsItem('Daily WakeUp Time',
                       formatTime(context, details.dailyWakeUpTime)),
+                       _buildDetailsItem('Daily Wokout Time',
+                      formatTime(context, details.dailyWorkoutTime)),
                   _buildDetailsItem('Daily Breakfast Time',
                       formatTime(context, details.dailyBreakfastTime)),
                   _buildDetailsItem('Daily Lunch Time',
