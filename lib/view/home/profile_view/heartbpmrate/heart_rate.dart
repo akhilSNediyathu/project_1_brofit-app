@@ -1,6 +1,7 @@
 import 'package:brofit/common/colo_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:heart_bpm/heart_bpm.dart';
+import 'package:lottie/lottie.dart';
 
 
 
@@ -20,7 +21,7 @@ class _HeartRateState extends State<HeartRate> {
     var media  = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Heart rate'),
+        title: const Text('Pulse Monitor'),
         centerTitle: true,
         backgroundColor: Tcolo.Primarycolor1,
         leading: IconButton(onPressed: (){
@@ -44,11 +45,14 @@ class _HeartRateState extends State<HeartRate> {
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(
-                  Icons.favorite,
-                  size: 88,
-                  color: Colors.red,
-                ),
+                // 
+                Lottie.asset(
+          'assets/gif/heart2.json', // Replace with your Lottie asset
+          width: media.width * 0.2,
+          height: media.width * 0.25,
+          fit: BoxFit.cover,
+        ),
+        SizedBox(width: media.width*0.03,),
                 HeartBPMDialog(
                   context: context,
                   onRawData: (value) {
