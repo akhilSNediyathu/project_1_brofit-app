@@ -3,6 +3,7 @@ import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/profile_list_tile.dart';
 import 'package:brofit/local_notification.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/drink_water_welcome.dart';
+import 'package:brofit/view/home/profile_view/profile_page_showdialogues.dart';
 
 import 'package:brofit/view/login/login_view.dart';
 import 'package:brofit/view/meals_planner/welcome_screen.dart';
@@ -115,9 +116,11 @@ class _ProfilePageState extends State<ProfilePage> {
                        Center(child: Text('Profile Settings',style: AppTextStyles.loginHeading1,)),
                         ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){}),
                      
-                      ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){}),
+                      ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){
+                        ContactUsDialog.show(context);
+                      }),
                       ProfileListTile(icon: Icons.privacy_tip_outlined, title: 'Privacy Polilcy', onTap: (){
-                      
+                      showPrivacyPolicyDialog(context);
                       }),
                        ProfileListTile(icon: Icons.logout , title: 'Logout', 
                        onTap: (){
