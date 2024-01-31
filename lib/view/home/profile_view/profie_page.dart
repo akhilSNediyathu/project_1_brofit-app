@@ -3,6 +3,7 @@ import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/profile_list_tile.dart';
 import 'package:brofit/local_notification.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/drink_water_welcome.dart';
+
 import 'package:brofit/view/login/login_view.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -87,8 +88,14 @@ class _ProfilePageState extends State<ProfilePage> {
                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                        Center(child: Text('Account',style: AppTextStyles.loginHeading1,)),
-                      ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){}),
-                      ProfileListTile(icon: Icons.auto_graph, title: 'Your Activity', onTap: (){})
+                     
+                      ProfileListTile(icon: Icons.auto_graph, title: 'Plan Your Meals', onTap: (){
+                        //  Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const HeartRate()));
+                      }),
+                       ProfileListTile(icon: Icons.local_drink_outlined, title: 'Drink Water Reminder', 
+                      onTap: (){
+                       Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const DrinkWaterReminder()));
+                      }),
 
 
                     ],
@@ -105,10 +112,8 @@ class _ProfilePageState extends State<ProfilePage> {
                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                        Center(child: Text('Others',style: AppTextStyles.loginHeading1,)),
-                      ProfileListTile(icon: Icons.local_drink_outlined, title: 'Drink Water Reminder', 
-                      onTap: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const DrinkWaterReminder()));
-                      }),
+                        ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){}),
+                     
                       ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){}),
                       ProfileListTile(icon: Icons.privacy_tip_outlined, title: 'Privacy Polilcy', onTap: (){
                       

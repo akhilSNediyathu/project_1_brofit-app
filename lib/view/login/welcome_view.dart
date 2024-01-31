@@ -4,6 +4,7 @@ import 'package:brofit/view/home/home_page.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../common/common_text_styles.dart';
 
@@ -89,7 +90,14 @@ Future<void> _loadUserData() async {
 
 
             ],
-          ):const Center(child: Text('loading.....'),),
+          ): Center(child: SizedBox(
+                width: media.width * 0.5,
+                height: media.width * 0.5,
+                child: Lottie.asset(
+                  'assets/gif/loading...json',
+                  fit: BoxFit.cover,
+                ),
+              ),),
         ),
       ),
     );

@@ -1,12 +1,43 @@
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
 
-// ignore: camel_case_types
-class mealsPlannerWelcome extends StatelessWidget {
-  const mealsPlannerWelcome({super.key});
 
+class MealsPlannerWelcome extends StatefulWidget {
+  const MealsPlannerWelcome({super.key});
+
+  @override
+  State<MealsPlannerWelcome> createState() => _MealsPlannerWelcomeState();
+}
+
+class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
+  //  User? _user;
+  //  String? _userName;
+ 
+  // Future<void> _loadUserData() async {
+ 
+  //   User? user = FirebaseAuth.instance.currentUser;
+
+  //   if (user != null) {
+     
+  //     DocumentSnapshot userData = await FirebaseFirestore.instance
+  //         .collection('UserDetails')
+  //         .doc(user.email) 
+  //         .get();
+
+    
+  //     String userName = userData['Name'];
+  //     int userhieght = int.parse(userData['height']);
+
+  //     setState(() {
+  //       _user = user;
+  //       _userName = userName;
+  //     });
+  //   }
+  // }
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
