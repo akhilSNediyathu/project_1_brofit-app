@@ -3,6 +3,7 @@ import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/profile_list_tile.dart';
 import 'package:brofit/local_notification.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/drink_water_welcome.dart';
+import 'package:brofit/view/home/profile_view/edit_profile_page.dart';
 import 'package:brofit/view/home/profile_view/profile_page_showdialogues.dart';
 
 import 'package:brofit/view/login/login_view.dart';
@@ -86,21 +87,23 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: SizedBox(
                   height: media.height*0.2,
                   width: media.width,
-                  child:  Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                       Center(child: Text('Wellness Planner',style: AppTextStyles.loginHeading1,)),
-                     
-                      ProfileListTile(icon: Icons.restaurant_menu, title: 'Plan Your Meals', onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const MealsPlannerWelcome()));
-                      }),
-                       ProfileListTile(icon: Icons.local_drink_outlined, title: 'Drink Water Reminder', 
-                      onTap: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const DrinkWaterReminder()));
-                      }),
-
-
-                    ],
+                  child:  SingleChildScrollView(
+                    child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                         Center(child: Text('Wellness Planner',style: AppTextStyles.loginHeading1,)),
+                       
+                        ProfileListTile(icon: Icons.restaurant_menu, title: 'Plan Your Meals', onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const MealsPlannerWelcome()));
+                        }),
+                         ProfileListTile(icon: Icons.local_drink_outlined, title: 'Drink Water Reminder', 
+                        onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const DrinkWaterReminder()));
+                        }),
+                    
+                    
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -110,30 +113,35 @@ class _ProfilePageState extends State<ProfilePage> {
                 child: SizedBox(
                   height: media.height*0.35,
                   width: media.width,
-                  child:  Column(
-                   crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                       Center(child: Text('Profile Settings',style: AppTextStyles.loginHeading1,)),
-                        ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){}),
-                     
-                      ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){
-                        ContactUsDialog.show(context);
-                      }),
-                      ProfileListTile(icon: Icons.privacy_tip_outlined, title: 'Privacy Polilcy', onTap: (){
-                      showPrivacyPolicyDialog(context);
-                      }),
-                       ProfileListTile(icon: Icons.logout , title: 'Logout', 
-                       onTap: (){
-                         _showLogoutConfirmationDialog(context);
-                       }),
-                        ProfileListTile(icon: Icons.doorbell_rounded , title: 'Stop Notifications', 
-                       onTap: (){
-                        showStopAllNotificationsDialog(context);
-                       }),
-
-
-
-                    ],
+                  child:  SingleChildScrollView(
+                    child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                         Center(child: Text('Profile Settings',style: AppTextStyles.loginHeading1,)),
+                          ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (ctx)=> const EditProfileView()));
+                            // showEditProfileDialog(context);
+                          }),
+                       
+                        ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){
+                          ContactUsDialog.show(context);
+                        }),
+                        ProfileListTile(icon: Icons.privacy_tip_outlined, title: 'Privacy Polilcy', onTap: (){
+                        showPrivacyPolicyDialog(context);
+                        }),
+                         ProfileListTile(icon: Icons.logout , title: 'Logout', 
+                         onTap: (){
+                           _showLogoutConfirmationDialog(context);
+                         }),
+                          ProfileListTile(icon: Icons.doorbell_rounded , title: 'Stop Notifications', 
+                         onTap: (){
+                          showStopAllNotificationsDialog(context);
+                         }),
+                    
+                    
+                    
+                      ],
+                    ),
                   ),
                 ),
               )
