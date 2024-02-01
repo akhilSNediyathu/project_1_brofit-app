@@ -77,7 +77,9 @@ class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
               RoundButton(
              
                   title: 'Set Now',
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                   buttonColor: Tcolo.Primarycolor1,
                   textColor: Tcolo.white)
             ],
