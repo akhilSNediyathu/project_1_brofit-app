@@ -7,6 +7,7 @@
     <application
         android:label="fitness_app"
         android:name="${applicationName}"
+        android:debuggable="true"
         android:icon="@mipmap/ic_launcher">
 
         <!-- Your existing activity and meta-data configurations go here -->

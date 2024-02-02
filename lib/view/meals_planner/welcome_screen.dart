@@ -1,5 +1,6 @@
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/meals_planner/plan_meals.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
@@ -78,7 +79,7 @@ class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
              
                   title: 'Set Now',
                   onPressed: () {
-                    
+                    Navigator.push(context, (MaterialPageRoute(builder: (ctx)=>const PlanMeals())));
                   },
                   buttonColor: Tcolo.Primarycolor1,
                   textColor: Tcolo.white)
