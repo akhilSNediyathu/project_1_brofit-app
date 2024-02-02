@@ -149,18 +149,21 @@ class _LoginViewState extends State<LoginView> {
                        Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>const SignUpView()));
                     },
                     child: Row(
+                    
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
-                          "Don't have an account yet? Register ",
+                          "Don't have an account yet? ",
                           style: AppTextStyles.loginEnding,
                         ),
-                        Text(
-                          "Sign up",
-                          style: TextStyle(
-                            color: Tcolo.Secondarycolor1,
-                            fontSize: media.height*0.015,
-                            fontWeight: FontWeight.w700,
+                        Expanded(
+                          child: Text(
+                            "Sign up",
+                            style: TextStyle(
+                              color: Tcolo.Secondarycolor1,
+                              fontSize: media.height*0.02,
+                             fontWeight: FontWeight.w700,
+                            ),
                           ),
                         ),
                       ],

@@ -6,6 +6,8 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/datamodel2.dart';
 import 'package:brofit/view/home/profile_view/functions_of_reminder.dart';
+import 'package:brofit/view/meals_planner/meal_planner_functions.dart';
+import 'package:brofit/view/meals_planner/plan_meals_data_mosel.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:timezone/data/latest.dart' as tz;
@@ -24,10 +26,14 @@ void main() async {
   if (!Hive.isAdapterRegistered(ReminderModelAdapter().typeId)) {
     Hive.registerAdapter(ReminderModelAdapter());
   }
+  if (!Hive.isAdapterRegistered(MealPlannerAdapter().typeId)) {
+    Hive.registerAdapter(MealPlannerAdapter());
+  }
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   addToList();
+  addmealstoList();
   addReminderToList();
 
   runApp(const MyApp());
