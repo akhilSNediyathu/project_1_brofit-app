@@ -1,10 +1,17 @@
 import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/meals_planner/mealplanner_showdialogues.dart';
+
 import 'package:brofit/view/meals_planner/plan_meals.dart';
+
+
+import 'package:brofit/view/meals_planner/plan_meals_db_functions.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 
 class MealsPlannerWelcome extends StatefulWidget {
@@ -15,34 +22,13 @@ class MealsPlannerWelcome extends StatefulWidget {
 }
 
 class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
-  //  User? _user;
-  //  String? _userName;
- 
-  // Future<void> _loadUserData() async {
- 
-  //   User? user = FirebaseAuth.instance.currentUser;
+  
 
-  //   if (user != null) {
-     
-  //     DocumentSnapshot userData = await FirebaseFirestore.instance
-  //         .collection('UserDetails')
-  //         .doc(user.email) 
-  //         .get();
 
-    
-  //     String userName = userData['Name'];
-  //     int userhieght = int.parse(userData['height']);
-
-  //     setState(() {
-  //       _user = user;
-  //       _userName = userName;
-  //     });
-  //   }
-  // }
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-    return Scaffold(
+    return  finalselectedmeals.isEmpty?Scaffold(
       backgroundColor: Tcolo.white,
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -71,11 +57,12 @@ class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
               SizedBox(
                   height: media.height * 0.4,
                   child: Center(
-                      child: Image.asset('assets/img/meals wecome.png'))),
+                      child: Lottie.asset('assets/gif/planfoodwelcome.json',))),
+                      SizedBox(height: media.height*0.02,),
               const Text(
                   '"Plan your meals with precision, fueling your body with the nutrients it needs for optimal performance and recovery, paving the way to your fitness goals."'),
               const Spacer(),
-              RoundButton(
+             RoundButton(
              
                   title: 'Set Now',
                   onPressed: () {
@@ -85,6 +72,49 @@ class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
                   textColor: Tcolo.white)
             ],
           )),
-    );
+    ) :Scaffold(
+  appBar: AppBar(
+    actions: [IconButton(onPressed: (){
+     showDeleteConfirmationDialogPlannedMeal(context);
+    }, icon:const  Icon(Icons.delete))],
+    title: const Text("Today's Meal Schedule"),
+    centerTitle: true,
+    automaticallyImplyLeading: false,
+    backgroundColor: Tcolo.Primarycolor2,
+  ),
+  body: Container(
+    padding: const EdgeInsets.all(15),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Lottie.asset('assets/gif/foodplan1.json'),
+
+       
+        Text('Breakfast: ${finalselectedmeals[0].mealPlan[0]}', style: AppTextStyles.carousalHeading2TextStyle),
+        Text('Lunch: ${finalselectedmeals[0].mealPlan[1]}', style: AppTextStyles.carousalHeading2TextStyle),
+        Text('Dinner: ${finalselectedmeals[0].mealPlan[2]}', style: AppTextStyles.carousalHeading2TextStyle),
+        
+      
+
+       
+        Text('Total Calories: ${finalselectedmeals[0].calorie}', style: AppTextStyles.carousalHeading2TextStyle),
+
+        
+        const Spacer(),
+
+       
+        RoundButton(
+          title: 'Edit Plan',
+          onPressed: () {
+            Navigator.push(context, (MaterialPageRoute(builder: (ctx)=>const PlanMeals())));
+          },
+          buttonColor: Tcolo.Primarycolor2,
+          textColor: Tcolo.white,
+        ),
+      ],
+    ),
+  ),
+);
+
   }
 }

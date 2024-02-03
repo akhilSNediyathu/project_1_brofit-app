@@ -1,26 +1,30 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
-import 'package:brofit/view/meals_planner/meal_planner_functions.dart';
+import 'package:brofit/view/meals_planner/add_custom_meals_fn.dart';
 import 'package:brofit/view/meals_planner/plan_meals.dart';
-import 'package:brofit/view/meals_planner/plan_meals_data_mosel.dart';
+import 'package:brofit/view/meals_planner/add_meals_data_model.dart';
 import 'package:flutter/material.dart';
 
 void showAddFoodDialog(BuildContext context) {
   var media = MediaQuery.of(context).size;
     TextEditingController nameController = TextEditingController();
     TextEditingController calorieController = TextEditingController();
-    GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+    GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
     showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
           backgroundColor: Tcolo.white,
+          surfaceTintColor: Tcolo.white,
+        
           title: const Text('Add Food'),
           content: SizedBox(
             height: media.height*0.2,
             child: Form(
-              key: _formKey,
+              key: formKey,
               child: Column(
                 children: [
               
@@ -61,16 +65,16 @@ void showAddFoodDialog(BuildContext context) {
               child: const Text('Cancel'),
             ),
             TextButton(
-             onPressed: () {
-              if (_formKey.currentState?.validate() ?? false) {
-                // Save the food with entered details
-                addMeals(
+             onPressed: ()async{
+              if (formKey.currentState?.validate() ?? false) {
+              
+               await addMeals(
                   meal: MealPlanner(
                     mealList: {nameController.text: num.parse(calorieController.text)},
                     id: DateTime.now().microsecondsSinceEpoch.toString(),
                   ),
                 );
-                addmealstoList();
+              
                 Navigator.of(context).pop();
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => const PlanMeals())); // Close the dialog
               }

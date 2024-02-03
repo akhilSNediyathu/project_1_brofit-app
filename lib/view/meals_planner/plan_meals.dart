@@ -1,9 +1,17 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/view/meals_planner/add_meals_showdialogue.dart';
-import 'package:brofit/view/meals_planner/meal_planner_functions.dart';
-import 'package:brofit/view/meals_planner/plan_meals_data_mosel.dart';
+import 'package:brofit/view/meals_planner/custom_meals_list.dart';
+import 'package:brofit/view/meals_planner/add_custom_meals_fn.dart';
+import 'package:brofit/view/meals_planner/plan_meals_data_mode.dart';
+import 'package:brofit/view/meals_planner/plan_meals_db_functions.dart';
+import 'package:brofit/view/meals_planner/welcome_screen.dart';
+
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class PlanMeals extends StatefulWidget {
   const PlanMeals({Key? key}) : super(key: key);
@@ -44,36 +52,78 @@ class _PlanMealsState extends State<PlanMeals> {
       appBar: AppBar(
         title: const Text('Plan Your Meals'),
         centerTitle: true,
+        actions: [IconButton(onPressed: (){
+          Navigator.push(context, MaterialPageRoute(builder: (context) => const CustomMealsList()));
+        }, icon: const Icon(Icons.restaurant_menu))],
       ),
       body: Container(
         padding:const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
-        child: ListView(
-          children: [
-            buildMealCard('Breakfast', breakfastItems.keys.toList(), selectedBreakfast),
-            buildMealCard('Lunch', lunchItems.keys.toList(), selectedLunch),
-            buildMealCard('Dinner', dinnerItems.keys.toList(), selectedDinner),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                ElevatedButton(onPressed: (){
-                  showAddFoodDialog(context);
-                }, child:const  Text('Add meals'))
-              ],
-            ),
-        
-              SizedBox(height: media.height*0.1,),
-            // Display total calories and warning if exceeding the limit
-            Text('Total Calories: ${calculateTotalCalories()}', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue)),
-            if (calculateTotalCalories() > dailyCalorieLimit)
-              const Text(
-                'Warning: Exceeding Daily Calorie Limit!',
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.red),
-                
-              ),
-              SizedBox(height: media.height*0.02,),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: media.height*0.2,
+                child: Lottie.asset('assets/gif/addfoodplan.json',fit: BoxFit.contain)),
+              buildMealCard('Breakfast', breakfastItems.keys.toList(), selectedBreakfast),
+              buildMealCard('Lunch', lunchItems.keys.toList(), selectedLunch),
+              buildMealCard('Dinner', dinnerItems.keys.toList(), selectedDinner),
+              Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    TextButton(onPressed: (){
+                                                   showAddFoodDialog(context);
+                                    } , child: Text('+Add More Dishes',style: AppTextStyles.loginEnding,)),
+                                  ],
+                                ),
+              Text('Total Calories: ${calculateTotalCalories()}', style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.blue)),
+                            if (calculateTotalCalories() > dailyCalorieLimit)
+                              const Text(
+                                'Warning: Exceeding Daily Calorie Limit!',
+                                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.red),
+                                
+                              ),
+                              
+                                
+          
+               
             
-              RoundButton(title: 'Set Meals plan', onPressed: (){}, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
-          ],
+             
+                SizedBox(height: media.height*0.04,),
+                 RoundButton(title: 'Set Meals plan', onPressed: ()async{
+                    if (selectedBreakfast == null || selectedLunch == null || selectedDinner == null) {
+                 
+          showDialog(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: const Text('Validation Error'),
+                content: const Text('Please select a meal for each category before setting the meal plan.'),
+                actions: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
+              );
+            },
+          );
+                } else {
+          num totalCalories = calculateTotalCalories();
+                await  addMealsPlan(mealplan: SetMealsPlan(id: 'MealsPlan', mealPlan: [selectedBreakfast!,selectedLunch!,selectedDinner!], calorie:totalCalories.toString() ));
+           Navigator.pop(context);
+           Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) => const MealsPlannerWelcome()));
+          
+           
+                 
+                }
+          
+                }, buttonColor: Tcolo.Primarycolor1, textColor: Tcolo.white)
+              
+               
+            ],
+          ),
         ),
       ),
     );
@@ -147,7 +197,7 @@ class _PlanMealsState extends State<PlanMeals> {
 
     return breakfastCalories + lunchCalories + dinnerCalories;
   }
-
+ 
 
 
 }

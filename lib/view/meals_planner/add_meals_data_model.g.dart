@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'plan_meals_data_mosel.dart';
+part of 'add_meals_data_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator

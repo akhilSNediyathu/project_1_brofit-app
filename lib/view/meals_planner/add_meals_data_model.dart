@@ -1,5 +1,5 @@
 import 'package:hive_flutter/hive_flutter.dart';
-part 'plan_meals_data_mosel.g.dart';
+ part 'add_meals_data_model.g.dart';
 @HiveType(typeId: 3)
 class MealPlanner{
   @HiveField(0)

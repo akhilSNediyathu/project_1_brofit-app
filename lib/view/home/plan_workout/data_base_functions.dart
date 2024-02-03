@@ -3,6 +3,7 @@
 
 
 import 'package:brofit/view/home/plan_workout/data_model.dart';
+import 'package:brofit/view/meals_planner/plan_meals_db_functions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
@@ -13,6 +14,7 @@ Future<void> addDatas({required WorkoutPlan workout}) async {
   try {
     final datas = await Hive.openBox<WorkoutPlan>(workoutPlanDb);
     await datas.put(workout.id, workout);
+    await addPlanToList();
     if (kDebugMode) {
       print('Data added successfully.');
     }

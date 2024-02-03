@@ -6,8 +6,10 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/datamodel2.dart';
 import 'package:brofit/view/home/profile_view/functions_of_reminder.dart';
-import 'package:brofit/view/meals_planner/meal_planner_functions.dart';
-import 'package:brofit/view/meals_planner/plan_meals_data_mosel.dart';
+import 'package:brofit/view/meals_planner/add_custom_meals_fn.dart';
+import 'package:brofit/view/meals_planner/add_meals_data_model.dart';
+import 'package:brofit/view/meals_planner/plan_meals_data_mode.dart';
+import 'package:brofit/view/meals_planner/plan_meals_db_functions.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:timezone/data/latest.dart' as tz;
@@ -29,12 +31,16 @@ void main() async {
   if (!Hive.isAdapterRegistered(MealPlannerAdapter().typeId)) {
     Hive.registerAdapter(MealPlannerAdapter());
   }
+  if (!Hive.isAdapterRegistered(SetMealsPlanAdapter().typeId)) {
+    Hive.registerAdapter(SetMealsPlanAdapter());
+  }
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   addToList();
   addmealstoList();
   addReminderToList();
+  addPlanToList();
 
   runApp(const MyApp());
 }
@@ -51,7 +57,7 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           fontFamily: "Poppins"),
       home: const Splash(),
-      // home: CompleteProfileView(),
+    
 
       debugShowCheckedModeBanner: false,
     );
