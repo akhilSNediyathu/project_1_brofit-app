@@ -38,9 +38,8 @@ class _CustomMealsListState extends State<CustomMealsList> {
                 return Dismissible(
                   key: Key(finalmealslist[index].id),
                   onDismissed: (direction) async {
-                    // Call deleteCustomMeals to delete the meal
                     await deleteCustomMeals(meal: finalmealslist[index]);
-                    // Reload the data after deletion
+                   
                     fetchData();
                   },
                   background: Container(
@@ -50,7 +49,7 @@ class _CustomMealsListState extends State<CustomMealsList> {
                     child: const Icon(Icons.delete, color: Colors.white),
                   ),
                   child: ListTile(
-                    title: Text(finalmealslist[index].mealList.keys.first), // Modify as needed
+                    title: Text(finalmealslist[index].mealList.keys.first), 
                     leading: const Icon(Icons.food_bank),
                   ),
                 );

@@ -147,7 +147,7 @@ static Future scheduleNotification({
         ticker: 'ticker');
 const NotificationDetails notificationDetails =
     NotificationDetails(android: androidNotificationDetails);
-    await _flutterLocalNotificationsPlugin.periodicallyShow(4, title, body, RepeatInterval.daily, notificationDetails);
+    await _flutterLocalNotificationsPlugin.periodicallyShow(4, title, body, RepeatInterval.hourly,  notificationDetails);
   } 
    
           
