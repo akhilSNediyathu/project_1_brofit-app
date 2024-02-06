@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
-        android:label="fitness_app"
+        android:label="BroFit"
         android:name="${applicationName}"
         android:debuggable="true"
         android:icon="@mipmap/ic_launcher">

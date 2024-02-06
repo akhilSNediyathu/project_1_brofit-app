@@ -6,7 +6,7 @@ class ResponsivePadding {
 
     if (screenWidth > 600) {
       
-      return const EdgeInsets.symmetric(horizontal: 500,vertical: 500);
+      return const EdgeInsets.symmetric(horizontal: 200,vertical: 200);
     } else {
       
       return const EdgeInsets.symmetric(horizontal: 20);

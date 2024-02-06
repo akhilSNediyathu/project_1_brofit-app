@@ -87,21 +87,24 @@ class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Lottie.asset('assets/gif/foodplan1.json'),
-
+        Lottie.asset('assets/gif/foodplan1.json',
+        height: media.height*0.4,
+        width: media.width
+        ),
+    
        
         Text('Breakfast: ${finalselectedmeals[0].mealPlan[0]}', style: AppTextStyles.carousalHeading2TextStyle),
         Text('Lunch: ${finalselectedmeals[0].mealPlan[1]}', style: AppTextStyles.carousalHeading2TextStyle),
         Text('Dinner: ${finalselectedmeals[0].mealPlan[2]}', style: AppTextStyles.carousalHeading2TextStyle),
         
       
-
+    
        
         Text('Total Calories: ${finalselectedmeals[0].calorie}', style: AppTextStyles.carousalHeading2TextStyle),
-
+    
         
         const Spacer(),
-
+    
        
         RoundButton(
           title: 'Edit Plan',

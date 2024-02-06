@@ -125,119 +125,121 @@ class _EditProfileViewState extends State<EditProfileView> {
                    
                     key: _formKey,
                     child: SizedBox(
-                      child: Column(
-                        
-                      
-                        children: [
+                      child: SingleChildScrollView(
+                        child: Column(
                           
-                          Container(
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            child: Row(
-                              children: [
-                                Container(
-                                  alignment: Alignment.center,
-                                  width: 50,
-                                  height: 50,
-                                  padding:
-                                      const EdgeInsets.symmetric(horizontal: 15),
-                                  child:  Icon(
-                                    Icons.person,
-                                    size: 20,
-                                    color: Tcolo.gray,
+                        
+                          children: [
+                            
+                            Container(
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              child: Row(
+                                children: [
+                                  Container(
+                                    alignment: Alignment.center,
+                                    width: 50,
+                                    height: 50,
+                                    padding:
+                                        const EdgeInsets.symmetric(horizontal: 15),
+                                    child:  Icon(
+                                      Icons.person,
+                                      size: 20,
+                                      color: Tcolo.gray,
+                                    ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: DropdownButtonHideUnderline(
-                                    child: DropdownButton<String>(
-                                      value: selectedGender,
-                                      items: ["Male", "Female"]
-                                          .map((name) {
-                                        return DropdownMenuItem<String>(
-                                          value: name,
-                                          child: Text(
-                                            name,
-                                            style: const TextStyle(
-                                                color: Colors.grey, fontSize: 14),
-                                          ),
-                                        );
-                                      }).toList(),
-                                      onChanged: (value) {
-                                        setState(() {
-                                          selectedGender = value;
-                                        });
-                                      },
-                                      isExpanded: true,
-                                      hint:  Text(
-                                        "Choose Gender",
-                                        style: TextStyle(
-                                            color: Tcolo.gray, fontSize: 12),
+                                  Expanded(
+                                    child: DropdownButtonHideUnderline(
+                                      child: DropdownButton<String>(
+                                        value: selectedGender,
+                                        items: ["Male", "Female"]
+                                            .map((name) {
+                                          return DropdownMenuItem<String>(
+                                            value: name,
+                                            child: Text(
+                                              name,
+                                              style: const TextStyle(
+                                                  color: Colors.grey, fontSize: 14),
+                                            ),
+                                          );
+                                        }).toList(),
+                                        onChanged: (value) {
+                                          setState(() {
+                                            selectedGender = value;
+                                          });
+                                        },
+                                        isExpanded: true,
+                                        hint:  Text(
+                                          "Choose Gender",
+                                          style: TextStyle(
+                                              color: Tcolo.gray, fontSize: 12),
+                                        ),
                                       ),
                                     ),
                                   ),
-                                ),
-                                const SizedBox(width: 8),
-                              ],
-                            ),
-                          ),
-                           SizedBox(height: media.width * 0.04),
-                          RoundTextField(
-                            icon: 'assets/img/Profile.png',
-                            controller: nameController,
-                            hintText: 'Name',
-                          ),
-                         
-                          
-                          SizedBox(height: media.width * 0.04),
-                          GestureDetector(
-                            onTap: () => _selectDate(context),
-                            child: AbsorbPointer(
-                              child: RoundTextField(
-                                controller: TextEditingController(
-                                    text: selectedDate?.toLocal().toString().split(' ')[0]),
-                                hintText: 'Date of Birth',
-                                icon: 'assets/img/Calendar.png', // Add your own icon path
+                                  const SizedBox(width: 8),
+                                ],
                               ),
                             ),
-                          ),
-                          SizedBox(height: media.width * 0.04),
-                          RoundTextField(
-                            icon: 'assets/img/weight-scale 1.png',
-                            controller: weightController,
-                            hintText: 'Weight',
-                            keyboardType: TextInputType.number,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter your weight';
-                              }
-                              double weight = double.tryParse(value) ?? 0.0;
-                              if (weight <= 0 || weight > 500) {
-                                return 'Please enter a valid weight';
-                              }
-                              return null;
-                            },
-                          ),
-                          SizedBox(height: media.width * 0.04),
-                          RoundTextField(
-                            icon:'assets/img/Swap.png',
-                            controller: heightController,
-                            hintText: 'Height',
-                            keyboardType: TextInputType.number,
-                            validator: (value) {
-                              if (value!.isEmpty) {
-                                return 'Please enter your height';
-                              }
-                              double height = double.tryParse(value) ?? 0.0;
-                              if (height <= 0 || height > 300) {
-                                return 'Please enter a valid height';
-                              }
-                              return null;
-                            },
-                          ),
-                          SizedBox(height: media.width * 0.09),
-                        ],
+                             SizedBox(height: media.width * 0.04),
+                            RoundTextField(
+                              icon: 'assets/img/Profile.png',
+                              controller: nameController,
+                              hintText: 'Name',
+                            ),
+                           
+                            
+                            SizedBox(height: media.width * 0.04),
+                            GestureDetector(
+                              onTap: () => _selectDate(context),
+                              child: AbsorbPointer(
+                                child: RoundTextField(
+                                  controller: TextEditingController(
+                                      text: selectedDate?.toLocal().toString().split(' ')[0]),
+                                  hintText: 'Date of Birth',
+                                  icon: 'assets/img/Calendar.png', // Add your own icon path
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: media.width * 0.04),
+                            RoundTextField(
+                              icon: 'assets/img/weight-scale 1.png',
+                              controller: weightController,
+                              hintText: 'Weight',
+                              keyboardType: TextInputType.number,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please enter your weight';
+                                }
+                                double weight = double.tryParse(value) ?? 0.0;
+                                if (weight <= 0 || weight > 500) {
+                                  return 'Please enter a valid weight';
+                                }
+                                return null;
+                              },
+                            ),
+                            SizedBox(height: media.width * 0.04),
+                            RoundTextField(
+                              icon:'assets/img/Swap.png',
+                              controller: heightController,
+                              hintText: 'Height',
+                              keyboardType: TextInputType.number,
+                              validator: (value) {
+                                if (value!.isEmpty) {
+                                  return 'Please enter your height';
+                                }
+                                double height = double.tryParse(value) ?? 0.0;
+                                if (height <= 0 || height > 300) {
+                                  return 'Please enter a valid height';
+                                }
+                                return null;
+                              },
+                            ),
+                            SizedBox(height: media.width * 0.09),
+                          ],
+                        ),
                       ),
                     ),
                   ),

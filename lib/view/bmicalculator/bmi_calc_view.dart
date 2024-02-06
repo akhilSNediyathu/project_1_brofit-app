@@ -89,14 +89,14 @@ class _BmiWelcomeState extends State<BmiWelcome> {
       body: SingleChildScrollView(
         child: Container(
           alignment: Alignment.center,
-          height: media.height * 0.8,
+          height: media.height * 0.85,
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: media.height * 0.2,
+                height: media.height * 0.15,
                 child: Center(child: Image.asset('assets/img/bmi welcome.png')),
               ),
               SizedBox(height: media.height * 0.02,),
@@ -201,7 +201,7 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                           ),
                           const SizedBox(width: 8,),
                           Container(
-
+                
                             width: 50,
                             height: 50,
                             alignment: Alignment.center,
@@ -221,7 +221,7 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                         ],
                       ),
                     ),
-                    SizedBox(height: media.height * 0.035,),
+                    SizedBox(height: media.height * 0.02,),
                     Container(
                       decoration: BoxDecoration(
                         color: Tcolo.Lightgrey,
@@ -313,12 +313,12 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                   ],
                 ),
               ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Tcolo.Lightgrey,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
+              // Container(
+              //   decoration: BoxDecoration(
+              //     color: Tcolo.Lightgrey,
+              //     borderRadius: BorderRadius.circular(15),
+              //   ),
+              // ),
               const Spacer(),
               RoundButton(
                

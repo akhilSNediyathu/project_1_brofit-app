@@ -43,7 +43,7 @@ class _MainTabViewState extends State<MainTabView> {
                 image: AssetImage('assets/img/homebg.jpeg'),
                 fit: BoxFit.cover,
                 opacity: 0.5)),
-        child: Column(
+        child:  Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             homeList(

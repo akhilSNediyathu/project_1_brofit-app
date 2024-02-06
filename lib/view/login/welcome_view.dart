@@ -55,15 +55,17 @@ Future<void> _loadUserData() async {
       body: SafeArea(
         child: SizedBox(
           
-          width: media.width*1,
+          width: media.width,
           // padding: const EdgeInsets.symmetric(vertical:10,horizontal: 10 ),
           child: _user != null? Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
                Image.asset('assets/img/welcomenew.jpeg',fit: BoxFit.fill,
+                width: media.width, 
+                      height: media.height * 0.4,
                ),
-              SizedBox(height: media.width *0.1,),
+              SizedBox(height: media.height*0.03,),
              
                  Text("Welcome, $_userName",
                  style: AppTextStyles.titleTextStyle,
@@ -87,8 +89,8 @@ Future<void> _loadUserData() async {
                     buttonColor: Tcolo.Primarycolor1,
                                     ),
                   ),
-
-
+                  
+                  
             ],
           ): Center(child: SizedBox(
                 width: media.width * 0.5,

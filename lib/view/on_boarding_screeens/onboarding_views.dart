@@ -99,7 +99,7 @@ class _onBoarding1State extends State<OnBoarding1> {
               onPressed: () {
                 if (selectPage < 3) {
                   selectPage = selectPage + 1;
-
+      
                   controller.jumpToPage(selectPage);
                   setState(() {});
                 } else {
@@ -118,3 +118,4 @@ class _onBoarding1State extends State<OnBoarding1> {
     );
   }
 }
+

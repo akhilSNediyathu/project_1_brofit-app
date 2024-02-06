@@ -64,53 +64,55 @@ class _PlanWorkoutWelcomeState extends State<PlanWorkoutWelcome> {
                     width: media.width * 0.8,
                     child: Card(
                       elevation: 3,
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Center(child: Image.asset('assets/img/plan.png')),
-                            SizedBox(
-                              height: media.height * 0.02,
-                            ),
-                            finaldatas.isEmpty
-                                ? Text('Set Your Workout plan now',
-                                    style: AppTextStyles.subtitleTextStyle(
-                                        context))
-                                : Text(details!.name,
-                                    style: AppTextStyles.subtitleTextStyle(
-                                        context)),
-                            // ,
-                            SizedBox(
-                              height: media.height * 0.02,
-                            ),
-                            finaldatas.isEmpty
-                                ? SmallRoundbutton(
-                                    title: 'Add',
-                                    onPressed: () {
-                                      Navigator.push(
+                      child: SingleChildScrollView(
+                        child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              Center(child: Image.asset('assets/img/plan.png')),
+                              SizedBox(
+                                height: media.height * 0.02,
+                              ),
+                              finaldatas.isEmpty
+                                  ? Text('Set Your Workout plan now',
+                                      style: AppTextStyles.subtitleTextStyle(
+                                          context))
+                                  : Text(details!.name,
+                                      style: AppTextStyles.subtitleTextStyle(
+                                          context)),
+                              // ,
+                              SizedBox(
+                                height: media.height * 0.02,
+                              ),
+                              finaldatas.isEmpty
+                                  ? SmallRoundbutton(
+                                      title: 'Add',
+                                      onPressed: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (ctx) =>
+                                                    const AddWorkoutPlan()));
+                                      },
+                                      buttonColor: Tcolo.Primarycolor1,
+                                      textColor: Tcolo.white)
+                                  :
+                                  //
+                                  SmallRoundbutton(
+                                      title: 'viewdetails',
+                                      onPressed: () {
+                                        Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                              builder: (ctx) =>
-                                                  const AddWorkoutPlan()));
-                                    },
-                                    buttonColor: Tcolo.Primarycolor1,
-                                    textColor: Tcolo.white)
-                                :
-                                //
-                                SmallRoundbutton(
-                                    title: 'viewdetails',
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => PlanDetailsPage(
-                                              details: details!),
-                                        ),
-                                      );
-                                    },
-                                    buttonColor: Tcolo.Primarycolor1,
-                                    textColor: Tcolo.white)
-                          ]),
+                                            builder: (context) => PlanDetailsPage(
+                                                details: details!),
+                                          ),
+                                        );
+                                      },
+                                      buttonColor: Tcolo.Primarycolor1,
+                                      textColor: Tcolo.white)
+                            ]),
+                      ),
                     ),
                   )
                 ],

@@ -1,38 +1,36 @@
+import 'package:flutter/material.dart';
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common_widget/tab_buttons.dart';
 import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart';
 import 'package:brofit/view/home/profile_view/profie_page.dart';
 import 'package:brofit/view/main_tab_view.dart';
-import 'package:flutter/material.dart';
-
-import '../bmicalculator/bmi_calc_view.dart';
+import 'package:brofit/view/bmicalculator/bmi_calc_view.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-int selectTab = 0;
-
 class _HomePageState extends State<HomePage> {
+ final PageController _pageController = PageController(initialPage: 0);
+
+  int selectTab = 0;
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
 
-    List pages = [
+    List<Widget> pages = [
       const MainTabView(),
       const PlanWorkoutWelcome(),
       const BmiWelcome(),
-    const  ProfilePage()
+      const ProfilePage(),
     ];
+
     return Scaffold(
       appBar: AppBar(
-        // leading: IconButton(onPressed: (){
-        //   Navigator.pop(context);
-
-        // }, icon: Image.asset('assets/img/Back-Navs.png'),color: Tcolo.Primarycolor1,),
         automaticallyImplyLeading: false,
         backgroundColor: Tcolo.Primarycolor1,
         title: Image.asset(
@@ -44,7 +42,15 @@ class _HomePageState extends State<HomePage> {
         elevation: 3,
       ),
       backgroundColor: Tcolo.white,
-      body: pages[selectTab],
+      body: PageView(
+        controller: _pageController,
+        children: pages,
+        onPageChanged: (index) {
+          setState(() {
+            selectTab = index;
+          });
+        },
+      ),
       bottomNavigationBar: BottomAppBar(
         child: SafeArea(
           child: SizedBox(
@@ -53,63 +59,37 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TAbButton(
-                    isActive: selectTab == 0,
-                    onTap: () {
-                      selectTab = 0;
-                      if (mounted) {
-                        setState(() {});
-                      }
-                    },
-                    selectIcon: 'assets/img/home_tab_select.png',
-                    icon: 'assets/img/home_tab.png'),
+                  isActive: selectTab == 0,
+                  onTap: () {
+                    _pageController.jumpToPage(0);
+                  },
+                  selectIcon: 'assets/img/home_tab_select.png',
+                  icon: 'assets/img/home_tab.png',
+                ),
                 TAbButton(
-                    isActive: selectTab == 1,
-                    onTap: () {
-                      selectTab = 1;
-                      if (mounted) {
-                        setState(() {});
-                      }
-                    },
-                    selectIcon: 'assets/img/workout planner1.png',
-                    icon: 'assets/img/workout planner2.png'),
-
+                  isActive: selectTab == 1,
+                  onTap: () {
+                    _pageController.jumpToPage(1);
+                  },
+                  selectIcon: 'assets/img/workout planner1.png',
+                  icon: 'assets/img/workout planner2.png',
+                ),
                 TAbButton(
-                    isActive: selectTab == 2,
-                    onTap: () {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>bmi_welcome()));
-                      selectTab = 2;
-                      if (mounted) {
-                        setState(() {});
-                      }
-                    },
-                    selectIcon: 'assets/img/calc 1 1.png',
-                    icon: 'assets/img/calc.png'),
-
-                //   TAbButton(isActive: selectTab==3, onTap: (){
-
-                //   selectTab=3;
-                //     if(mounted){
-                //       setState(() {
-
-                //       });
-
-                //     }
-
-                // }, icon: 'assets/img/mealsplanner.png',
-                //  selectIcon: 'assets/img/mealsplanner2.png'),
-
+                  isActive: selectTab == 2,
+                  onTap: () {
+                    _pageController.jumpToPage(2);
+                  },
+                  selectIcon: 'assets/img/calc 1 1.png',
+                  icon: 'assets/img/calc.png',
+                ),
                 TAbButton(
-                    isActive: selectTab == 3,
-                    onTap: () {
-                      // FirebaseAuth.instance.signOut();
-                      // Navigator.pushReplacement(context, MaterialPageRoute(builder:(ctx)=>LoginView()));
-                      selectTab = 3;
-                      if (mounted) {
-                        setState(() {});
-                      }
-                    },
-                    selectIcon: 'assets/img/profile_tab_select.png',
-                    icon: 'assets/img/profile_tab.png'),
+                  isActive: selectTab == 3,
+                  onTap: () {
+                    _pageController.jumpToPage(3);
+                  },
+                  selectIcon: 'assets/img/profile_tab_select.png',
+                  icon: 'assets/img/profile_tab.png',
+                ),
               ],
             ),
           ),

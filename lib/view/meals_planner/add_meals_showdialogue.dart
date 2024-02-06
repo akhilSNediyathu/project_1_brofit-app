@@ -25,35 +25,37 @@ void showAddFoodDialog(BuildContext context) {
             height: media.height*0.2,
             child: Form(
               key: formKey,
-              child: Column(
-                children: [
-              
-                  RoundTextField(
-                    hintText: 'Food Name',
-                    
-                     icon: 'assets/img/fooditem (1).png',
-                      controller: nameController,
-                       validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a valid food name';
-                    }
-                    return null;
-                  },
-                      ),
-                 SizedBox(height: media.height*0.02,),
-                  RoundTextField(hintText: 'Calories' , icon:'assets/img/weight-scale 1.png',controller: calorieController,
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a valid calorie value';
-                    }
-                    int calorie = int.tryParse(value) ?? 0;
-                    if (calorie <= 0 || calorie > 1000) {
-                      return 'Calories must be between 1 and 1000';
-                    }
-                    return null;
-                  },
-                  )
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                
+                    RoundTextField(
+                      hintText: 'Food Name',
+                      
+                       icon: 'assets/img/fooditem (1).png',
+                        controller: nameController,
+                         validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter a valid food name';
+                      }
+                      return null;
+                    },
+                        ),
+                   SizedBox(height: media.height*0.02,),
+                    RoundTextField(hintText: 'Calories' , icon:'assets/img/weight-scale 1.png',controller: calorieController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter a valid calorie value';
+                      }
+                      int calorie = int.tryParse(value) ?? 0;
+                      if (calorie <= 0 || calorie > 1000) {
+                        return 'Calories must be between 1 and 1000';
+                      }
+                      return null;
+                    },
+                    )
+                  ],
+                ),
               ),
             ),
           ),
