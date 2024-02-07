@@ -2,6 +2,7 @@ import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/profile_list_tile.dart';
 import 'package:brofit/local_notification.dart';
+import 'package:brofit/view/home/profile_view/activity_history.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/drink_water_welcome.dart';
 import 'package:brofit/view/home/profile_view/edit_profile_page.dart';
 import 'package:brofit/view/home/profile_view/profile_page_showdialogues.dart';
@@ -100,6 +101,9 @@ class _ProfilePageState extends State<ProfilePage> {
                         onTap: (){
                          Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const DrinkWaterReminder()));
                         }),
+                        ProfileListTile(icon: Icons.auto_graph_sharp, title: 'Activity History', onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder:(context) =>const ActivityHistory()));
+                        })
                     
                     
                       ],

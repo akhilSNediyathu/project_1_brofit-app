@@ -6,6 +6,8 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/profile_view/drink_water_reminder/datamodel2.dart';
 import 'package:brofit/view/home/profile_view/functions_of_reminder.dart';
+import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
+import 'package:brofit/view/home/workout_history_db/history_model.dart';
 import 'package:brofit/view/meals_planner/add_custom_meals_fn.dart';
 import 'package:brofit/view/meals_planner/add_meals_data_model.dart';
 import 'package:brofit/view/meals_planner/plan_meals_data_mode.dart';
@@ -34,6 +36,10 @@ void main() async {
   if (!Hive.isAdapterRegistered(SetMealsPlanAdapter().typeId)) {
     Hive.registerAdapter(SetMealsPlanAdapter());
   }
+   if (!Hive.isAdapterRegistered(WorkoutHistoryAdapter().typeId)) {
+    Hive.registerAdapter(WorkoutHistoryAdapter());
+  }
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -41,6 +47,7 @@ void main() async {
   addmealstoList();
   addReminderToList();
   addPlanToList();
+  addHistorytoList();
 
   runApp(const MyApp());
 }

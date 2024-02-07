@@ -3,12 +3,19 @@ import 'package:brofit/common/testgif.dart';
 import 'package:brofit/common/workout_list.dart';
 import 'package:brofit/common_widget/completed_workout.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
+import 'package:brofit/view/home/workout_history_db/history_model.dart';
 
 import 'package:flutter/material.dart';
 
-class TotalArmToningSet3 extends StatelessWidget {
+class TotalArmToningSet3 extends StatefulWidget {
   const TotalArmToningSet3({super.key});
 
+  @override
+  State<TotalArmToningSet3> createState() => _TotalArmToningSet3State();
+}
+
+class _TotalArmToningSet3State extends State<TotalArmToningSet3> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -132,7 +139,14 @@ class TotalArmToningSet3 extends StatelessWidget {
               RoundButton(
                 
                   title: 'Finish workout ',
-                  onPressed: () {
+                  onPressed: () async{
+                     await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Arms workout'));
+                     await getHistory();
+                     
+              
+                    
+                    
+                    // ignore: use_build_context_synchronously
                     Navigator.pushReplacement(
                         context,
                         MaterialPageRoute(

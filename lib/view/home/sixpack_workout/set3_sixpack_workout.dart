@@ -3,6 +3,8 @@ import 'package:brofit/common/testgif.dart';
 import 'package:brofit/common/workout_list.dart';
 import 'package:brofit/common_widget/completed_workout.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
+import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
+import 'package:brofit/view/home/workout_history_db/history_model.dart';
 import 'package:flutter/material.dart';
 
 class SixpackSet3 extends StatelessWidget {
@@ -162,7 +164,9 @@ class SixpackSet3 extends StatelessWidget {
             RoundButton(
               
                 title: 'Finish workout ',
-                onPressed: () {
+                onPressed: () async{
+                   await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Abdominal toning'));
+                  // ignore: use_build_context_synchronously
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
