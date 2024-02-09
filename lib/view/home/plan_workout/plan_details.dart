@@ -5,6 +5,7 @@ import 'package:brofit/view/home/home_page.dart';
 import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/plan_workout/edit_plan.dart';
+import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 
@@ -13,14 +14,32 @@ class PlanDetailsPage extends StatelessWidget {
 
   const PlanDetailsPage({super.key, required this.details});
 
-  String formatTime(BuildContext context, String timeString) {
-    final timeList = timeString.split(':');
-    final int hour = int.parse(timeList[0]);
-    final int minute = int.parse(timeList[1]);
+  // String formatTime(BuildContext context, String timeString) {
+  //   final timeList = timeString.split(':');
+  //   final int hour = int.parse(timeList[0]);
+  //   final int minute = int.parse(timeList[1]);
+  //   final TimeOfDay timeOfDay = TimeOfDay(hour: hour, minute: minute);
+
+  //   return timeOfDay.format(context);
+  // }
+String formatTime(BuildContext context, String timeString) {
+  final timeList = timeString.split(':');
+
+  if (timeList.length == 2) {
+    
+    final int hour = int.parse(timeList[0].replaceAll(RegExp('^0+'), ''));
+    final int minute = int.parse(timeList[1].replaceAll(RegExp('^0+'), ''));
     final TimeOfDay timeOfDay = TimeOfDay(hour: hour, minute: minute);
 
     return timeOfDay.format(context);
+  } else {
+   
+    if (kDebugMode) {
+      print('Invalid time format: $timeString');
+    }
+    return timeString; 
   }
+}
 
   @override
   Widget build(BuildContext context) {
@@ -53,17 +72,29 @@ class PlanDetailsPage extends StatelessWidget {
                 children: [
                   _buildDetailsItem('Name', details.name),
                   _buildDetailsItem('Daily WakeUp Time',
-                      formatTime(context, details.dailyWakeUpTime)),
+                      // formatTime(context, details.dailyWakeUpTime)
+                      details.dailyWakeUpTime
+                      ),
                        _buildDetailsItem('Daily Wokout Time',
-                      formatTime(context, details.dailyWorkoutTime)),
+                      // formatTime(context, details.dailyWorkoutTime)
+                      details.dailyWorkoutTime
+                      ),
                   _buildDetailsItem('Daily Breakfast Time',
-                      formatTime(context, details.dailyBreakfastTime)),
+                      // formatTime(context, details.dailyBreakfastTime)
+                      details.dailyBreakfastTime
+                      ),
                   _buildDetailsItem('Daily Lunch Time',
-                      formatTime(context, details.dailyLunchTime)),
+                      // formatTime(context, details.dailyLunchTime)
+                      details.dailyLunchTime
+                      ),
                   _buildDetailsItem('Daily Dinner Time',
-                      formatTime(context, details.dailyDinnerTime)),
+                      // formatTime(context, details.dailyDinnerTime)
+                      details.dailyDinnerTime
+                      ),
                   _buildDetailsItem('Daily Bed Time',
-                      formatTime(context, details.dailyBedTime)),
+                      // formatTime(context, details.dailyBedTime)
+                      details.dailyBedTime
+                      ),
                   SizedBox(
                     height: media.height * 0.2,
                   ),

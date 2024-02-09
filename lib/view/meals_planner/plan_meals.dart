@@ -32,7 +32,7 @@ class _PlanMealsState extends State<PlanMeals> {
   String? selectedDinner;
 
   // Calorie limits
-  final int dailyCalorieLimit = 1000; 
+  final int dailyCalorieLimit = 2000; 
   @override
   void initState() {
   for(int i = 0; i<finalmealslist.length;i++){

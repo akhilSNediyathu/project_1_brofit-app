@@ -7,8 +7,7 @@
     <application
         android:label="BroFit"
         android:name="${applicationName}"
-        android:debuggable="true"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
 
         <!-- Your existing activity and meta-data configurations go here -->
 

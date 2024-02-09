@@ -1,6 +1,7 @@
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 
+
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -313,12 +314,7 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                   ],
                 ),
               ),
-              // Container(
-              //   decoration: BoxDecoration(
-              //     color: Tcolo.Lightgrey,
-              //     borderRadius: BorderRadius.circular(15),
-              //   ),
-              // ),
+             
               const Spacer(),
               RoundButton(
                
@@ -328,6 +324,7 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                     showBMIResultDialog();
                     heightController.clear();
                     weightController.clear();
+                    // LocalNotifications.showSimpleNotification(tittle: 'hi', body: 'just', payload: 'test');
                   }
                 },
                 buttonColor: Tcolo.Primarycolor1,
