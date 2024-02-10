@@ -21,7 +21,9 @@ import 'package:flutter/material.dart';
           ElevatedButton(
             onPressed: () async{
              await deletePlannedMeals(mealplan: finalselectedmeals[0]);
-
+      //         showCustomDialogDone(context, 'assets/gif/deletedone1.json');
+      // await Future.delayed(const Duration(seconds: 2));
+      // Navigator.pop(context);
               Navigator.of(context).pop(); 
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=> const MealsPlannerWelcome()));
             },

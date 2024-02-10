@@ -1,4 +1,5 @@
 import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
 import 'package:brofit/view/home/workout_history_db/history_model.dart';
 import 'package:flutter/material.dart';
@@ -77,7 +78,7 @@ class ActivityHistoryState extends State<ActivityHistory> {
                     ),
                     child: ListTile(
                       title: Text(todayhistory.dailyWokout),
-                      trailing: Text(reverseDate(todayhistory.id)),
+                      trailing: Text(reverseDate(todayhistory.id),style: AppTextStyles.loginEnding,),
                       
                     ),
                   );

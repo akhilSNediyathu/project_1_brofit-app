@@ -151,7 +151,7 @@ class SixpackSet1 extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'asset/gif/halfcrunch.gif',
+                              gifPath: 'assets/gif/halfcrunch.gif',
                               initialCounter: 30)));
                 },
                 title: 'Half Sit-Ups',

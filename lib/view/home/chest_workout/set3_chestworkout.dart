@@ -132,7 +132,7 @@ class ChestWorkoutSet3 extends StatelessWidget {
              
                 title: 'Finish workout ',
                 onPressed: ()async {
-                  await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Comprehensive Chest Routine'));
+                  await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Accomplished the chest routine'));
                   // ignore: use_build_context_synchronously
                   Navigator.pushReplacement(
                       context,

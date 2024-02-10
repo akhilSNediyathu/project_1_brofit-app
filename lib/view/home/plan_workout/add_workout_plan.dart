@@ -1,5 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/time_setter.dart';
+import 'package:brofit/common_widget/custom_show_dialogues.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
 import 'package:brofit/local_notification.dart';
@@ -8,6 +11,7 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart'; 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class AddWorkoutPlan extends StatefulWidget {
   const AddWorkoutPlan({Key? key}) : super(key: key);
@@ -176,13 +180,16 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
                         payload: 'bedtime_reminder',
                         scheduledTime: _selectedDailyBedTime!,
                         daysOfWeek: selectedDays);
-// ignore: use_build_context_synchronously
+                        showCustomDialogDone(context, 'assets/gif/workoutplanadded.json');
+      await Future.delayed(const Duration(seconds: 3));
+      Navigator.pop(context);
+
                     Navigator.of(context).pushAndRemoveUntil(
                         MaterialPageRoute(builder: (ctx2) => const HomePage()),
                         (route) => false);
-                    
-                    // ignore: use_build_context_synchronously
-                    // ignore: use_build_context_synchronously
+                    // Navigator.pop(context);
+                   
+                  
                   }
                 },
                 buttonColor: Tcolo.Primarycolor1,

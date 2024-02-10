@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
@@ -248,9 +250,33 @@ class _EditProfileViewState extends State<EditProfileView> {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              child: RoundButton(title: 'Update', onPressed: (){
+              child: RoundButton(title: 'Update', onPressed: ()async{
                 if (_formKey.currentState!.validate()) {
                     saveChangesToFirestore();
+                    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return Dialog(
+          
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Lottie.asset(
+                    'assets/gif/profile updated.json', 
+                   fit: BoxFit.fill
+                  ),
+                
+                ],
+              ),
+            ),
+          );
+        },
+      );
+      await Future.delayed(const Duration(seconds: 3));
+      Navigator.pop(context);
+
                     // Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>const HomePage()));
                     Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (ctx2) => const HomePage()),

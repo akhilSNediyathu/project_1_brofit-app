@@ -14,9 +14,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
- final PageController _pageController = PageController(initialPage: 0);
 
-  int selectTab = 0;
+int selectTab = 0;
+ final PageController _pageController = PageController(initialPage: 0);
+  
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@
 
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/time_setter.dart';
+import 'package:brofit/common_widget/custom_show_dialogues.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/common_widget/round_textfield.dart';
 import 'package:brofit/local_notification.dart';
@@ -10,6 +11,7 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:lottie/lottie.dart';
 
 class EditWorkoutPlan extends StatefulWidget {
   const EditWorkoutPlan({super.key});
@@ -188,6 +190,8 @@ class _EditWorkoutPlanState extends State<EditWorkoutPlan> {
                     scheduledTime: _selectedDailyBedTime ?? dailyBedTime,
                     daysOfWeek: selectedDays,
                   );
+              showCustomDialogDone(context, 'assets/gif/done.json');
+      await Future.delayed(const Duration(seconds: 2));
 
                   Navigator.pop(context);
                   

@@ -2,6 +2,7 @@
 
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/common_text_styles.dart';
+import 'package:brofit/common_widget/custom_show_dialogues.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/view/meals_planner/add_meals_showdialogue.dart';
 import 'package:brofit/view/meals_planner/custom_meals_list.dart';
@@ -112,6 +113,9 @@ class _PlanMealsState extends State<PlanMeals> {
                 } else {
           num totalCalories = calculateTotalCalories();
                 await  addMealsPlan(mealplan: SetMealsPlan(id: 'MealsPlan', mealPlan: [selectedBreakfast!,selectedLunch!,selectedDinner!], calorie:totalCalories.toString() ));
+                showCustomDialogDone(context, 'assets/gif/done.json');
+      await Future.delayed(const Duration(seconds: 2));
+      Navigator.pop(context);
            Navigator.pop(context);
            Navigator.pushReplacement(context, MaterialPageRoute(builder:(context) => const MealsPlannerWelcome()));
           

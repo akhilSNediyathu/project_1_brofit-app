@@ -1,11 +1,10 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/view/meals_planner/mealplanner_showdialogues.dart';
-
 import 'package:brofit/view/meals_planner/plan_meals.dart';
-
-
 import 'package:brofit/view/meals_planner/plan_meals_db_functions.dart';
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
@@ -74,7 +73,8 @@ class _MealsPlannerWelcomeState extends State<MealsPlannerWelcome> {
           )),
     ) :Scaffold(
   appBar: AppBar(
-    actions: [IconButton(onPressed: (){
+    actions: [IconButton(onPressed: ()async{
+     
      showDeleteConfirmationDialogPlannedMeal(context);
     }, icon:const  Icon(Icons.delete))],
     title: const Text("Today's Meal Schedule"),

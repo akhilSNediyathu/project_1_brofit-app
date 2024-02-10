@@ -117,7 +117,7 @@ class SixpackSet3 extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const CustomCounterDialog1(
-                              gifPath: 'asset/gif/halfcrunch.gif',
+                              gifPath: 'assets/gif/halfcrunch.gif',
                               initialCounter: 30)));
                 },
                 title: 'Half Sit-Ups',
@@ -165,7 +165,7 @@ class SixpackSet3 extends StatelessWidget {
               
                 title: 'Finish workout ',
                 onPressed: () async{
-                   await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Abdominal toning'));
+                   await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Abs workout crushed'));
                   // ignore: use_build_context_synchronously
                   Navigator.pushReplacement(
                       context,

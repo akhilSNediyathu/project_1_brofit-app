@@ -140,7 +140,7 @@ class _TotalArmToningSet3State extends State<TotalArmToningSet3> {
                 
                   title: 'Finish workout ',
                   onPressed: () async{
-                     await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Arms workout'));
+                     await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: "Accomplished arm exercises"));
                      await getHistory();
                      
               

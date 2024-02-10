@@ -45,6 +45,7 @@ dependencies:
   intl: ^0.17.0
   lottie: ^3.0.0
   numberpicker: ^2.1.2
+  pedometer: ^4.0.0
   rxdart: ^0.27.7
   timezone: ^0.9.2
 

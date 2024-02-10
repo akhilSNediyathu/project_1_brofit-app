@@ -170,7 +170,7 @@ class LegWorkoutSet3 extends StatelessWidget {
                   
                     title: 'Finish Workout ',
                     onPressed: () async{
-                        await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Domicile Leg Regimen'));
+                        await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Completed lower body exercises'));
                       // ignore: use_build_context_synchronously
                       Navigator.pushReplacement(
                           context,

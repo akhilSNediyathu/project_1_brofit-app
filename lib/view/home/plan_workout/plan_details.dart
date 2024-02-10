@@ -1,5 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:brofit/common/colo_extension.dart';
 import 'package:brofit/common/common_text_styles.dart';
+import 'package:brofit/common_widget/custom_show_dialogues.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/view/home/home_page.dart';
 import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
@@ -8,6 +11,7 @@ import 'package:brofit/view/home/plan_workout/edit_plan.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class PlanDetailsPage extends StatelessWidget {
   final WorkoutPlan details;
@@ -147,8 +151,11 @@ String formatTime(BuildContext context, String timeString) {
               child: const Text('Cancel'),
             ),
             TextButton(
-              onPressed: () {
+              onPressed: ()async{
                 deleteplan(workout: finaldatas[0]);
+              showCustomDialogDone(context, 'assets/gif/done.json');
+      await Future.delayed(const Duration(seconds: 2));
+      Navigator.pop(context);
                 Navigator.pop(context);
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (ctx2) => const HomePage()),
