@@ -9,9 +9,8 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:brofit/view/home/plan_workout/edit_plan.dart';
 import 'package:flutter/foundation.dart';
-
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+
 
 class PlanDetailsPage extends StatelessWidget {
   final WorkoutPlan details;
@@ -153,9 +152,9 @@ String formatTime(BuildContext context, String timeString) {
             TextButton(
               onPressed: ()async{
                 deleteplan(workout: finaldatas[0]);
-              showCustomDialogDone(context, 'assets/gif/done.json');
+               showCustomDialogDone(context, 'assets/gif/deletedone3.json');
       await Future.delayed(const Duration(seconds: 2));
-      Navigator.pop(context);
+       Navigator.pop(context);
                 Navigator.pop(context);
                 Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (ctx2) => const HomePage()),

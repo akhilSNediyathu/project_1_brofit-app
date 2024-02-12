@@ -7,6 +7,7 @@ import 'package:brofit/view/main_tab_view.dart';
 import 'package:brofit/view/bmicalculator/bmi_calc_view.dart';
 
 class HomePage extends StatefulWidget {
+  
   const HomePage({Key? key}) : super(key: key);
 
   @override
