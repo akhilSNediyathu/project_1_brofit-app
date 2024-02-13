@@ -37,7 +37,7 @@ class WorkoutList extends StatelessWidget {
               leading: SizedBox(
                 height: media.height*0.06,
                 child: Image.asset(imageUrl,fit:BoxFit.contain,),),
-              subtitle: Text(subtitle,style: TextStyle(fontSize: media.height*0.015),),
+              subtitle: Text(subtitle,style:AppTextStyles.workoutListSub(context)),
               trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
              
               title: Text(title,style: AppTextStyles.subtitleTextStyle(context),
@@ -48,27 +48,7 @@ class WorkoutList extends StatelessWidget {
         ),
       )
     );
-    // return Container(
-    //   padding: EdgeInsets.all(10),
-    //   child: ClipRRect(
-    //     borderRadius: BorderRadius.circular(20),
-    //     child: ListTile(
-    //       tileColor: Tcolo.gray,
-    //       leading: SizedBox(
-    //             child: Image.asset(imageUrl,fit:BoxFit.fitWidth,),
-    //             height: media.height*0.05,),
-    //           subtitle: Text(subtitle,style: TextStyle(fontSize: media.height*0.015),),
-    //           trailing: IconButton(onPressed: onIconTap, icon: Image.asset(trailingimageUrl)),
-             
-    //           title: Text(title,style: TextStyle(
-    //             fontWeight: FontWeight.w600,
-    //             color: Tcolo.black,fontSize: media.height*0.018
-                
-    //           ),),
-            
-    //         ),
-    //   ),
-    // );
+
     
   }
 }

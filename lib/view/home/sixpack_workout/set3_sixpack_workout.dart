@@ -6,6 +6,7 @@ import 'package:brofit/common_widget/round_button_1.dart';
 import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
 import 'package:brofit/view/home/workout_history_db/history_model.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class SixpackSet3 extends StatelessWidget {
   const SixpackSet3({super.key});
@@ -165,7 +166,17 @@ class SixpackSet3 extends StatelessWidget {
               
                 title: 'Finish workout ',
                 onPressed: () async{
-                   await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Abs workout crushed'));
+                                   DateTime now = DateTime.now();
+        String formattedDate = DateFormat('dd MMM yyyy').format(now);
+
+        await addWorkoutHistory(
+          todayhistory: WorkoutHistory(
+            id: formattedDate,
+            dailyWokout: "Abs workout crushed",
+          ),
+        );
+           
+                   
                   // ignore: use_build_context_synchronously
                   Navigator.pushReplacement(
                       context,

@@ -92,7 +92,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         Center(child: Text('Wellness Planner',style: AppTextStyles.loginHeading1,)),
+                        SizedBox(height: media.height*0.02,),
+                         Center(child: Text('Wellness Planner',style: AppTextStyles.profileStyle2,)),
                        
                         ProfileListTile(icon: Icons.restaurant_menu, title: 'Plan Your Meals', onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (ctx)=>const MealsPlannerWelcome()));
@@ -121,7 +122,8 @@ class _ProfilePageState extends State<ProfilePage> {
                     child: Column(
                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                         Center(child: Text('Profile Settings',style: AppTextStyles.loginHeading1,)),
+                        SizedBox(height: media.height*0.02,),
+                         Center(child: Text('Profile Settings',style: AppTextStyles.profileStyle2,)),
                           ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){
                             Navigator.push(context, MaterialPageRoute(builder: (ctx)=> const EditProfileView()));
                             // showEditProfileDialog(context);
@@ -141,6 +143,8 @@ class _ProfilePageState extends State<ProfilePage> {
                          onTap: (){
                           showStopAllNotificationsDialog(context);
                          }),
+                         SizedBox(height: media.height*0.01,),
+                         Center(child: Text('Version V1.0',style: AppTextStyles.loginEnding,)),
                     
                     
                     

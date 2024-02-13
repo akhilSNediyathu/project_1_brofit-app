@@ -30,10 +30,10 @@ class ActivityHistoryState extends State<ActivityHistory> {
   Future<void> _refresh() async {
     await fetchData();
   }
-  String reverseDate(String date) {
-    List<String> parts = date.split('-');
-    return '${parts[2]}-${parts[1]}-${parts[0]}';
-  }
+  // String reverseDate(String date) {
+  //   List<String> parts = date.split('-');
+  //   return '${parts[2]}-${parts[1]}-${parts[0]}';
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class ActivityHistoryState extends State<ActivityHistory> {
                     ),
                     child: ListTile(
                       title: Text(todayhistory.dailyWokout),
-                      trailing: Text(reverseDate(todayhistory.id),style: AppTextStyles.loginEnding,),
+                      trailing: Text(todayhistory.id,style: AppTextStyles.loginEnding,),
                       
                     ),
                   );

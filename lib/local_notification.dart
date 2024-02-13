@@ -149,39 +149,6 @@ const NotificationDetails notificationDetails =
     NotificationDetails(android: androidNotificationDetails);
     await _flutterLocalNotificationsPlugin.periodicallyShow(4, title, body, RepeatInterval.hourly,  notificationDetails);
   } 
-   //schedule noty
-  //  Future<void> scheduleDailyNotificationAtTime({
-  //   int id = 3,
-  //   String? title,
-  //   String? body,
-  //   required TimeOfDay notificationTime,
-  // }) async {
-  //   DateTime now = DateTime.now();
-
-  //   DateTime scheduledDateTime = DateTime(
-  //     now.year,
-  //     now.month,
-  //     now.day,
-  //     notificationTime.hour,
-  //     notificationTime.minute,
-  //   );
-
-  //   if (scheduledDateTime.isBefore(now)) {
-  //     scheduledDateTime = scheduledDateTime.add(const Duration(days: 1));
-  //   }
-
-  //   await _flutterLocalNotificationsPlugin.zonedSchedule(
-  //     id,
-  //     title,
-  //     body,
-  //     tz.TZDateTime.from(scheduledDateTime, tz.local),
-  //     notificationDetails(),
-  //     androidAllowWhileIdle: true,
-  //     uiLocalNotificationDateInterpretation:
-  //         UILocalNotificationDateInterpretation.absoluteTime,
-  //     payload: id.toString(),
-  //   );
-  // }
 
           
   }

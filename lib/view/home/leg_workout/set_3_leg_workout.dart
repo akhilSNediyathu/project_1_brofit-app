@@ -7,6 +7,7 @@ import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
 import 'package:brofit/view/home/workout_history_db/history_model.dart';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class LegWorkoutSet3 extends StatelessWidget {
   const LegWorkoutSet3({super.key});
@@ -170,7 +171,17 @@ class LegWorkoutSet3 extends StatelessWidget {
                   
                     title: 'Finish Workout ',
                     onPressed: () async{
-                        await addWorkoutHistory(todayhistory: WorkoutHistory(id: DateTime.now().toLocal().toIso8601String().split('T')[0], dailyWokout: 'Completed lower body exercises'));
+                                 DateTime now = DateTime.now();
+        String formattedDate = DateFormat('dd MMM yyyy').format(now);
+
+        await addWorkoutHistory(
+          todayhistory: WorkoutHistory(
+            id: formattedDate,
+            dailyWokout: 'Completed lower body exercises',
+          ),
+        );
+          
+                        
                       // ignore: use_build_context_synchronously
                       Navigator.pushReplacement(
                           context,

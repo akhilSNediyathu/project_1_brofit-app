@@ -8,11 +8,10 @@ import 'package:brofit/common_widget/round_textfield.dart';
 import 'package:brofit/local_notification.dart';
 import 'package:brofit/view/home/home_page.dart';
 import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
-import 'package:brofit/view/home/plan_workout/data_model.dart';
-import 'package:brofit/view/home/plan_workout/plan_workout_welcome.dart'; 
+import 'package:brofit/view/home/plan_workout/data_model.dart'; 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+
 
 class AddWorkoutPlan extends StatefulWidget {
   const AddWorkoutPlan({Key? key}) : super(key: key);

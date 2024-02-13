@@ -11,7 +11,7 @@ import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
 import 'package:brofit/view/home/plan_workout/data_model.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:lottie/lottie.dart';
+
 
 class EditWorkoutPlan extends StatefulWidget {
   const EditWorkoutPlan({super.key});

@@ -1,4 +1,5 @@
 import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common/testgif.dart';
 import 'package:brofit/view/home/chest_workout/set2_chestworkout.dart';
 
@@ -20,7 +21,7 @@ class ChestWorkoutSet1 extends StatelessWidget {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: const Text('Congratulations!'),
+            title:  Text('Congratulations!',style: AppTextStyles.new1,),
             content: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,
@@ -32,8 +33,8 @@ class ChestWorkoutSet1 extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 10),
-                const Text(
-                    "Great work! You've crushed your first set. Now, conquer the next two and own the full three-set challenge!"),
+                 Text(
+                    "Great work! You've crushed your first set. Now, conquer the next two and own the full three-set challenge!",style: AppTextStyles.loginEnding),
               ],
             ),
           );
@@ -57,7 +58,7 @@ class ChestWorkoutSet1 extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Comprehensive Chest Routine',
-          style: TextStyle(fontWeight: FontWeight.w600, color: Tcolo.white),
+          style: AppTextStyles.workouAppBarTitle,
         ),
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -80,12 +81,12 @@ class ChestWorkoutSet1 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                const Center(
+                Center(
                 child: Text(
               'Exercises',
-              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 18),
+              style: AppTextStyles.exercises,
             )),
-            const Text('set-1'),
+             Text('set-1',style: AppTextStyles.loginEnding,),
             SizedBox(
               height: media.height * 0.02,
             ),

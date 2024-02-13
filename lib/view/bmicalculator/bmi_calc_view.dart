@@ -1,4 +1,5 @@
 import 'package:brofit/common/colo_extension.dart';
+import 'package:brofit/common/common_text_styles.dart';
 import 'package:brofit/common_widget/round_button_1.dart';
 
 
@@ -101,10 +102,10 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                 child: Center(child: Image.asset('assets/img/bmi welcome.png')),
               ),
               SizedBox(height: media.height * 0.02,),
-              const Center(
+              Center(
                 child: Text(
                   "Check your BMI regularly",
-                  style: TextStyle(fontWeight: FontWeight.w700),
+                  style: AppTextStyles.new1,
                   textAlign: TextAlign.center,
                 ),
               ),
@@ -112,13 +113,13 @@ class _BmiWelcomeState extends State<BmiWelcome> {
               Center(
                 child: Text(
                   "it's a key indicator for your overall health, guiding ",
-                  style: TextStyle(fontSize: media.height * 0.016),
+                  style:AppTextStyles.new2,
                 ),
               ),
               Center(
                 child: Text(
                   ' you toward better lifestyle choices.',
-                  style: TextStyle(fontSize: media.height * 0.016),
+                  style: AppTextStyles.new2,
                 ),
               ),
               SizedBox(height: media.height * 0.06,),
@@ -324,7 +325,6 @@ class _BmiWelcomeState extends State<BmiWelcome> {
                     showBMIResultDialog();
                     heightController.clear();
                     weightController.clear();
-                    // LocalNotifications.showSimpleNotification(tittle: 'hi', body: 'just', payload: 'test');
                   }
                 },
                 buttonColor: Tcolo.Primarycolor1,

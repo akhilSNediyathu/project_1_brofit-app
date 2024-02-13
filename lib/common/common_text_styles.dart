@@ -56,5 +56,24 @@ static TextStyle loginHeading1 = TextStyle(
                       color: Tcolo.Primarycolor1,
                       fontSize: 18,
                       );   
+                       static TextStyle new1 = TextStyle(
+                            color: Tcolo.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w700
+                          );
+                          static TextStyle new2 = TextStyle(
+                      color: Tcolo.black,
+                      fontSize: 16,
+                    );
+                        static TextStyle workouAppBarTitle = TextStyle(fontWeight: FontWeight.w600, color: Tcolo.white);
+
+                          static TextStyle exercises =  const TextStyle(fontWeight: FontWeight.w500, fontSize: 18);
+                          
+static TextStyle workoutListSub(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    return TextStyle(
+      fontSize: screenHeight*0.015
+    );
+  }
                                       
 }
