@@ -11,18 +11,19 @@ void showCustomDialogDone(BuildContext context, String lottieFilePath) {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
         ),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(30.0),
-          child: SizedBox(
-            width: media.width * 0.7, 
-            height: media.height * 0.35,  
-           
+        child: SizedBox(
+          width: media.width * 0.7,
+          height: media.height * 0.35,  // Keep the original height
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(30.0),
             child: Column(
-              //  mainAxisSize: MainAxisSize.max,
+              mainAxisSize: MainAxisSize.max,
               children: [
-                Lottie.asset(
-                  lottieFilePath,
-                  fit: BoxFit.contain,
+                Expanded(
+                  child: Lottie.asset(
+                    lottieFilePath,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),

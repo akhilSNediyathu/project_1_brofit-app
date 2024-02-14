@@ -63,7 +63,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Tcolo.Primarycolor1,
           useMaterial3: true,
           fontFamily: "Poppins"),
-      home: const Splash(),
+  home: const Splash(),
     
 
       debugShowCheckedModeBanner: false,

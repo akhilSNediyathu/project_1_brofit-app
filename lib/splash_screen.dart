@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 import 'common/colo_extension.dart';
 
@@ -28,38 +29,47 @@ class _SplashState extends State<Splash> {
     var media = MediaQuery.of(context).size;
     // EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-              colors: Tcolo.primaryG,
-              begin: Alignment.topCenter,
-              end: Alignment.bottomRight),
-        ),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              //  Text('B R O F I T',style: TextStyle(fontSize: 38,
-              //            color: Colors.white,fontWeight: FontWeight.bold
-
-              // ),),
-              Opacity(
-                opacity: .7,
-                child: Container(
-                  height: media.height * 0.75,
-                  width: media.width * 0.75,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(200),
-                    image: const DecorationImage(
-                        image: AssetImage(
-                          'assets/img/newsplash.png',
-                        ),
-                        fit: BoxFit.fitWidth),
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          height: media.height,
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+                colors: Tcolo.primaryG,
+                begin: Alignment.topCenter,
+                end: Alignment.bottomRight),
+          ),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                //  Text('B R O F I T',style: TextStyle(fontSize: 38,
+                //            color: Colors.white,fontWeight: FontWeight.bold
+            
+                // ),),
+                Opacity(
+                  opacity: .7,
+                  child: Container(
+                    height: media.height * 0.8,
+                    width: media.width * 0.8,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(200),
+                      image: const DecorationImage(
+                          image: AssetImage(
+                            'assets/img/newsplash.png',
+                          ),
+                          fit: BoxFit.contain),
+                    ),
                   ),
                 ),
-              )
-            ],
+                Expanded(
+                  child: SizedBox(
+                    height: media.height*0.045,
+                    width: media.width*0.18,
+                    child: Lottie.asset('assets/gif/splash.json')),
+                )
+              ],
+            ),
           ),
         ),
       ),

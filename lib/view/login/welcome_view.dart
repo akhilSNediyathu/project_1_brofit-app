@@ -50,48 +50,52 @@ Future<void> _loadUserData() async {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
+    
     return Scaffold(
       backgroundColor: Tcolo.white,
       body: SafeArea(
         child: SizedBox(
           
-          width: media.width,
+          // width: media.width,
           // padding: const EdgeInsets.symmetric(vertical:10,horizontal: 10 ),
-          child: _user != null? Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-               Image.asset('assets/img/welcomenew.jpeg',fit: BoxFit.fill,
-                width: media.width, 
-                      height: media.height * 0.4,
-               ),
-              SizedBox(height: media.height*0.03,),
-             
-                 Text("Welcome, $_userName",
-                 style: AppTextStyles.titleTextStyle,
+          child: _user != null? SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                 Image.asset('assets/img/welcomenew.jpeg',fit: BoxFit.cover,
+                 
+                  width: media.width, 
+                         height: media.height * 0.4
                  ),
-                 Text("You are all set now, let's reach your \ngoals together with us",
-                 textAlign: TextAlign.center,
-                 style: AppTextStyles.welcomeSubtitle
-                 ),
-             const Spacer(),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
-                    child: RoundButton(
-                       
+                SizedBox(height: media.height*0.03,),
+               
+                   Text("Welcome, $_userName",
+                   style: AppTextStyles.titleTextStyle,
+                   ),
+                   Text("You are all set now, let's reach your \ngoals together with us",
+                   textAlign: TextAlign.center,
+                   style: AppTextStyles.welcomeSubtitle
+                   ),
+               const Spacer(),
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+                      child: RoundButton(
+                         
+                      
+                      textColor: Tcolo.white,
+                      title: 'Go To Home',
+                      onPressed: () {
+                         Navigator.push(context,
+                            MaterialPageRoute(builder: (context) =>const HomePage()));
+                      },
+                      buttonColor: Tcolo.Primarycolor1,
+                                      ),
+                    ),
                     
-                    textColor: Tcolo.white,
-                    title: 'Go To Home',
-                    onPressed: () {
-                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) =>const HomePage()));
-                    },
-                    buttonColor: Tcolo.Primarycolor1,
-                                    ),
-                  ),
-                  
-                  
-            ],
+                    
+              ],
+            ),
           ): Center(child: SizedBox(
                 width: media.width * 0.5,
                 height: media.width * 0.5,
