@@ -1,23 +1,30 @@
-import 'package:brofit/common/colo_extension.dart';
-import 'package:brofit/firebase_options.dart';
-import 'package:brofit/local_notification.dart';
-import 'package:brofit/splash_screen.dart';
-import 'package:brofit/view/home/plan_workout/data_base_functions.dart';
-import 'package:brofit/view/home/plan_workout/data_model.dart';
-import 'package:brofit/view/home/profile_view/drink_water_reminder/datamodel2.dart';
-import 'package:brofit/view/home/profile_view/functions_of_reminder.dart';
-import 'package:brofit/view/home/workout_history_db/history_db_functions.dart';
-import 'package:brofit/view/home/workout_history_db/history_model.dart';
-import 'package:brofit/view/meals_planner/add_custom_meals_fn.dart';
-import 'package:brofit/view/meals_planner/add_meals_data_model.dart';
-import 'package:brofit/view/meals_planner/plan_meals_data_mode.dart';
-import 'package:brofit/view/meals_planner/plan_meals_db_functions.dart';
+import 'package:brofit/database/hive/workout_history_db/history_db_functions.dart';
+import 'package:brofit/database/hive/workout_history_db/history_model.dart';
+import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/database/firebase/firebase_options.dart';
+import 'package:brofit/local_notifications/local_notification.dart';
+import 'package:brofit/database/hive/functions/data_base_functions.dart';
+import 'package:brofit/database/hive/data_models/data_model.dart';
+import 'package:brofit/presentation/view/home/profile_view/drink_water_reminder/datamodel2.dart';
+
+import 'package:brofit/database/hive/functions/add_custom_meals_fn.dart';
+
+import 'package:brofit/database/hive/data_models/plan_meals_data_mode.dart';
+import 'package:brofit/database/hive/data_models/add_meals_data_model.dart';
+
+import 'package:brofit/database/hive/functions/plan_meals_db_functions.dart';
+import 'package:brofit/presentation/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:timezone/data/latest.dart' as tz;
 
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+
+import 'database/hive/functions/functions_of_reminder.dart';
+
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
