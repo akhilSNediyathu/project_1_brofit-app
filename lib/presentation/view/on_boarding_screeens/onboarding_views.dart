@@ -51,7 +51,7 @@ class _onBoarding1State extends State<OnBoarding1> {
       'title': 'Eat Well',
       'subtitle':
           "Let's start a healthy lifestyle with us, its important to take healthy meal if you really want to complete this mission",
-      'image': 'assets/img/new1.png'
+      'image': 'assets/img/images (6).png'
     }
   ];
   @override
