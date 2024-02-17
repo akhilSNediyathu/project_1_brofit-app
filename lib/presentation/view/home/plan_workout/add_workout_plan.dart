@@ -187,10 +187,6 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
                     Navigator.of(context).pushAndRemoveUntil(
                         MaterialPageRoute(builder: (ctx2) => const HomePage()),
                         (route) => false);
-                    // workout.notifyListeners();
-                    // Navigator.pop(context);
-                   
-                  
                   }
                 },
                 buttonColor: Tcolo.Primarycolor1,
@@ -304,12 +300,6 @@ class _AddWorkoutPlanState extends State<AddWorkoutPlan> {
     );
   }
 
-  // String formatTimeOfDay(TimeOfDay timeOfDay) {
-  //   final now = DateTime.now();
-  //   final dateTime = DateTime(
-  //       now.year, now.month, now.day, timeOfDay.hour, timeOfDay.minute);
-  //   return '${dateTime.hour}:${dateTime.minute}';
-  // }
   String formatTimeOfDay(TimeOfDay timeOfDay) {
   int hour = timeOfDay.hour;
   String period = 'AM';

@@ -7,8 +7,7 @@ import 'package:brofit/presentation/view/meals_planner/mealplanner_showdialogues
 import 'package:brofit/presentation/view/meals_planner/plan_meals.dart';
 import 'package:brofit/database/hive/functions/plan_meals_db_functions.dart';
 
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
+
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';

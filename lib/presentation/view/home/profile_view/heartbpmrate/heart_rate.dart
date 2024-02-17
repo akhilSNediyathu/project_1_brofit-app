@@ -47,7 +47,7 @@ class _HeartRateState extends State<HeartRate> {
               children: [
                 // 
                 Lottie.asset(
-          'assets/gif/heart2.json', // Replace with your Lottie asset
+          'assets/gif/heart2.json', 
           width: media.width * 0.2,
           height: media.width * 0.25,
           fit: BoxFit.cover,

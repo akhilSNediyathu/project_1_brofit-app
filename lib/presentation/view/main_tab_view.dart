@@ -23,18 +23,7 @@ class _MainTabViewState extends State<MainTabView> {
     var media = MediaQuery.of(context).size;
 
     return Scaffold(
-      // appBar: AppBar(
-      //     automaticallyImplyLeading: false,
-      //   backgroundColor: Tcolo.Primarycolor1,
-      //   title: Center
-      //   (child: Text
-      //   ('Start Your Workout',style: TextStyle(
-      //     fontSize: 18,
-      //     fontWeight: FontWeight.w700,
-      //     color: Tcolo.white
-      //   ),)
-      //   ),
-      // ),
+   
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: BoxDecoration(

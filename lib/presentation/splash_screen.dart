@@ -43,10 +43,7 @@ class _SplashState extends State<Splash> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                //  Text('B R O F I T',style: TextStyle(fontSize: 38,
-                //            color: Colors.white,fontWeight: FontWeight.bold
-            
-                // ),),
+                
                 Opacity(
                   opacity: .7,
                   child: Container(

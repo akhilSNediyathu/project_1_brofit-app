@@ -36,14 +36,7 @@ class _DrinkWaterReminderState extends State<DrinkWaterReminder> {
           },
           icon:  Icon(Icons.arrow_back, color: Tcolo.black),
         ),
-        // actions: [
-        //   IconButton(
-        //     onPressed: () {
-        //       showStopNotificationsDialog(context);
-        //     },
-        //     icon:  Icon(Icons.highlight_remove, color: Tcolo.black),
-        //   ),
-        // ],
+      
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -57,7 +50,7 @@ class _DrinkWaterReminderState extends State<DrinkWaterReminder> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: media.width * 0.04,
-                  color: Tcolo.gray, // Choose an appropriate text color
+                  color: Tcolo.gray, 
                 ),
               ),
               const SizedBox(height: 20),
@@ -74,7 +67,7 @@ class _DrinkWaterReminderState extends State<DrinkWaterReminder> {
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: media.width * 0.04,
-                  color: Tcolo.gray, // Choose an appropriate text color
+                  color: Tcolo.gray, 
                 ),
               ),
               const SizedBox(height: 20),

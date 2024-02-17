@@ -13,7 +13,7 @@ void showCustomDialogDone(BuildContext context, String lottieFilePath) {
         ),
         child: SizedBox(
           width: media.width * 0.7,
-          height: media.height * 0.35,  // Keep the original height
+          height: media.height * 0.35, 
           child: ClipRRect(
             borderRadius: BorderRadius.circular(30.0),
             child: Column(

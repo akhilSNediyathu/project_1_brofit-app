@@ -125,7 +125,7 @@ class _ProfilePageState extends State<ProfilePage> {
                          Center(child: Text('Profile Settings',style: AppTextStyles.profileStyle2,)),
                           ProfileListTile(icon: Icons.person, title: 'Edit Profile', onTap: (){
                             Navigator.push(context, MaterialPageRoute(builder: (ctx)=> const EditProfileView()));
-                            // showEditProfileDialog(context);
+                            
                           }),
                        
                         ProfileListTile(icon: Icons.domain_verification_rounded, title: 'contact Us', onTap: (){

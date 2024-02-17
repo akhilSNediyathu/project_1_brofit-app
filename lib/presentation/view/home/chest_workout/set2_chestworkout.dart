@@ -30,7 +30,7 @@ class _ChestWorkoutSet2State extends State<ChestWorkoutSet2> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  'assets/img/showdialogue.png', // Replace with your image asset path
+                  'assets/img/showdialogue.png', 
                   width: 100,
                   height: 100,
                   fit: BoxFit.contain,
@@ -50,7 +50,7 @@ class _ChestWorkoutSet2State extends State<ChestWorkoutSet2> {
           context,
           MaterialPageRoute(
               builder: (context) =>
-               const   ChestWorkoutSet3()), // Replace with your target page
+               const   ChestWorkoutSet3()), 
         );
       });
     }

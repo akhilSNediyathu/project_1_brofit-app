@@ -113,7 +113,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                SizedBox(
                height: media.height*0.2,
                 child:  Lottie.asset(
-              'assets/gif/editprofile.json', // Replace with your Lottie file path
+              'assets/gif/editprofile.json', 
             
               fit: BoxFit.cover,
             ),),
@@ -201,7 +201,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                                   controller: TextEditingController(
                                       text: selectedDate?.toLocal().toString().split(' ')[0]),
                                   hintText: 'Date of Birth',
-                                  icon: 'assets/img/Calendar.png', // Add your own icon path
+                                  icon: 'assets/img/Calendar.png', 
                                 ),
                               ),
                             ),
@@ -277,7 +277,7 @@ class _EditProfileViewState extends State<EditProfileView> {
       await Future.delayed(const Duration(seconds: 3));
       Navigator.pop(context);
 
-                    // Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx)=>const HomePage()));
+                   
                     Navigator.of(context).pushAndRemoveUntil(
                     MaterialPageRoute(builder: (ctx2) => const HomePage()),
                     (route)=>false);

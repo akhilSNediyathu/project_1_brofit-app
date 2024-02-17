@@ -23,7 +23,6 @@ class _CompleteProfileViewState extends State<CompleteProfileView> {
 
   String? selectedGender;
   DateTime? selectedDate;
-//  final DateFormat _dateFormat =DateFormat('yyyy-MM-dd');
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

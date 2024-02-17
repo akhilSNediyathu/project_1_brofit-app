@@ -25,7 +25,7 @@ class GradientFab extends StatelessWidget {
           shape: BoxShape.circle,
         ),
         child: Lottie.asset(
-          'assets/gif/heartrate.json', // Replace with your Lottie asset
+          'assets/gif/heartrate.json', 
           width: media.width * 0.1,
           height: media.width * 0.11,
           fit: BoxFit.cover,

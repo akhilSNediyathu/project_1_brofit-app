@@ -62,7 +62,7 @@ void showAddFoodDialog(BuildContext context) {
           actions: [
             TextButton(
               onPressed: () {
-                Navigator.of(context).pop(); // Close the dialog
+                Navigator.of(context).pop();
               },
               child: const Text('Cancel'),
             ),
@@ -78,7 +78,7 @@ void showAddFoodDialog(BuildContext context) {
                 );
               
                 Navigator.of(context).pop();
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => const PlanMeals())); // Close the dialog
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => const PlanMeals())); 
               }
             },
               child: const Text('Save'),

@@ -65,7 +65,7 @@ void showPrivacyPolicyDialog(BuildContext context) {
           borderRadius: BorderRadius.circular(16),
         ),
         child: Container(
-          width: media.width * 0.8, // Adjust as needed
+          width: media.width * 0.8, 
           padding: const EdgeInsets.all(16),
           child: Column(
             mainAxisSize: MainAxisSize.min,

@@ -177,7 +177,7 @@ class _SignUpViewState extends State<SignUpView> {
                             duration: Duration(seconds: 3),
                           ),
                         );
-                        // return null;
+                        
                       }
                     },
                     buttonColor: Tcolo.Primarycolor1,
@@ -270,7 +270,7 @@ class _SignUpViewState extends State<SignUpView> {
         ),
       );
 
-      // print("Error: $e");
+      
     }
   }
   bool isEmailValid(String email) {
