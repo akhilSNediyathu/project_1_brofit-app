@@ -27,7 +27,7 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
-    // EdgeInsetsGeometry padding = ResponsivePadding.getPadding(context);
+    
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
