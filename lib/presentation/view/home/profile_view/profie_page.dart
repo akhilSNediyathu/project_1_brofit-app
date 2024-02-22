@@ -1,3 +1,4 @@
+import 'package:brofit/database/hive/functions/functions_of_reminder.dart';
 import 'package:brofit/presentation/common/colo_extension.dart';
 import 'package:brofit/presentation/common/common_text_styles.dart';
 import 'package:brofit/presentation/common_widget/profile_list_tile.dart';
@@ -251,6 +252,7 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             TextButton(
               onPressed: () {
+                 deletereminder(id: '1');
                 LocalNotifications.cancelAllNotifications();
                 Navigator.of(context).pop(); 
               },
