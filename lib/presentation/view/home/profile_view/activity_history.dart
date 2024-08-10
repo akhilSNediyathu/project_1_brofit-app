@@ -2,8 +2,8 @@
 
 import 'package:brofit/database/hive/workout_history_db/history_db_functions.dart';
 import 'package:brofit/database/hive/workout_history_db/history_model.dart';
-import 'package:brofit/presentation/common/colo_extension.dart';
-import 'package:brofit/presentation/common/common_text_styles.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
+import 'package:brofit/presentation/utils/common_text_styles.dart';
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';

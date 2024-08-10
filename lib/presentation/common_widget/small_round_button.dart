@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 
 class SmallRoundbutton extends StatelessWidget {
   final String title;

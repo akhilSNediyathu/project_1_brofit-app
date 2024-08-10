@@ -1,6 +1,6 @@
 // ignore: file_names
 
-import 'package:brofit/presentation/common/common_text_styles.dart';
+import 'package:brofit/presentation/utils/common_text_styles.dart';
 
 import 'package:flutter/material.dart';
 

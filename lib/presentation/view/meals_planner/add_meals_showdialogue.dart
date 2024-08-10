@@ -1,6 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 import 'package:brofit/presentation/common_widget/round_textfield.dart';
 import 'package:brofit/database/hive/functions/add_custom_meals_fn.dart';
 import 'package:brofit/database/hive/data_models/add_meals_data_model.dart';

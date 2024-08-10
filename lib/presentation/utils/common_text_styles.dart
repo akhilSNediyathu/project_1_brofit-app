@@ -1,7 +1,7 @@
 
 
 
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 
 import 'package:flutter/material.dart';
 

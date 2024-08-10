@@ -1,4 +1,4 @@
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 import 'package:brofit/presentation/view/login/signup_view.dart';
 
 import 'package:flutter/material.dart';

@@ -1,5 +1,5 @@
-import 'package:brofit/presentation/common/colo_extension.dart';
-import 'package:brofit/presentation/common/home_screenlist_tile.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
+import 'package:brofit/presentation/utils/home_screenlist_tile.dart';
 import 'package:brofit/presentation/common_widget/homefloating.dart';
 import 'package:brofit/presentation/view/home/chest_workout/set1_chestworkout.dart';
 import 'package:brofit/presentation/view/home/leg_workout/set1_legworkout.dart';

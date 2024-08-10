@@ -1,9 +1,9 @@
 
 import 'package:brofit/database/hive/workout_history_db/history_db_functions.dart';
 import 'package:brofit/database/hive/workout_history_db/history_model.dart';
-import 'package:brofit/presentation/common/colo_extension.dart';
-import 'package:brofit/presentation/common/testgif.dart';
-import 'package:brofit/presentation/common/workout_list.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
+import 'package:brofit/presentation/utils/testgif.dart';
+import 'package:brofit/presentation/utils/workout_list.dart';
 import 'package:brofit/presentation/common_widget/completed_workout.dart';
 import 'package:brofit/presentation/common_widget/round_button_1.dart';
 import 'package:flutter/material.dart';

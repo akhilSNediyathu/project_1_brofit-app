@@ -8,7 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import 'common/colo_extension.dart';
+import 'utils/colo_extension.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
