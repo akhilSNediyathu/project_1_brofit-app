@@ -1,5 +1,5 @@
-import 'package:brofit/presentation/common/colo_extension.dart';
-import 'package:brofit/presentation/common/common_text_styles.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
+import 'package:brofit/presentation/utils/common_text_styles.dart';
 import 'package:brofit/presentation/common_widget/small_round_button.dart';
 import 'package:brofit/presentation/view/home/plan_workout/add_workout_plan.dart';
 import 'package:brofit/database/hive/functions/data_base_functions.dart';

@@ -1,6 +1,6 @@
 // ignore: file_names
 
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

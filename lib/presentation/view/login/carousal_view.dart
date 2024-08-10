@@ -1,6 +1,6 @@
 
-import 'package:brofit/presentation/common/colo_extension.dart';
-import 'package:brofit/presentation/common/common_text_styles.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
+import 'package:brofit/presentation/utils/common_text_styles.dart';
 import 'package:brofit/presentation/common_widget/round_button_1.dart';
 import 'package:brofit/presentation/view/login/welcome_view.dart';
 import 'package:carousel_slider/carousel_slider.dart';

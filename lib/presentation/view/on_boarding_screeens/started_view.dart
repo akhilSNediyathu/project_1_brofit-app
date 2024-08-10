@@ -1,4 +1,4 @@
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 import 'package:brofit/presentation/common_widget/round_button_1.dart';
 import 'package:brofit/presentation/view/on_boarding_screeens/onboarding_views.dart';
 import 'package:flutter/material.dart';

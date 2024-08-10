@@ -1,6 +1,6 @@
 import 'package:brofit/database/hive/functions/functions_of_reminder.dart';
-import 'package:brofit/presentation/common/colo_extension.dart';
-import 'package:brofit/presentation/common/common_text_styles.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
+import 'package:brofit/presentation/utils/common_text_styles.dart';
 import 'package:brofit/presentation/common_widget/profile_list_tile.dart';
 import 'package:brofit/local_notifications/local_notification.dart';
 import 'package:brofit/presentation/view/home/profile_view/activity_history.dart';
@@ -144,7 +144,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           showStopAllNotificationsDialog(context);
                          }),
                          SizedBox(height: media.height*0.01,),
-                         Center(child: Text('Version V1.0',style: AppTextStyles.loginEnding,)),
+                         Center(child: Text('Version V1.2',style: AppTextStyles.loginEnding,)),
                     
                     
                     

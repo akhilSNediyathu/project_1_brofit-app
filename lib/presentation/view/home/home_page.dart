@@ -3,7 +3,7 @@ import 'package:brofit/presentation/view/home/plan_workout/plan_workout_welcome.
 import 'package:brofit/presentation/view/home/profile_view/profie_page.dart';
 import 'package:brofit/presentation/view/main_tab_view.dart';
 import 'package:flutter/material.dart';
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 import 'package:brofit/presentation/common_widget/tab_buttons.dart';
 
 class HomePage extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:brofit/presentation/common/colo_extension.dart';
+import 'package:brofit/presentation/utils/colo_extension.dart';
 import 'package:brofit/database/hive/functions/add_custom_meals_fn.dart';
 
 import 'package:brofit/database/hive/data_models/add_meals_data_model.dart';
